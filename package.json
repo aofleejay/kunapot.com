@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "analyze": "source-map-explorer build/static/js/main.*",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=node",
@@ -27,6 +28,7 @@
     "eslint-plugin-react": "7.11.1",
     "gh-pages": "2.0.1",
     "react-test-renderer": "16.6.0",
+    "source-map-explorer": "1.6.0",
     "typescript": "3.1.6"
   },
   "homepage": "https://aofleejay.github.io",
