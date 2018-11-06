@@ -31,7 +31,7 @@
     "source-map-explorer": "1.6.0",
     "typescript": "3.1.6"
   },
-  "homepage": "https://aofleejay.github.io",
+  "homepage": "https://www.aofleejay.com",
   "eslintConfig": {
     "extends": "react-app"
   },
