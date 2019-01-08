@@ -10,8 +10,8 @@ class Routes extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/:slug" component={Blog} />
+          <Route path={process.env.PUBLIC_URL + '/'} exact component={Home} />
+          <Route path={process.env.PUBLIC_URL + '/:slug'} component={Blog} />
         </Switch>
       </Router>
     )
