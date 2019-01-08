@@ -8,10 +8,10 @@ const Screen = () => <div>'Screen'</div>
 class Routes extends React.Component {
   public render() {
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route path={process.env.PUBLIC_URL + '/'} exact component={Home} />
-          <Route path={process.env.PUBLIC_URL + '/:slug'} component={Blog} />
+          <Route path="/" exact component={Home} />
+          <Route path="/:slug" component={Blog} />
         </Switch>
       </Router>
     )
