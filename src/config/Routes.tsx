@@ -1,13 +1,17 @@
 import * as React from 'react'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Blog from '../screens/Blog'
+import Home from '../screens/Home'
+
+const Screen = () => <div>'Screen'</div>
 
 class Routes extends React.Component {
-  render() {
+  public render() {
     return (
       <Router>
         <Switch>
-          <Route path="/" exact component={() => 'Home'} />
-          <Route path="/:slug" component={() => 'Blog'} />
+          <Route path="/" exact component={Home} />
+          <Route path="/:slug" component={Blog} />
         </Switch>
       </Router>
     )
