@@ -1,8 +1,13 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 class Blog extends React.Component {
   public render() {
-    return <h1>Blog</h1>
+    return (
+      <div>
+        <h1 style={{ textAlign: 'center' }}>Blog</h1>
+      </div>
+    )
   }
 }
 
