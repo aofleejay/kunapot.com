@@ -28,7 +28,7 @@
     "tslint": "5.12.0",
     "typescript": "3.2.2"
   },
-  "homepage": "https://aofleejay.github.io/aofleejay.com",
+  "homepage": "https://aofleejay.com",
   "browserslist": [
     ">0.2%",
     "not dead",
