@@ -4,6 +4,14 @@
   "description": "My personal blog.",
   "version": "0.1.0",
   "author": "aofleejay <aofleejay@hotmail.com>",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "format": "prettier --write \"src/**/*.js\"",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "deploy": "gatsby build && gh-pages -d public"
+  },
   "dependencies": {
     "@emotion/core": "10.0.6",
     "gatsby": "2.0.76",
@@ -25,22 +33,12 @@
     "typography": "0.16.18",
     "typography-theme-kirkham": "0.16.18"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
-    "deploy": "gatsby build && gh-pages -d public"
-  },
   "devDependencies": {
     "gh-pages": "2.0.1",
     "prettier": "1.15.2"
   },
+  "license": "MIT",
+  "homepage": "https://aofleejay.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/aofleejay/aofleejay.com"

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import { css } from '@emotion/core'
+
 import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
 
@@ -37,7 +38,7 @@ const IndexPage = ({ data }) => (
   </Layout>
 )
 
-export const query = graphql`
+const query = graphql`
   query {
     allMarkdownRemark {
       totalCount
@@ -58,4 +59,5 @@ export const query = graphql`
   }
 `
 
+export { query }
 export default IndexPage

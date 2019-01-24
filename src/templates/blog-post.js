@@ -1,6 +1,7 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import React from 'react'
+import { graphql } from 'gatsby'
+
+import Layout from '../components/layout'
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark
@@ -14,7 +15,7 @@ const BlogPost = ({ data }) => {
   )
 }
 
-export const query = graphql`
+const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
@@ -25,4 +26,5 @@ export const query = graphql`
   }
 `
 
+export { query }
 export default BlogPost

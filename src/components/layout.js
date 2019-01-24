@@ -4,14 +4,14 @@ import { Link } from 'gatsby'
 
 import { rhythm } from '../utils/typography'
 
-const ListLink = props => (
+const ListLink = ({ to, children }) => (
   <li
     css={css`
       display: inline-block;
       margin-right: 1rem;
     `}
   >
-    <Link to={props.to}>{props.children}</Link>
+    <Link to={to}>{children}</Link>
   </li>
 )
 

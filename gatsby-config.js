@@ -1,8 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: `aofleejay`,
+    author: `Kunapot Pairat`,
     description: `My personal blog.`,
-    author: `@aofleejay`,
+    siteUrl: 'https://overreacted.io',
+    social: {
+      medium: '@aofleejay',
+      github: '@aofleejay',
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,13 +23,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `aofleejay.com`,
+        name: `aofleejay`,
         short_name: `aofleejay`,
         start_url: `/`,
         background_color: `#209CEE`,
         theme_color: `#209CEE`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/assets/favicon.png`,
       },
     },
     `gatsby-plugin-emotion`,
