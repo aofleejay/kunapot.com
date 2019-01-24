@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => (
   </Layout>
 )
 
-const query = graphql`
+export const query = graphql`
   query {
     allMarkdownRemark {
       totalCount
@@ -59,5 +59,4 @@ const query = graphql`
   }
 `
 
-export { query }
 export default IndexPage
