@@ -1,31 +1,24 @@
 import React from 'react'
-import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
 import { rhythm } from '../utils/typography'
 
 const Layout = ({ children }) => (
   <div
-    css={css`
-      margin: 0 auto;
-      max-width: 700px;
-      padding: ${rhythm(2)};
-      padding-top: ${rhythm(1.5)};
-    `}
+    style={{
+      margin: '0 auto',
+      maxWidth: 700,
+      padding: rhythm(2),
+      paddingTop: rhythm(1.5),
+    }}
   >
-    <header
-      css={css`
-        margin-bottom: 1.5rem;
-      `}
-    >
+    <header style={{ marginBottom: '1.5rem' }}>
       <Link to="/">
         Home
       </Link>
       <Link
         to="/about/"
-        css={css`
-          float: right;
-        `}
+        style={{ float: 'right' }}
       >
         About
       </Link>

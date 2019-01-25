@@ -32,7 +32,6 @@ module.exports = {
         icon: `src/assets/favicon.png`,
       },
     },
-    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

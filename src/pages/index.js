@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import { css } from '@emotion/core'
 
 import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
@@ -12,22 +11,11 @@ const IndexPage = ({ data }) => (
       <div key={node.id}>
         <Link
           to={node.fields.slug}
-          css={css`
-            text-decoration: none;
-            color: inherit;
-          `}
+          style={{ textDecoration: 'none', color: 'inherit' }}
         >
-          <h3
-            css={css`
-              margin-bottom: ${rhythm(1 / 4)};
-            `}
-          >
+          <h3 style={{ marginBottom: rhythm(1 / 4) }}>
             {node.frontmatter.title}{" "}
-            <span
-              css={css`
-                color: #bbb;
-              `}
-            >
+            <span style={{ color: '#bbb' }}>
               — {node.frontmatter.date}
             </span>
           </h3>
