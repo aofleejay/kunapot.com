@@ -33,7 +33,7 @@
     "react-helmet": "5.2.0",
     "react-typography": "0.16.18",
     "typography": "0.16.18",
-    "typography-theme-kirkham": "0.16.18"
+    "typography-theme-github": "0.16.18"
   },
   "devDependencies": {
     "gh-pages": "2.0.1",

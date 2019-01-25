@@ -1,7 +1,7 @@
 import Typography from 'typography'
-import kirkhamTheme from 'typography-theme-kirkham'
+import githubTheme from 'typography-theme-github'
 
-const typography = new Typography(kirkhamTheme)
+const typography = new Typography(githubTheme)
 const rhythm = typography.rhythm
 
 export { rhythm }
