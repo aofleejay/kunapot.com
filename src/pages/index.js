@@ -3,9 +3,11 @@ import { Link, graphql } from 'gatsby'
 
 import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const IndexPage = ({ data }) => (
   <Layout>
+    <SEO />
     <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
     {data.allMarkdownRemark.edges.map(({ node }) => (
       <div key={node.id}>
