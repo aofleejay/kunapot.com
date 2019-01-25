@@ -4,17 +4,6 @@ import { Link } from 'gatsby'
 
 import { rhythm } from '../utils/typography'
 
-const ListLink = ({ to, children }) => (
-  <li
-    css={css`
-      display: inline-block;
-      margin-right: 1rem;
-    `}
-  >
-    <Link to={to}>{children}</Link>
-  </li>
-)
-
 const Layout = ({ children }) => (
   <div
     css={css`
@@ -30,25 +19,16 @@ const Layout = ({ children }) => (
       `}
     >
       <Link to="/">
-        <h3
-          css={css`
-            margin-bottom: ${rhythm(2)};
-            display: inline-block;
-            font-style: normal;
-          `}
-        >
-          Home
-        </h3>
+        Home
       </Link>
-      <ul
+      <Link
+        to="/about/"
         css={css`
-          list-style: none;
           float: right;
         `}
       >
-        <ListLink to="/about/">About</ListLink>
-        <ListLink to="/contact/">Contact</ListLink>
-      </ul>
+        About
+      </Link>
     </header>
     {children}
   </div>
