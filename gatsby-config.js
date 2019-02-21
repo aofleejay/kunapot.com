@@ -3,13 +3,19 @@ module.exports = {
     title: `aofleejay`,
     author: `Kunapot Pairat`,
     description: `My personal blog.`,
-    siteUrl: 'https://overreacted.io',
+    siteUrl: 'https://aofleejay.com',
     social: {
       medium: '@aofleejay',
       github: '@aofleejay',
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-75313761-1",
+      },
+    },
     `gatsby-plugin-typescript`,
     `gatsby-plugin-tslint`,
     `gatsby-plugin-react-helmet`,
