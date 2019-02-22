@@ -11,6 +11,7 @@ const BlogPost = ({ data }) => {
       <SEO title={post.frontmatter.title} />
       <div>
         <h1>{post.frontmatter.title}</h1>
+        <img src={post.frontmatter.cover.publicURL} alt={post.frontmatter.cover.frontmatter} />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
@@ -23,6 +24,10 @@ export const query = graphql`
       html
       frontmatter {
         title
+        cover {
+          name
+          publicURL
+        }
       }
     }
   }
