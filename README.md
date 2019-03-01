@@ -1,5 +1,5 @@
 # [aofleejay.com](https://aofleejay.com)
-My personal website.
+💻 Software Developer / 🏃 Slow Runner / 🐱 Pokemon Trainer / 😻 Cat Lover / 🎸 Guitar Player
 
 ## 🚀 Quick start
 -  **View your site locally**
@@ -17,3 +17,6 @@ My personal website.
     ```
     yarn deploy
     ```
+
+## Change log
+- [CHANGELOG.md](CHANGELOG.md)
