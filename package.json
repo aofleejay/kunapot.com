@@ -14,7 +14,7 @@
     "deploy": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
-    "gatsby": "2.0.76",
+    "gatsby": "2.1.23",
     "gatsby-image": "2.0.20",
     "gatsby-plugin-google-analytics": "2.0.14",
     "gatsby-plugin-manifest": "2.0.9",
