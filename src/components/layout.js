@@ -13,13 +13,8 @@ const Layout = ({ children }) => (
     }}
   >
     <header style={{ marginBottom: '1.5rem' }}>
-      <Link to="/">
-        Home
-      </Link>
-      <Link
-        to="/about/"
-        style={{ float: 'right' }}
-      >
+      <Link to="/">Home</Link>
+      <Link to="/about/" style={{ float: 'right' }}>
         About
       </Link>
     </header>
