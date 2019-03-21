@@ -1,4 +1,4 @@
-# [aofleejay.com](https://aofleejay.com)
+# [aofleejay.com](https://aofleejay.com) [![Build Status](https://travis-ci.org/aofleejay/aofleejay.com.svg?branch=master)](https://travis-ci.org/aofleejay/aofleejay.com)
 💻 Software Developer / 🏃 Slow Runner / 🐱 Pokemon Trainer / 😻 Cat Lover / 🎸 Guitar Player
 
 ## 🚀 Quick start

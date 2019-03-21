@@ -16,10 +16,8 @@ const IndexPage = ({ data }) => (
           style={{ textDecoration: 'none', color: 'inherit' }}
         >
           <h3 style={{ marginBottom: rhythm(1 / 4) }}>
-            {node.frontmatter.title}{" "}
-            <span style={{ color: '#bbb' }}>
-              — {node.frontmatter.date}
-            </span>
+            {node.frontmatter.title}{' '}
+            <span style={{ color: '#bbb' }}>— {node.frontmatter.date}</span>
           </h3>
           <p>{node.excerpt}</p>
         </Link>
@@ -30,7 +28,7 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       totalCount
       edges {
         node {
