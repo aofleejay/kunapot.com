@@ -8,7 +8,6 @@ import SEO from '../components/seo'
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO />
-    <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
     {data.allMarkdownRemark.edges.map(({ node }) => (
       <div key={node.id}>
         <Link
@@ -17,8 +16,9 @@ const IndexPage = ({ data }) => (
         >
           <h3 style={{ marginBottom: rhythm(1 / 4) }}>
             {node.frontmatter.title}{' '}
-            <span style={{ color: '#bbb' }}>— {node.frontmatter.date}</span>
+            <p style={{ color: '#bbb', fontSize: rhythm(1 / 2) }}>{node.frontmatter.date}</p>
           </h3>
+          <img src={node.frontmatter.cover.publicURL} alt={node.frontmatter.cover.name} />
           <p>{node.excerpt}</p>
         </Link>
       </div>
@@ -29,12 +29,15 @@ const IndexPage = ({ data }) => (
 export const query = graphql`
   query {
     allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
-      totalCount
       edges {
         node {
           id
           frontmatter {
             title
+            cover {
+              name
+              publicURL
+            }
             date(formatString: "DD MMMM, YYYY")
           }
           fields {

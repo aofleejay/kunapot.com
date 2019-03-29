@@ -8,7 +8,7 @@ const Layout = ({ children }) => (
     style={{
       margin: '0 auto',
       maxWidth: 700,
-      padding: rhythm(2),
+      padding: rhythm(3 / 4),
       paddingTop: rhythm(1.5),
     }}
   >
@@ -26,7 +26,7 @@ const Layout = ({ children }) => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          Software Engineering Blog
+          Software Engineering
         </a>
         <Link to="/about/" style={{ marginLeft: 20 }}>
           About
