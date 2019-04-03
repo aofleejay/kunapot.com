@@ -8,20 +8,30 @@ const Layout = ({ children }) => (
     style={{
       margin: '0 auto',
       maxWidth: 700,
-      padding: rhythm(2),
+      padding: rhythm(3 / 4),
       paddingTop: rhythm(1.5),
     }}
   >
-    <header style={{ marginBottom: '1.5rem' }}>
-      <Link to="/">
-        Home
-      </Link>
-      <Link
-        to="/about/"
-        style={{ float: 'right' }}
-      >
-        About
-      </Link>
+    <header
+      style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginBottom: '1.5rem',
+      }}
+    >
+      <Link to="/">Home</Link>
+      <div style={{ display: 'inline', textAlign: 'right' }}>
+        <a
+          href="https://medium.com/@aofleejay/latest"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Software Engineering
+        </a>
+        <Link to="/about/" style={{ marginLeft: 20 }}>
+          About
+        </Link>
+      </div>
     </header>
     {children}
   </div>
