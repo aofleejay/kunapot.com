@@ -16,9 +16,14 @@ const IndexPage = ({ data }) => (
         >
           <h3 style={{ marginBottom: rhythm(1 / 4) }}>
             {node.frontmatter.title}{' '}
-            <p style={{ color: '#bbb', fontSize: rhythm(1 / 2) }}>{node.frontmatter.date}</p>
+            <p style={{ color: '#bbb', fontSize: rhythm(1 / 2) }}>
+              {node.frontmatter.date}
+            </p>
           </h3>
-          <img src={node.frontmatter.cover.publicURL} alt={node.frontmatter.cover.name} />
+          <img
+            src={node.frontmatter.cover.publicURL}
+            alt={node.frontmatter.cover.name}
+          />
           <p>{node.excerpt}</p>
         </Link>
       </div>
