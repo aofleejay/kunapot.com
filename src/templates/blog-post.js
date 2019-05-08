@@ -11,10 +11,12 @@ const BlogPost = ({ data }) => {
       <SEO title={post.frontmatter.title} />
       <div>
         <h1>{post.frontmatter.title}</h1>
-        <img
-          src={post.frontmatter.cover.publicURL}
-          alt={post.frontmatter.cover.frontmatter}
-        />
+        {post.frontmatter.cover && (
+          <img
+            src={post.frontmatter.cover.publicURL}
+            alt={post.frontmatter.cover.name}
+          />
+        )}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
     </Layout>
