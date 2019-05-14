@@ -20,10 +20,12 @@ const IndexPage = ({ data }) => (
               {node.frontmatter.date}
             </p>
           </h3>
-          <img
-            src={node.frontmatter.cover.publicURL}
-            alt={node.frontmatter.cover.name}
-          />
+          {node.frontmatter.cover && (
+            <img
+              src={node.frontmatter.cover.publicURL}
+              alt={node.frontmatter.cover.name}
+            />
+          )}
           <p>{node.excerpt}</p>
         </Link>
       </div>
