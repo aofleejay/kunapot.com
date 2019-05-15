@@ -10,7 +10,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "test": "jest",
     "deploy": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
@@ -37,11 +37,17 @@
     "typography-theme-github": "0.16.18"
   },
   "devDependencies": {
+    "babel-jest": "24.8.0",
+    "babel-preset-gatsby": "0.1.11",
     "gatsby-plugin-tslint": "0.0.2",
     "gh-pages": "2.0.1",
     "husky": "2.1.0",
+    "identity-obj-proxy": "3.0.0",
+    "jest": "24.8.0",
     "prettier": "1.15.2",
     "pretty-quick": "1.10.0",
+    "react-test-renderer": "16.8.6",
+    "ts-jest": "24.0.2",
     "tslint": "5.12.1",
     "tslint-loader": "3.5.4",
     "typescript": "3.3.3"
