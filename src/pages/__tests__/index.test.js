@@ -16,6 +16,7 @@ it('Home page should contain blog posts.', () => {
                 title: 'เล่าหนังสือ - เมื่อหัวว่าง จึงสร้างสรรค์',
                 cover: null,
                 date: '15 May, 2019',
+                tags: ['เล่าหนังสือ'],
               },
               fields: {
                 slug: '/เมื่อหัวว่างจึงสร้างสรรค์/',
