@@ -19,6 +19,22 @@ const IndexPage = ({ data }) => (
             <p style={{ color: '#bbb', fontSize: rhythm(1 / 2) }}>
               {node.frontmatter.date}
             </p>
+            {node.frontmatter.tags.map(tag => (
+              <Link
+                to={`/tags/${tag}`}
+                style={{ textDecoration: 'none', color: 'inherit' }}
+              >
+                <span
+                  style={{
+                    marginRight: 5,
+                    color: '#bbb',
+                    fontSize: rhythm(1 / 2),
+                  }}
+                >
+                  {tag}
+                </span>
+              </Link>
+            ))}
           </h3>
           {node.frontmatter.cover && (
             <img
@@ -46,6 +62,7 @@ export const query = graphql`
               publicURL
             }
             date(formatString: "DD MMMM, YYYY")
+            tags
           }
           fields {
             slug

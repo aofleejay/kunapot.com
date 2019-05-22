@@ -1,83 +1,82 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
-// Components
 import { Link, graphql } from 'gatsby'
 
-const Tags = ({ pageContext, data }) => {
-  const { tag } = pageContext
-  const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
-    totalCount === 1 ? '' : 's'
-  } tagged with "${tag}"`
+import { rhythm } from '../utils/typography'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
+const TagsPage = ({ data }) => {
   return (
-    <div>
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          const { slug } = node.fields
-          const { title } = node.frontmatter
-          return (
-            <li key={slug}>
-              <Link to={slug}>{title}</Link>
-            </li>
-          )
-        })}
-      </ul>
-      {/*
-              This links to a page that does not yet exist.
-              We'll come back to it!
-            */}
-      <Link to="/tags">All tags</Link>
-    </div>
+    <Layout>
+      <SEO />
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <div key={node.id}>
+          <Link
+            to={node.fields.slug}
+            style={{ textDecoration: 'none', color: 'inherit' }}
+          >
+            <h3 style={{ marginBottom: rhythm(1 / 4) }}>
+              {node.frontmatter.title}{' '}
+              <p style={{ color: '#bbb', fontSize: rhythm(1 / 2) }}>
+                {node.frontmatter.date}
+              </p>
+              {node.frontmatter.tags.map(tag => (
+                <Link
+                  to={`/tags/${tag}`}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                >
+                  <span
+                    style={{
+                      marginRight: 5,
+                      color: '#bbb',
+                      fontSize: rhythm(1 / 2),
+                    }}
+                  >
+                    {tag}
+                  </span>
+                </Link>
+              ))}
+            </h3>
+            {node.frontmatter.cover && (
+              <img
+                src={node.frontmatter.cover.publicURL}
+                alt={node.frontmatter.cover.name}
+              />
+            )}
+            <p>{node.excerpt}</p>
+          </Link>
+        </div>
+      ))}
+    </Layout>
   )
 }
-
-Tags.propTypes = {
-  pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
-  }),
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      totalCount: PropTypes.number.isRequired,
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            frontmatter: PropTypes.shape({
-              title: PropTypes.string.isRequired,
-            }),
-            fields: PropTypes.shape({
-              slug: PropTypes.string.isRequired,
-            }),
-          }),
-        }).isRequired
-      ),
-    }),
-  }),
-}
-
-export default Tags
 
 export const query = graphql`
   query($tag: String!) {
     allMarkdownRemark(
-      limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
-      totalCount
       edges {
         node {
+          id
+          frontmatter {
+            title
+            cover {
+              name
+              publicURL
+            }
+            date(formatString: "DD MMMM, YYYY")
+            tags
+          }
           fields {
             slug
           }
-          frontmatter {
-            title
-            tags
-          }
+          excerpt(truncate: true, pruneLength: 250)
         }
       }
     }
   }
 `
+
+export default TagsPage
