@@ -1,4 +1,4 @@
-# [aofleejay.com](https://aofleejay.com) [![Build Status](https://travis-ci.org/aofleejay/aofleejay.com.svg?branch=master)](https://travis-ci.org/aofleejay/aofleejay.com) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+# [aofleejay.com](https://aofleejay.com) [![Build Status](https://travis-ci.org/aofleejay/aofleejay.com.svg?branch=master)](https://travis-ci.org/aofleejay/aofleejay.com) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 💻 Software Developer / 🏃 Slow Runner / 🐱 Pokemon Trainer / 😻 Cat Lover / 🎸 Guitar Player
 
 ## 🚀 Quick start
