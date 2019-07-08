@@ -11,6 +11,7 @@ module.exports = {
       activeStyle,
       getProps,
       innerRef,
+      partiallyActive,
       ref,
       replace,
       to,
@@ -19,7 +20,7 @@ module.exports = {
       React.createElement('a', {
         ...rest,
         href: to,
-      })
+      }),
   ),
   StaticQuery: jest.fn(),
   useStaticQuery: jest.fn(),

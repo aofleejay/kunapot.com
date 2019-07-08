@@ -17,9 +17,7 @@ function SEO({ description, lang, meta, keywords, title }) {
             }}
             title={title}
             titleTemplate={`%s - ${data.site.siteMetadata.title}`}
-            defaultTitle={`${data.site.siteMetadata.title} - ${
-              data.site.siteMetadata.description
-            }`}
+            defaultTitle={`${data.site.siteMetadata.title} - ${data.site.siteMetadata.description}`}
             meta={[
               {
                 name: `description`,
@@ -60,7 +58,7 @@ function SEO({ description, lang, meta, keywords, title }) {
                       name: `keywords`,
                       content: keywords.join(`, `),
                     }
-                  : []
+                  : [],
               )
               .concat(meta)}
           />

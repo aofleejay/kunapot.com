@@ -1,41 +1,61 @@
+import { css } from '@emotion/core'
+import { graphql, Link } from 'gatsby'
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-
-import { rhythm } from '../utils/typography'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { rhythm } from '../utils/typography'
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO />
     {data.allMarkdownRemark.edges.map(({ node }) => (
-      <div key={node.id}>
+      <div
+        key={node.id}
+        css={css`
+          margin-bottom: ${rhythm(2)};
+        `}
+      >
         <Link
+          css={css`
+            text-decoration: none;
+            color: inherit;
+          `}
           to={node.fields.slug}
-          style={{ textDecoration: 'none', color: 'inherit' }}
         >
-          <h3 style={{ marginBottom: rhythm(1 / 4) }}>
-            {node.frontmatter.title}{' '}
-            <p style={{ color: '#bbb', fontSize: rhythm(1 / 2) }}>
-              {node.frontmatter.date}
-            </p>
+          <h1
+            css={css`
+              margin-bottom: ${rhythm(1 / 2)};
+            `}
+          >
+            {node.frontmatter.title}
+          </h1>
+          <p
+            css={css`
+              color: #bbb;
+            `}
+          >
+            {node.frontmatter.date}
+            <span
+              css={css`
+                padding: 0 ${rhythm(1 / 2)};
+              `}
+            >
+              |
+            </span>
             {node.frontmatter.tags.map(tag => (
               <Link
+                key={tag}
                 to={`/tags/${tag}`}
-                style={{ textDecoration: 'none', color: 'inherit' }}
+                css={css`
+                  text-decoration: none;
+                  color: inherit;
+                `}
               >
-                <span
-                  style={{
-                    marginRight: 5,
-                    color: '#bbb',
-                    fontSize: rhythm(1 / 2),
-                  }}
-                >
-                  {tag}
-                </span>
+                <span>{tag}</span>
               </Link>
             ))}
-          </h3>
+          </p>
+
           {node.frontmatter.cover && (
             <img
               src={node.frontmatter.cover.publicURL}

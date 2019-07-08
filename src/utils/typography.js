@@ -1,8 +1,23 @@
 import Typography from 'typography'
-import githubTheme from 'typography-theme-github'
 
-const typography = new Typography(githubTheme)
-const rhythm = typography.rhythm
+const systemFontStack = [
+  '-apple-system',
+  'BlinkMacSystemFont',
+  'Segoe UI',
+  'Roboto',
+  'Oxygen-Sans',
+  'Ubuntu',
+  'Cantarell',
+  'Helvetica Neue',
+  'Helvetica',
+  'Arial',
+  'sans-serif',
+]
 
-export { rhythm }
+const typography = new Typography({
+  headerFontFamily: systemFontStack,
+  bodyFontFamily: systemFontStack,
+})
+
 export default typography
+export const rhythm = typography.rhythm

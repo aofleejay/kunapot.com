@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `aofleejay`,
     author: `Kunapot Pairat`,
-    description: `My personal blog.`,
+    description: `เล่าโค้ด | เล่าหนังสือ | เล่าเกม`,
     siteUrl: 'https://aofleejay.com',
     social: {
       medium: '@aofleejay',
@@ -13,7 +13,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-75313761-4",
+        trackingId: 'UA-75313761-4',
       },
     },
     `gatsby-plugin-typescript`,
@@ -40,6 +40,7 @@ module.exports = {
         icon: `src/assets/favicon.png`,
       },
     },
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
