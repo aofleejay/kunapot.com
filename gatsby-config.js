@@ -57,18 +57,11 @@ module.exports = {
               maxWidth: 590,
             },
           },
-        ],
-      },
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [
           {
             resolve: 'gatsby-remark-embed-video',
             options: {
               width: '100%',
-              height: 300,
+              height: 330,
             },
           },
         ],
