@@ -29,33 +29,40 @@ const IndexPage = ({ data }) => (
           >
             {node.frontmatter.title}
           </h1>
-          <p
+        </Link>
+        <p
+          css={css`
+            color: #bbb;
+          `}
+        >
+          {node.frontmatter.date}
+          <span
             css={css`
-              color: #bbb;
+              padding: 0 ${rhythm(1 / 2)};
             `}
           >
-            {node.frontmatter.date}
-            <span
+            |
+          </span>
+          {node.frontmatter.tags.map(tag => (
+            <Link
+              key={tag}
+              to={`/tags/${tag}`}
               css={css`
-                padding: 0 ${rhythm(1 / 2)};
+                text-decoration: none;
+                color: inherit;
               `}
             >
-              |
-            </span>
-            {node.frontmatter.tags.map(tag => (
-              <Link
-                key={tag}
-                to={`/tags/${tag}`}
-                css={css`
-                  text-decoration: none;
-                  color: inherit;
-                `}
-              >
-                <span>{tag}</span>
-              </Link>
-            ))}
-          </p>
-
+              <span>{tag}</span>
+            </Link>
+          ))}
+        </p>
+        <Link
+          css={css`
+            text-decoration: none;
+            color: inherit;
+          `}
+          to={node.fields.slug}
+        >
           {node.frontmatter.cover && (
             <img
               src={node.frontmatter.cover.publicURL}
