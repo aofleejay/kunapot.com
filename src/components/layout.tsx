@@ -7,6 +7,7 @@ import { rhythm } from '../utils/typography'
 export default ({ children }) => (
   <>
     <div
+      className="asdasdasd"
       css={css`
         background-color: salmon;
       `}
@@ -15,7 +16,7 @@ export default ({ children }) => (
         css={css`
           margin: 0 auto;
           max-width: 700px;
-          padding: ${rhythm(1)} ${rhythm(2)};
+          padding: ${rhythm(1)};
         `}
       >
         <Link
@@ -30,6 +31,10 @@ export default ({ children }) => (
         <div
           css={css`
             float: right;
+
+            @media only screen and (max-width: 320px) {
+              float: none;
+            }
           `}
         >
           <a
@@ -68,8 +73,7 @@ export default ({ children }) => (
         css={css`
           margin: 0 auto;
           max-width: 700px;
-          padding: ${rhythm(2)};
-          padding-top: ${rhythm(1.5)};
+          padding: ${rhythm(2)} ${rhythm(1)};
         `}
       >
         {children}
