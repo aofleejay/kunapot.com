@@ -5,8 +5,9 @@
   "rules": {
     "semicolon": [true, "never"],
     "quotemark": [true, "single", "jsx-double"],
-    "ordered-imports": false,
-    "object-literal-sort-keys": false
+    "ordered-imports": [false, "never"],
+    "object-literal-sort-keys": [false, "never"],
+    "interface-name": [true, "never-prefix"]
   },
   "rulesDirectory": ["src/"]
 }

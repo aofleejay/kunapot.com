@@ -5,10 +5,37 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
 
-const IndexPage = ({ data }) => (
+interface AllMarkdownProps {
+  data: {
+    allMarkdownRemark: {
+      edges: [
+        {
+          node: {
+            id: string
+            frontmatter: {
+              title: string
+              cover: {
+                name: string
+                publicURL: string
+              }
+              date: Date
+              tags: [string]
+            }
+            fields: {
+              slug: string
+            }
+            excerpt: string
+          }
+        },
+      ]
+    }
+  }
+}
+
+const IndexPage = (props: AllMarkdownProps) => (
   <Layout>
     <SEO />
-    {data.allMarkdownRemark.edges.map(({ node }) => (
+    {props.data.allMarkdownRemark.edges.map(({ node }) => (
       <div
         key={node.id}
         css={css`
