@@ -9,6 +9,7 @@ interface SEOProps {
   keywords: string[]
   image: string
   article: boolean
+  slug: string
 }
 
 const SEO = (props: SEOProps) => {
@@ -21,6 +22,7 @@ const SEO = (props: SEOProps) => {
           props.description || data.site.siteMetadata.description
         const author = props.author || data.site.siteMetadata.author
         const keywords = props.keywords || data.site.siteMetadata.keywords
+        const slug = props.slug || '/'
 
         return (
           <Helmet title={`${title} - ${data.site.siteMetadata.title}`}>
@@ -28,6 +30,10 @@ const SEO = (props: SEOProps) => {
             <meta name="author" content={author} />
             <meta name="keywords" content={keywords.join()} />
 
+            <meta
+              property="og:url"
+              content={`${data.site.siteMetadata.siteUrl}${slug}`}
+            />
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
             {props.article && <meta property="og:type" content="article" />}
@@ -46,6 +52,7 @@ SEO.defaultProps = {
   keywords: null,
   image: null,
   article: false,
+  slug: null,
 }
 
 export const query = graphql`
@@ -56,6 +63,7 @@ export const query = graphql`
         description
         author
         keywords
+        siteUrl
       }
     }
   }

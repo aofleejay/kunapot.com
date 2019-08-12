@@ -13,6 +13,7 @@ const BlogPost = ({ data }) => {
         description={post.frontmatter.description}
         keywords={post.frontmatter.tags}
         image={post.frontmatter.cover.publicURL}
+        slug={post.fields.slug}
         article
       />
       <div>
@@ -41,6 +42,9 @@ export const query = graphql`
           name
           publicURL
         }
+      }
+      fields {
+        slug
       }
     }
   }
