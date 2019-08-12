@@ -2,77 +2,37 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-function SEO({
-  description,
-  lang,
-  meta,
-  keywords,
-  title,
-}: {
-  description: string
-  lang: string
-  meta: [any]
-  keywords: [string]
+interface SEOProps {
   title: string
-}) {
+  description: string
+  author: string
+  keywords: string[]
+  image: string
+  article: boolean
+}
+
+const SEO = (props: SEOProps) => {
   return (
     <StaticQuery
-      query={detailsQuery}
+      query={query}
       render={data => {
-        const metaDescription =
-          description || data.site.siteMetadata.description
+        const title = props.title || data.site.siteMetadata.description
+        const description =
+          props.description || data.site.siteMetadata.description
+        const author = props.author || data.site.siteMetadata.author
+        const keywords = props.keywords || data.site.siteMetadata.keywords
+
         return (
-          <Helmet
-            htmlAttributes={{
-              lang,
-            }}
-            title={title}
-            titleTemplate={`%s - ${data.site.siteMetadata.title}`}
-            defaultTitle={`${data.site.siteMetadata.title} - ${data.site.siteMetadata.description}`}
-            meta={[
-              {
-                name: `description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:title`,
-                content: title,
-              },
-              {
-                property: `og:description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:type`,
-                content: `website`,
-              },
-              {
-                name: `twitter:card`,
-                content: `summary`,
-              },
-              {
-                name: `twitter:creator`,
-                content: data.site.siteMetadata.author,
-              },
-              {
-                name: `twitter:title`,
-                content: title,
-              },
-              {
-                name: `twitter:description`,
-                content: metaDescription,
-              },
-            ]
-              .concat(
-                keywords.length > 0
-                  ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
-                  : [],
-              )
-              .concat(meta)}
-          />
+          <Helmet title={`${title} - ${data.site.siteMetadata.title}`}>
+            <meta name="description" content={description} />
+            <meta name="author" content={author} />
+            <meta name="keywords" content={keywords.join()} />
+
+            <meta property="og:title" content={title} />
+            <meta property="og:description" content={description} />
+            {props.article && <meta property="og:type" content="article" />}
+            {props.image && <meta property="og:image" content={props.image} />}
+          </Helmet>
         )
       }}
     />
@@ -80,23 +40,25 @@ function SEO({
 }
 
 SEO.defaultProps = {
-  description: undefined,
-  lang: `th`,
-  meta: [],
-  keywords: [],
-  title: undefined,
+  title: null,
+  description: null,
+  author: null,
+  keywords: null,
+  image: null,
+  article: false,
 }
 
-export default SEO
-
-const detailsQuery = graphql`
-  query DefaultSEOQuery {
+export const query = graphql`
+  query getSiteMetadata {
     site {
       siteMetadata {
         title
         description
         author
+        keywords
       }
     }
   }
 `
+
+export default SEO

@@ -4,6 +4,7 @@ module.exports = {
     author: `Kunapot Pairat`,
     description: `เล่าโค้ด | เล่าหนังสือ | เล่าเกม`,
     siteUrl: 'https://aofleejay.com',
+    keywords: ['เล่าโค้ด', 'เล่าหนังสือ', 'เล่าเกม'],
     social: {
       medium: '@aofleejay',
       github: '@aofleejay',

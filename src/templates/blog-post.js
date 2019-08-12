@@ -8,7 +8,13 @@ const BlogPost = ({ data }) => {
   const post = data.markdownRemark
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description}
+        keywords={post.frontmatter.tags}
+        image={post.frontmatter.cover.publicURL}
+        article
+      />
       <div>
         <h1>{post.frontmatter.title}</h1>
         {post.frontmatter.cover && (
@@ -29,6 +35,8 @@ export const query = graphql`
       html
       frontmatter {
         title
+        description
+        tags
         cover {
           name
           publicURL
