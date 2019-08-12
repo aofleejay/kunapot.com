@@ -37,7 +37,12 @@ const SEO = (props: SEOProps) => {
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
             {props.article && <meta property="og:type" content="article" />}
-            {props.image && <meta property="og:image" content={props.image} />}
+            {props.image && (
+              <meta
+                property="og:image"
+                content={`${data.site.siteMetadata.siteUrl}${props.image}`}
+              />
+            )}
           </Helmet>
         )
       }}
