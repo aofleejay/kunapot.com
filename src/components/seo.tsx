@@ -43,6 +43,11 @@ const SEO = (props: SEOProps) => {
                 content={`${data.site.siteMetadata.siteUrl}${props.image}`}
               />
             )}
+            <meta property="og:locale" content="th_TH" />
+            <meta
+              property="fb:app_id"
+              content={data.site.siteMetadata.facebookAppID}
+            />
           </Helmet>
         )
       }}
@@ -69,6 +74,7 @@ export const query = graphql`
         author
         keywords
         siteUrl
+        facebookAppID
       }
     }
   }

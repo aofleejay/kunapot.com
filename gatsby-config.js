@@ -9,6 +9,7 @@ module.exports = {
       medium: '@aofleejay',
       github: '@aofleejay',
     },
+    facebookAppID: '489184495212718',
   },
   plugins: [
     {
