@@ -1,7 +1,7 @@
 ---
 title: 'เล่าหนังสือ - ฤาสิ้นสุดมนุษยภาพ'
-date: '2019-08-12'
-# cover: 'jumping-joe-and-friends-1.jpg'
+date: '2019-08-13'
+cover: '12-years-a-slave-1.jpg'
 tags: ['เล่าหนังสือ']
 ---
 
