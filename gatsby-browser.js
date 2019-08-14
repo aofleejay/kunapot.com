@@ -1,9 +1,8 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import React from 'react'
 
-// You can delete this file if you're not using it
+import themeContext from './src/context/theme'
+import './src/styles/global.css'
 
-import "./src/styles/global.css"
+export const wrapRootElement = ({ element }) => {
+  return <themeContext.Provider value="dark">{element}</themeContext.Provider>
+}
