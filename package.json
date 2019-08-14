@@ -11,6 +11,7 @@
     "serve": "gatsby serve",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "jest",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "deploy": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
@@ -46,6 +47,7 @@
     "@types/react-test-renderer": "^16.8.2",
     "babel-jest": "^24.8.0",
     "babel-preset-gatsby": "^0.2.1",
+    "coveralls": "^3.0.6",
     "gatsby-plugin-tslint": "^0.0.2",
     "gh-pages": "^2.0.1",
     "husky": "^2.1.0",
