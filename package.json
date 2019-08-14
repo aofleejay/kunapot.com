@@ -11,7 +11,7 @@
     "serve": "gatsby serve",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "jest",
-    "coveralls": "jest --coverage && cat ./tests/coverage/lcov.info | coveralls",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "deploy": "gatsby build && gh-pages -d public"
   },
   "dependencies": {
