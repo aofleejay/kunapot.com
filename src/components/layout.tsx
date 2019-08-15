@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
@@ -6,7 +6,14 @@ import { rhythm } from '../utils/typography'
 import themeContext, { themeColor } from '../context/theme'
 
 export default ({ children }) => {
-  const theme = useContext(themeContext)
+  const initialTheme = useContext(themeContext)
+  const [theme, setTheme] = useState(initialTheme)
+
+  const changeTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    setTheme(newTheme)
+    localStorage.setItem('theme', newTheme)
+  }
 
   return (
     <>
@@ -68,6 +75,24 @@ export default ({ children }) => {
             >
               ABOUT
             </Link>
+            <span
+              css={css`
+                padding: 0 ${rhythm(0.5)};
+                color: ${themeColor[theme].primary};
+              `}
+            >
+              |
+            </span>
+            <span
+              css={css`
+                color: ${themeColor[theme].primary};
+                text-decoration: none;
+                cursor: pointer;
+              `}
+              onClick={changeTheme}
+            >
+              CHANGE THEME
+            </span>
           </div>
         </div>
       </div>
