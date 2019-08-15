@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import themeContext from './src/context/theme'
 import './src/styles/global.css'
 
-const initialTheme = localStorage.getItem('theme') || 'light'
+const initialTheme = localStorage.getItem('theme') || 'dark'
 
 const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(initialTheme)
