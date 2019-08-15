@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
@@ -6,20 +6,14 @@ import { rhythm } from '../utils/typography'
 import themeContext, { themeColor } from '../context/theme'
 
 export default ({ children }) => {
-  const initialTheme = useContext(themeContext)
-  const [theme, setTheme] = useState(initialTheme)
-
-  const changeTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
-  }
+  const { theme, changeTheme } = useContext(themeContext)
+  const { foreground, background } = themeColor[theme]
 
   return (
     <>
       <div
         css={css`
-          background-color: ${themeColor[theme].secondary};
+          background-color: ${background};
         `}
       >
         <div
@@ -31,7 +25,7 @@ export default ({ children }) => {
         >
           <Link
             css={css`
-              color: ${themeColor[theme].primary};
+              color: ${foreground};
               text-decoration: none;
             `}
             to={`/`}
@@ -49,7 +43,7 @@ export default ({ children }) => {
           >
             <a
               css={css`
-                color: ${themeColor[theme].primary};
+                color: ${foreground};
                 text-decoration: none;
               `}
               href="https://medium.com/@aofleejay/latest"
@@ -61,7 +55,7 @@ export default ({ children }) => {
             <span
               css={css`
                 padding: 0 ${rhythm(0.5)};
-                color: ${themeColor[theme].primary};
+                color: ${foreground};
               `}
             >
               |
@@ -69,7 +63,7 @@ export default ({ children }) => {
             <Link
               to={`/about/`}
               css={css`
-                color: ${themeColor[theme].primary};
+                color: ${foreground};
                 text-decoration: none;
               `}
             >
@@ -78,14 +72,14 @@ export default ({ children }) => {
             <span
               css={css`
                 padding: 0 ${rhythm(0.5)};
-                color: ${themeColor[theme].primary};
+                color: ${foreground};
               `}
             >
               |
             </span>
             <span
               css={css`
-                color: ${themeColor[theme].primary};
+                color: ${foreground};
                 text-decoration: none;
                 cursor: pointer;
               `}
@@ -98,8 +92,8 @@ export default ({ children }) => {
       </div>
       <div
         css={css`
-          color: ${themeColor[theme].secondary};
-          background-color: ${themeColor[theme].primary};
+          color: ${background};
+          background-color: ${foreground};
         `}
       >
         <div

@@ -1,15 +1,18 @@
 import React from 'react'
 
-const themeContext = React.createContext('dark')
+const themeContext = React.createContext({
+  theme: 'dark',
+  changeTheme: () => {},
+})
 
 const themeColor = {
   dark: {
-    primary: '#000000',
-    secondary: '#FFFFFF',
+    foreground: '#000000',
+    background: '#FFFFFF',
   },
   light: {
-    primary: '#FFFFFF',
-    secondary: '#000000',
+    foreground: '#FFFFFF',
+    background: '#000000',
   },
 }
 
