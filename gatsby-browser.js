@@ -1,25 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import themeContext from './src/context/theme'
+import ThemeProvider from './src/components/ThemeProvider'
 import './src/styles/global.css'
-
-const initialTheme = localStorage.getItem('theme') || 'dark'
-
-const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(initialTheme)
-
-  const changeTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark'
-    setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
-  }
-
-  return (
-    <themeContext.Provider value={{ theme, changeTheme }}>
-      {children}
-    </themeContext.Provider>
-  )
-}
 
 export const wrapRootElement = ({ element }) => {
   return <ThemeProvider>{element}</ThemeProvider>
