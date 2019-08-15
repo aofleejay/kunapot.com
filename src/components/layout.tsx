@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
 import { rhythm } from '../utils/typography'
-import themeContext from '../context/theme'
+import themeContext, { themeColor } from '../context/theme'
 
 export default ({ children }) => {
   const theme = useContext(themeContext)
@@ -11,9 +11,8 @@ export default ({ children }) => {
   return (
     <>
       <div
-        className="asdasdasd"
         css={css`
-          background-color: salmon;
+          background-color: ${themeColor[theme].secondary};
         `}
       >
         <div
@@ -25,7 +24,7 @@ export default ({ children }) => {
         >
           <Link
             css={css`
-              color: #ffffff;
+              color: ${themeColor[theme].primary};
               text-decoration: none;
             `}
             to={`/`}
@@ -43,7 +42,7 @@ export default ({ children }) => {
           >
             <a
               css={css`
-                color: #ffffff;
+                color: ${themeColor[theme].primary};
                 text-decoration: none;
               `}
               href="https://medium.com/@aofleejay/latest"
@@ -55,7 +54,7 @@ export default ({ children }) => {
             <span
               css={css`
                 padding: 0 ${rhythm(0.5)};
-                color: #ffffff;
+                color: ${themeColor[theme].primary};
               `}
             >
               |
@@ -63,7 +62,7 @@ export default ({ children }) => {
             <Link
               to={`/about/`}
               css={css`
-                color: #ffffff;
+                color: ${themeColor[theme].primary};
                 text-decoration: none;
               `}
             >
@@ -72,7 +71,12 @@ export default ({ children }) => {
           </div>
         </div>
       </div>
-      <div>
+      <div
+        css={css`
+          color: ${themeColor[theme].secondary};
+          background-color: ${themeColor[theme].primary};
+        `}
+      >
         <div
           css={css`
             margin: 0 auto;
