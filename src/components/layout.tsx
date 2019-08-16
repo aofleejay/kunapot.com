@@ -3,11 +3,13 @@ import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
 import { rhythm } from '../utils/typography'
-import themeContext, { themeColor } from '../context/theme'
+import { themeContext } from './ThemeProvider'
 
 export default ({ children }) => {
-  const { theme, changeTheme } = useContext(themeContext)
-  const { foreground, background } = themeColor[theme]
+  const {
+    theme: { foreground, background, icon },
+    changeTheme,
+  } = useContext(themeContext)
 
   return (
     <>
@@ -32,62 +34,61 @@ export default ({ children }) => {
           >
             HOME
           </Link>
-          <div
+          <span
             css={css`
-              float: right;
-
-              @media only screen and (max-width: 320px) {
-                float: none;
-              }
+              padding: 0 ${rhythm(0.5)};
+              color: ${foreground};
             `}
           >
-            <a
-              css={css`
-                color: ${foreground};
-                text-decoration: none;
-              `}
-              href="https://medium.com/@aofleejay/latest"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              SOFTWARE DEVELOPMENT
-            </a>
-            <span
-              css={css`
-                padding: 0 ${rhythm(0.5)};
-                color: ${foreground};
-              `}
-            >
-              |
-            </span>
-            <Link
-              to={`/about/`}
-              css={css`
-                color: ${foreground};
-                text-decoration: none;
-              `}
-            >
-              ABOUT
-            </Link>
-            <span
-              css={css`
-                padding: 0 ${rhythm(0.5)};
-                color: ${foreground};
-              `}
-            >
-              |
-            </span>
-            <span
-              css={css`
-                color: ${foreground};
-                text-decoration: none;
-                cursor: pointer;
-              `}
-              onClick={changeTheme}
-            >
-              CHANGE THEME
-            </span>
-          </div>
+            |
+          </span>
+          <a
+            css={css`
+              color: ${foreground};
+              text-decoration: none;
+            `}
+            href="https://medium.com/@aofleejay/latest"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            SOFTWARE DEVELOPMENT
+          </a>
+          <span
+            css={css`
+              padding: 0 ${rhythm(0.5)};
+              color: ${foreground};
+            `}
+          >
+            |
+          </span>
+          <Link
+            to={`/about/`}
+            css={css`
+              color: ${foreground};
+              text-decoration: none;
+            `}
+          >
+            ABOUT
+          </Link>
+          <span
+            css={css`
+              padding: 0 ${rhythm(0.5)};
+              color: ${foreground};
+            `}
+          >
+            |
+          </span>
+          <img
+            src={icon}
+            css={css`
+              display: inline-block;
+              cursor: pointer;
+              width: 25px;
+              vertical-align: bottom;
+              margin-bottom: 0;
+            `}
+            onClick={changeTheme}
+          />
         </div>
       </div>
       <div

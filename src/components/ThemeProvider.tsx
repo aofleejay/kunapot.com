@@ -1,19 +1,34 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import moon from '../assets/moon.svg'
+import sun from '../assets/cloudy.svg'
 
-import themeContext from '../context/theme'
+const themes = {
+  dark: {
+    name: 'dark',
+    icon: moon,
+    foreground: '#FFFFFF',
+    background: '#000000',
+  },
+  light: {
+    name: 'light',
+    icon: sun,
+    foreground: '#000000',
+    background: '#FFFFFF',
+  },
+}
+
+const themeContext = React.createContext({
+  theme: themes.light,
+  changeTheme: () => {},
+})
 
 const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('dark')
-
-  useEffect(() => {
-    const currentTheme = JSON.parse(localStorage.getItem('theme'))
-    if (currentTheme) {
-      setTheme(currentTheme)
-    }
-  }, [theme])
+  const [theme, setTheme] = useState(
+    JSON.parse(localStorage.getItem('theme')) || themes.light,
+  )
 
   const changeTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark'
+    const newTheme = theme.name === 'dark' ? themes.light : themes.dark
     setTheme(newTheme)
     localStorage.setItem('theme', JSON.stringify(newTheme))
   }
@@ -25,4 +40,5 @@ const ThemeProvider = ({ children }) => {
   )
 }
 
+export { themeContext, themes }
 export default ThemeProvider
