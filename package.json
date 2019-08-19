@@ -2,7 +2,7 @@
   "name": "aofleejay.com",
   "private": true,
   "description": "เล่าโค้ด | เล่าหนังสือ | เล่าเกม",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "aofleejay <aofleejay@hotmail.com>",
   "scripts": {
     "build": "gatsby build",
