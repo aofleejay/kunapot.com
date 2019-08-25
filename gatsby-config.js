@@ -56,7 +56,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 700,
+              withWebp: true,
             },
           },
           {
@@ -69,6 +70,8 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-dark-mode',
+    `gatsby-plugin-sitemap`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

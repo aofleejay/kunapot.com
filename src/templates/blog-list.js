@@ -1,26 +1,25 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
 import Layout from '../components/layout'
-import SEO from '../components/seo'
 import BlogCard from '../components/BlogCard'
 
-const TagsPage = ({ data }) => {
-  return (
-    <Layout>
-      <SEO />
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <BlogCard post={node} />
-      ))}
-    </Layout>
-  )
+export default class BlogList extends React.Component {
+  render() {
+    const posts = this.props.data.allMarkdownRemark.edges
+    return (
+      <Layout>
+        {posts.map(({ node }) => (
+          <BlogCard post={node} />
+        ))}
+      </Layout>
+    )
+  }
 }
 
-export const query = graphql`
-  query($tag: String!, $skip: Int!, $limit: Int!) {
+export const blogListQuery = graphql`
+  query blogListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
       limit: $limit
       skip: $skip
     ) {
@@ -45,5 +44,3 @@ export const query = graphql`
     }
   }
 `
-
-export default TagsPage

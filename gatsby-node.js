@@ -8,6 +8,7 @@
 
 const path = require(`path`)
 const _ = require('lodash')
+const kebabCase = require('lodash').kebabCase
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
@@ -24,6 +25,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
+  const blogListTemplate = path.resolve('./src/templates/blog-list.js')
   const blogPostTemplate = path.resolve('./src/templates/blog-post.js')
   const tagTemplate = path.resolve('./src/templates/tags.js')
 
@@ -45,6 +47,21 @@ exports.createPages = ({ graphql, actions }) => {
     }
   `).then(result => {
     const posts = result.data.allMarkdownRemark.edges
+    const postsPerPage = 2
+    const numPages = Math.ceil(posts.length / postsPerPage)
+
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: `/page/${i + 1}`,
+        component: blogListTemplate,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      })
+    })
 
     posts.forEach(({ node }) => {
       createPage({
@@ -70,6 +87,11 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Make tag pages
     tags.forEach(tag => {
+      let postTag = 0
+      posts.forEach(({ node }) => {
+        postTag += node.frontmatter.tags.filter(t => t.includes(tag)).length
+      })
+
       createPage({
         path: `/tags/${_.kebabCase(tag)}/`,
         component: tagTemplate,
@@ -77,7 +99,28 @@ exports.createPages = ({ graphql, actions }) => {
           // Data passed to context is available
           // in page queries as GraphQL variables.
           tag,
+          limit: postsPerPage,
+          skip: 0,
+          numPages: postTag,
+          currentPage: 1,
         },
+      })
+
+      const numTagPages = Math.ceil(postTag / postsPerPage)
+      Array.from({ length: numTagPages }).forEach((_, i) => {
+        createPage({
+          path: `/tags/${kebabCase(tag)}/page/${i + 1}`,
+          component: tagTemplate,
+          context: {
+            // Data passed to context is available
+            // in page queries as GraphQL variables.
+            tag,
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages: numTagPages,
+            currentPage: i + 1,
+          },
+        })
       })
     })
   })
