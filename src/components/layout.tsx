@@ -13,86 +13,75 @@ export default ({ children }) => {
       {({ theme, toggleTheme }) => {
         return (
           <>
-            <div css={css``}>
-              <div
+            <div
+              css={css`
+                margin: 0 auto;
+                max-width: 700px;
+                padding: ${rhythm(1)};
+                text-align: right;
+              `}
+            >
+              <Link
                 css={css`
-                  margin: 0 auto;
-                  max-width: 700px;
-                  padding: ${rhythm(1)};
+                  text-decoration: none;
+                  margin-left: ${rhythm(0.5)};
+                `}
+                to={`/`}
+              >
+                Home
+              </Link>
+              <a
+                css={css`
+                  text-decoration: none;
+                  margin-left: ${rhythm(0.5)};
+                `}
+                href="https://medium.com/@aofleejay/latest"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Medium
+              </a>
+              <a
+                css={css`
+                  text-decoration: none;
+                  margin-left: ${rhythm(0.5)};
+                `}
+                href="https://github.com/aofleejay"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+              <Link
+                to={`/about/`}
+                css={css`
+                  text-decoration: none;
+                  margin-left: ${rhythm(0.5)};
                 `}
               >
-                <Link
-                  css={css`
-                    text-decoration: none;
-                  `}
-                  to={`/`}
-                >
-                  HOME
-                </Link>
-                <span
-                  css={css`
-                    padding: 0 ${rhythm(0.5)};
-                  `}
-                >
-                  |
-                </span>
-                <a
-                  css={css`
-                    text-decoration: none;
-                  `}
-                  href="https://medium.com/@aofleejay/latest"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  SOFTWARE DEVELOPMENT
-                </a>
-                <span
-                  css={css`
-                    padding: 0 ${rhythm(0.5)};
-                  `}
-                >
-                  |
-                </span>
-                <Link
-                  to={`/about/`}
-                  css={css`
-                    text-decoration: none;
-                  `}
-                >
-                  ABOUT
-                </Link>
-                <span
-                  css={css`
-                    padding: 0 ${rhythm(0.5)};
-                  `}
-                >
-                  |
-                </span>
-                <img
-                  src={theme === 'dark' ? sun : moon}
-                  css={css`
-                    display: inline-block;
-                    cursor: pointer;
-                    width: 25px;
-                    vertical-align: bottom;
-                    margin-bottom: 0;
-                  `}
-                  onClick={() =>
-                    toggleTheme(theme === 'dark' ? 'light' : 'dark')
-                  }
-                />
-              </div>
+                About
+              </Link>
+              <img
+                src={theme === 'dark' ? sun : moon}
+                css={css`
+                  display: inline-block;
+                  cursor: pointer;
+                  width: 25px;
+                  vertical-align: bottom;
+                  margin-bottom: 0;
+                  margin-left: ${rhythm(0.5)};
+                `}
+                onClick={() => toggleTheme(theme === 'dark' ? 'light' : 'dark')}
+              />
             </div>
-            <div css={css``}>
-              <div
-                css={css`
-                  margin: 0 auto;
-                  max-width: 700px;
-                  padding: ${rhythm(2)} ${rhythm(1)};
-                `}
-              >
-                {children}
-              </div>
+            <div
+              css={css`
+                margin: 0 auto;
+                max-width: 700px;
+                padding: ${rhythm(2)} ${rhythm(1)};
+              `}
+            >
+              {children}
             </div>
           </>
         )
