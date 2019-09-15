@@ -1,11 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { DiscussionEmbed } from 'disqus-react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark
+
   return (
     <Layout>
       <SEO
@@ -25,6 +27,13 @@ const BlogPost = ({ data }) => {
           />
         )}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <DiscussionEmbed
+          shortname={data.site.siteMetadata.title}
+          config={{
+            identifier: post.fields.slug,
+            title: post.frontmatter.title,
+          }}
+        />
       </div>
     </Layout>
   )
@@ -45,6 +54,11 @@ export const query = graphql`
       }
       fields {
         slug
+      }
+    }
+    site {
+      siteMetadata {
+        title
       }
     }
   }
