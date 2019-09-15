@@ -1,9 +1,12 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-function About() {
+function About(props) {
+  const { medium, github } = props.data.site.siteMetadata.social
+
   return (
     <Layout>
       <SEO />
@@ -32,16 +35,31 @@ function About() {
       </p>
       <p>
         Medium -{' '}
-        <a href="https://medium.com/@aofleejay">
-          https://medium.com/@aofleejay
+        <a href={medium} target="_blank" rel="noopener noreferrer">
+          {medium}
         </a>
       </p>
       <p>
         GitHub -{' '}
-        <a href="https://github.com/aofleejay">https://github.com/aofleejay</a>
+        <a href={github} target="_blank" rel="noopener noreferrer">
+          {github}
+        </a>
       </p>
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    site {
+      siteMetadata {
+        social {
+          github
+          medium
+        }
+      }
+    }
+  }
+`
 
 export default About

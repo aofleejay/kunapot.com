@@ -2,12 +2,12 @@ module.exports = {
   siteMetadata: {
     title: `aofleejay`,
     author: `Kunapot Pairat`,
-    description: `เล่าโค้ด | เล่าหนังสือ | เล่าเกม`,
+    description: `เล่าหนังสือ | เล่าเกม`,
     siteUrl: 'https://aofleejay.com',
-    keywords: ['เล่าโค้ด', 'เล่าหนังสือ', 'เล่าเกม'],
+    keywords: ['เล่าหนังสือ', 'เล่าเกม'],
     social: {
-      medium: '@aofleejay',
-      github: '@aofleejay',
+      medium: 'https://medium.com/@aofleejay/latest',
+      github: 'https://github.com/aofleejay',
     },
     facebookAppID: '489184495212718',
   },

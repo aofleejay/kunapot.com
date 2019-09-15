@@ -1,13 +1,15 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
 import { rhythm } from '../utils/typography'
 import moon from '../assets/moon.svg'
 import sun from '../assets/cloudy.svg'
 
-export default ({ children }) => {
+function Layout({ children, data }) {
+  const { medium, github } = data.site.siteMetadata.social
+
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => {
@@ -35,7 +37,7 @@ export default ({ children }) => {
                   text-decoration: none;
                   margin-left: ${rhythm(0.5)};
                 `}
-                href="https://medium.com/@aofleejay/latest"
+                href={medium}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -46,7 +48,7 @@ export default ({ children }) => {
                   text-decoration: none;
                   margin-left: ${rhythm(0.5)};
                 `}
-                href="https://github.com/aofleejay"
+                href={github}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -89,3 +91,18 @@ export default ({ children }) => {
     </ThemeToggler>
   )
 }
+
+export const query = graphql`
+  {
+    site {
+      siteMetadata {
+        social {
+          github
+          medium
+        }
+      }
+    }
+  }
+`
+
+export default Layout
