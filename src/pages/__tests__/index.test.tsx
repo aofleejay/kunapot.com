@@ -1,10 +1,25 @@
 import React from 'react'
 import { render } from '@testing-library/react'
+import { StaticQuery } from 'gatsby'
+
 import Index from '../index'
 
 jest.mock('../../components/seo', () => 'div')
 
 it('Home page should contain blog posts.', () => {
+  StaticQuery.mockImplementationOnce(({ render }) =>
+    render({
+      site: {
+        siteMetadata: {
+          social: {
+            medium: 'asd',
+            github: 'asd',
+          },
+        },
+      },
+    }),
+  )
+
   const props = {
     data: {
       allMarkdownRemark: {
