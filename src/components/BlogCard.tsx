@@ -7,7 +7,6 @@ import { rhythm } from '../utils/typography'
 const BlogCard = ({ post }) => {
   return (
     <div
-      key={post.id}
       css={css`
         margin-bottom: ${rhythm(2)};
       `}

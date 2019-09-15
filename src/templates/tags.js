@@ -10,7 +10,7 @@ const TagsPage = ({ data }) => {
     <Layout>
       <SEO />
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <BlogCard post={node} />
+        <BlogCard key={node.id} post={node} />
       ))}
     </Layout>
   )
