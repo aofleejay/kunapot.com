@@ -9,7 +9,7 @@ export default class BlogList extends React.Component {
     return (
       <Layout>
         {posts.map(({ node }) => (
-          <BlogCard post={node} />
+          <BlogCard key={node.id} post={node} />
         ))}
       </Layout>
     )
