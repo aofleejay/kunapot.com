@@ -51,6 +51,10 @@ function Layout({ children }) {
                       css={css`
                         text-decoration: none;
                         margin-left: ${rhythm(0.5)};
+                        padding: ${rhythm(0.25)} ${rhythm(0.5)};
+                        color: var(--bg);
+                        background-color: var(--textNormal);
+                        border-radius: 5px;
                       `}
                       href={medium}
                       target="_blank"
