@@ -6,7 +6,6 @@ import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import { rhythm } from '../utils/typography'
 import moon from '../assets/moon.svg'
 import sun from '../assets/cloudy.svg'
-import profileImage from '../assets/profile.jpg'
 
 function Layout({ children }) {
   return (
