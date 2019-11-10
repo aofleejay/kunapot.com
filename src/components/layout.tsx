@@ -2,6 +2,7 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+import { FaGithubSquare, FaMedium, FaSun, FaMoon, FaHome } from 'react-icons/fa'
 
 import { rhythm } from '../utils/typography'
 import moon from '../assets/moon.svg'
@@ -16,13 +17,14 @@ function Layout({ children }) {
             siteMetadata {
               social {
                 github
+                medium
               }
             }
           }
         }
       `}
       render={data => {
-        const { github } = data.site.siteMetadata.social
+        const { github, medium } = data.site.siteMetadata.social
         return (
           <ThemeToggler>
             {({ theme, toggleTheme }) => {
@@ -43,7 +45,7 @@ function Layout({ children }) {
                       `}
                       to={`/`}
                     >
-                      Home
+                      <FaHome size={20} />
                     </Link>
                     <a
                       css={css`
@@ -54,22 +56,36 @@ function Layout({ children }) {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      GitHub
+                      <FaGithubSquare size={20} />
                     </a>
-                    <img
-                      src={theme === 'dark' ? sun : moon}
+                    <a
                       css={css`
-                        display: inline-block;
-                        cursor: pointer;
-                        width: 25px;
-                        vertical-align: bottom;
-                        margin-bottom: 0;
+                        text-decoration: none;
                         margin-left: ${rhythm(0.5)};
                       `}
-                      onClick={() =>
+                      href={medium}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaMedium size={20} />
+                    </a>
+                    <a
+                      css={css`
+                        text-decoration: none;
+                        cursor: pointer;
+                        margin-left: ${rhythm(0.5)};
+                      `}
+                      onClick={e => {
+                        e.preventDefault()
                         toggleTheme(theme === 'dark' ? 'light' : 'dark')
-                      }
-                    />
+                      }}
+                    >
+                      {theme === 'dark' ? (
+                        <FaSun size={20} />
+                      ) : (
+                        <FaMoon size={20} />
+                      )}
+                    </a>
                   </div>
                   <div
                     css={css`
