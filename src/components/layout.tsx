@@ -17,14 +17,13 @@ function Layout({ children }) {
             siteMetadata {
               social {
                 github
-                medium
               }
             }
           }
         }
       `}
       render={data => {
-        const { medium, github } = data.site.siteMetadata.social
+        const { github } = data.site.siteMetadata.social
         return (
           <ThemeToggler>
             {({ theme, toggleTheme }) => {
@@ -47,21 +46,6 @@ function Layout({ children }) {
                     >
                       Home
                     </Link>
-                    <a
-                      css={css`
-                        text-decoration: none;
-                        margin-left: ${rhythm(0.5)};
-                        padding: ${rhythm(0.25)} ${rhythm(0.5)};
-                        color: var(--bg);
-                        background-color: var(--textNormal);
-                        border-radius: 5px;
-                      `}
-                      href={medium}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Medium
-                    </a>
                     <a
                       css={css`
                         text-decoration: none;
