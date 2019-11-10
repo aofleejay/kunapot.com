@@ -6,7 +6,7 @@ import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import { rhythm } from '../utils/typography'
 import moon from '../assets/moon.svg'
 import sun from '../assets/cloudy.svg'
-import profileImage from '../assets/profile.jpeg'
+import profileImage from '../assets/profile.jpg'
 
 function Layout({ children }) {
   return (
@@ -73,24 +73,6 @@ function Layout({ children }) {
                     >
                       GitHub
                     </a>
-                    <Link
-                      to={`/about/`}
-                      css={css`
-                        text-decoration: none;
-                        margin-left: ${rhythm(0.5)};
-                      `}
-                    >
-                      <img
-                        src={profileImage}
-                        css={css`
-                          width: 25px;
-                          vertical-align: bottom;
-                          margin-bottom: 0;
-                          border-radius: 50%;
-                          border: 1px solid grey;
-                        `}
-                      />
-                    </Link>
                     <img
                       src={theme === 'dark' ? sun : moon}
                       css={css`
