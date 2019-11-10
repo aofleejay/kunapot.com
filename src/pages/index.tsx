@@ -7,7 +7,7 @@ import BlogCard from '../components/BlogCard'
 
 interface AllMarkdownProps {
   data: {
-    allMarkdownRemark: {
+    books: {
       edges: [
         {
           node: {
@@ -18,25 +18,7 @@ interface AllMarkdownProps {
                 name: string
                 publicURL: string
               }
-              date: Date
-              tags: [string]
-            }
-            fields: {
-              slug: string
-            }
-            excerpt: string
-          }
-        },
-      ]
-    }
-    books: {
-      edges: [
-        {
-          node: {
-            id: string
-            frontmatter: {
-              title: string
-              cover: {
+              thumbnail: {
                 name: string
                 publicURL: string
               }
@@ -93,7 +75,7 @@ const IndexPage = (props: AllMarkdownProps) => {
               >
                 <Link to={node.fields.slug}>
                   <img
-                    src={node.frontmatter.cover.publicURL}
+                    src={node.frontmatter.thumbnail.publicURL}
                     css={css`
                       border: 1px darkgrey solid;
                     `}
@@ -119,35 +101,12 @@ const IndexPage = (props: AllMarkdownProps) => {
           <p>see more</p>
         </a>
       </section>
-      {props.data.allMarkdownRemark.edges.map(({ node }) => (
-        <BlogCard key={node.id} post={node} />
-      ))}
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            cover {
-              name
-              publicURL
-            }
-            date(formatString: "DD MMMM, YYYY")
-            tags
-          }
-          fields {
-            slug
-          }
-          excerpt(truncate: true, pruneLength: 250)
-        }
-      }
-    }
     books: allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
       filter: { frontmatter: { tags: { eq: "เล่าหนังสือ" } } }
@@ -158,6 +117,10 @@ export const query = graphql`
           frontmatter {
             title
             cover {
+              name
+              publicURL
+            }
+            thumbnail {
               name
               publicURL
             }
