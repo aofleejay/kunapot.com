@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `aofleejay`,
-    author: `Kunapot Pairat`,
-    description: `เล่าหนังสือ | เล่าเกม`,
+    title: `aofleejay.com`,
+    author: `aofleejay`,
     siteUrl: 'https://aofleejay.com',
     keywords: ['เล่าหนังสือ', 'เล่าเกม'],
     social: {
