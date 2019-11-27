@@ -62,7 +62,6 @@ const IndexPage = (props: AllMarkdownProps) => {
         <div
           css={css`
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
           `}
         >
@@ -71,7 +70,8 @@ const IndexPage = (props: AllMarkdownProps) => {
               <div
                 key={node.id}
                 css={css`
-                  width: 24%;
+                  flex-basis: 24%;
+                  padding: 5px;
                 `}
               >
                 <Link to={node.fields.slug}>
