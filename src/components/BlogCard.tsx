@@ -4,7 +4,25 @@ import { Link } from 'gatsby'
 
 import { rhythm } from '../utils/typography'
 
-const BlogCard = ({ post }) => {
+type BlogCardProp = {
+  post: {
+    fields: {
+      slug: string
+    }
+    frontmatter: {
+      title: string
+      date: string
+      tags: string[]
+      cover: {
+        publicURL: string
+        name: string
+      }
+    }
+    excerpt: string
+  }
+}
+
+const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
   return (
     <div
       css={css`

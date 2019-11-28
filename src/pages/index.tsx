@@ -3,7 +3,6 @@ import React from 'react'
 import { css } from '@emotion/core'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import BlogCard from '../components/BlogCard'
 
 interface AllMarkdownProps {
   data: {
@@ -90,14 +89,23 @@ const IndexPage = (props: AllMarkdownProps) => {
         <h1>Blogs I've written.</h1>
         {props.data.mediumBlogs.nodes.map(blog => {
           return (
-            <a key={blog.id} href={blog.link} target="_blank">
+            <a
+              key={blog.id}
+              href={blog.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <p>
                 {blog.title} - {blog.date}
               </p>
             </a>
           )
         })}
-        <a href={props.data.site.siteMetadata.social.medium} target="_blank">
+        <a
+          href={props.data.site.siteMetadata.social.medium}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <p>see more</p>
         </a>
       </section>

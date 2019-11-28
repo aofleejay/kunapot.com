@@ -5,10 +5,12 @@ import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import { FaGithubSquare, FaMedium, FaSun, FaMoon, FaHome } from 'react-icons/fa'
 
 import { rhythm } from '../utils/typography'
-import moon from '../assets/moon.svg'
-import sun from '../assets/cloudy.svg'
 
-function Layout({ children }) {
+type LayoutProps = {
+  children: React.ReactNode
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <StaticQuery
       query={graphql`
