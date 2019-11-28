@@ -22,7 +22,7 @@ type BlogCardProp = {
   }
 }
 
-const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
+const BlogCard = ({ post }: BlogCardProp) => {
   return (
     <div
       css={css`
