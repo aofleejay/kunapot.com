@@ -61,6 +61,7 @@ const IndexPage = (props: AllMarkdownProps) => {
         <div
           css={css`
             display: flex;
+            flex-wrap: wrap;
           `}
         >
           {props.data.books.edges.map(({ node }) => {
@@ -68,8 +69,8 @@ const IndexPage = (props: AllMarkdownProps) => {
               <div
                 key={node.id}
                 css={css`
-                  width: 120px;
-                  margin-right: 10px;
+                  flex-basis: 24%;
+                  padding: 5px;
                 `}
               >
                 <Link to={node.fields.slug}>
