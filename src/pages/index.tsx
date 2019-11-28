@@ -32,6 +32,32 @@ interface AllMarkdownProps {
         },
       ]
     }
+    games: {
+      edges: [
+        {
+          node: {
+            id: string
+            frontmatter: {
+              title: string
+              cover: {
+                name: string
+                publicURL: string
+              }
+              thumbnail: {
+                name: string
+                publicURL: string
+              }
+              date: Date
+              tags: [string]
+            }
+            fields: {
+              slug: string
+            }
+            excerpt: string
+          }
+        },
+      ]
+    }
     mediumBlogs: {
       nodes: [
         {
@@ -70,7 +96,7 @@ const IndexPage = (props: AllMarkdownProps) => {
                 key={node.id}
                 css={css`
                   flex-basis: 24%;
-                  padding: 5px;
+                  padding: 3px;
                 `}
               >
                 <Link to={node.fields.slug}>
@@ -110,6 +136,36 @@ const IndexPage = (props: AllMarkdownProps) => {
           <p>see more</p>
         </a>
       </section>
+      <section>
+        <h1>Games I've played.</h1>
+        <div
+          css={css`
+            display: flex;
+            flex-wrap: wrap;
+          `}
+        >
+          {props.data.games.edges.map(({ node }) => {
+            return (
+              <div
+                key={node.id}
+                css={css`
+                  flex-basis: 24%;
+                  padding: 3px;
+                `}
+              >
+                <Link to={node.fields.slug}>
+                  <img
+                    src={node.frontmatter.cover.publicURL}
+                    css={css`
+                      border: 1px darkgrey solid;
+                    `}
+                  />
+                </Link>
+              </div>
+            )
+          })}
+        </div>
+      </section>
     </Layout>
   )
 }
@@ -119,6 +175,33 @@ export const query = graphql`
     books: allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
       filter: { frontmatter: { tags: { eq: "เล่าหนังสือ" } } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            cover {
+              name
+              publicURL
+            }
+            thumbnail {
+              name
+              publicURL
+            }
+            date(formatString: "DD MMMM, YYYY")
+            tags
+          }
+          fields {
+            slug
+          }
+          excerpt(truncate: true, pruneLength: 250)
+        }
+      }
+    }
+    games: allMarkdownRemark(
+      sort: { fields: frontmatter___date, order: DESC }
+      filter: { frontmatter: { tags: { eq: "เล่าเกม" } } }
     ) {
       edges {
         node {
