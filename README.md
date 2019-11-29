@@ -26,6 +26,12 @@
   yarn deploy
   ```
 
-## Change log
+## ➕ Create blog
+
+```
+yarn create:blog
+```
+
+## 📈 Change log
 
 - [CHANGELOG.md](CHANGELOG.md)
