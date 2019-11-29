@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import BlogCard from '../components/BlogCard'
+import BlogCard from '../components/blog-card'
 
 const TagsPage = ({ data }) => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
-import BlogCard from '../components/BlogCard'
+import BlogCard from '../components/blog-card'
 
 export default class BlogList extends React.Component {
   render() {
