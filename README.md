@@ -31,7 +31,3 @@
 ```
 yarn create:blog
 ```
-
-## 📈 Change log
-
-- [CHANGELOG.md](CHANGELOG.md)
