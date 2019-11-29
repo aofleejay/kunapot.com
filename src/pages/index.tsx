@@ -105,6 +105,7 @@ const IndexPage = (props: AllMarkdownProps) => {
                     css={css`
                       border: 1px darkgrey solid;
                     `}
+                    alt={node.frontmatter.title}
                   />
                 </Link>
               </div>
@@ -121,6 +122,9 @@ const IndexPage = (props: AllMarkdownProps) => {
               href={blog.link}
               target="_blank"
               rel="noopener noreferrer"
+              css={css`
+                text-decoration: none;
+              `}
             >
               <p>
                 {blog.title} - {blog.date}
@@ -132,6 +136,9 @@ const IndexPage = (props: AllMarkdownProps) => {
           href={props.data.site.siteMetadata.social.medium}
           target="_blank"
           rel="noopener noreferrer"
+          css={css`
+            text-decoration: none;
+          `}
         >
           <p>see more</p>
         </a>
@@ -159,6 +166,7 @@ const IndexPage = (props: AllMarkdownProps) => {
                     css={css`
                       border: 1px darkgrey solid;
                     `}
+                    alt={node.frontmatter.title}
                   />
                 </Link>
               </div>
