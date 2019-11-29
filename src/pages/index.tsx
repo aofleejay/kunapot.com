@@ -95,7 +95,7 @@ const IndexPage = (props: AllMarkdownProps) => {
               <div
                 key={node.id}
                 css={css`
-                  flex-basis: 24%;
+                  flex-basis: 25%;
                   padding: 3px;
                 `}
               >
@@ -156,7 +156,7 @@ const IndexPage = (props: AllMarkdownProps) => {
               <div
                 key={node.id}
                 css={css`
-                  flex-basis: 24%;
+                  flex-basis: 33.33%;
                   padding: 3px;
                 `}
               >
