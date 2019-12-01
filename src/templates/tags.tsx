@@ -17,12 +17,10 @@ const TagsPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query($tag: String!, $skip: Int!, $limit: Int!) {
+  query($tag: String!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
-      limit: $limit
-      skip: $skip
     ) {
       edges {
         node {

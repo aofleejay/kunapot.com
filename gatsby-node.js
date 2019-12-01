@@ -72,11 +72,6 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Make tag pages
     tags.forEach(tag => {
-      let postTag = 0
-      posts.forEach(({ node }) => {
-        postTag += node.frontmatter.tags.filter(t => t.includes(tag)).length
-      })
-
       createPage({
         path: `/tags/${_.kebabCase(tag)}/`,
         component: tagTemplate,
@@ -84,28 +79,7 @@ exports.createPages = ({ graphql, actions }) => {
           // Data passed to context is available
           // in page queries as GraphQL variables.
           tag,
-          limit: postsPerPage,
-          skip: 0,
-          numPages: postTag,
-          currentPage: 1,
         },
-      })
-
-      const numTagPages = Math.ceil(postTag / postsPerPage)
-      Array.from({ length: numTagPages }).forEach((_, i) => {
-        createPage({
-          path: `/tags/${kebabCase(tag)}/page/${i + 1}`,
-          component: tagTemplate,
-          context: {
-            // Data passed to context is available
-            // in page queries as GraphQL variables.
-            tag,
-            limit: postsPerPage,
-            skip: i * postsPerPage,
-            numPages: numTagPages,
-            currentPage: i + 1,
-          },
-        })
       })
     })
   })
