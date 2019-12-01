@@ -25,7 +25,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
-  const blogListTemplate = path.resolve('./src/templates/blog-list.tsx')
   const blogPostTemplate = path.resolve('./src/templates/blog-post.tsx')
   const tagTemplate = path.resolve('./src/templates/tags.tsx')
 
@@ -48,20 +47,6 @@ exports.createPages = ({ graphql, actions }) => {
   `).then(result => {
     const posts = result.data.allMarkdownRemark.edges
     const postsPerPage = 2
-    const numPages = Math.ceil(posts.length / postsPerPage)
-
-    Array.from({ length: numPages }).forEach((_, i) => {
-      createPage({
-        path: `/page/${i + 1}`,
-        component: blogListTemplate,
-        context: {
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
-          currentPage: i + 1,
-        },
-      })
-    })
 
     posts.forEach(({ node }) => {
       createPage({
