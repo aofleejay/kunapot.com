@@ -1,6 +1,7 @@
 import inquirer from 'inquirer'
 import fs from 'fs'
 import path from 'path'
+import kebabCase from 'lodash.kebabcase'
 
 type BlogInput = {
   title: string
@@ -17,20 +18,17 @@ const createBlog = ({
   thumbnail,
   cover,
 }: BlogInput) => {
-  const targetDir = __dirname + `/../blogs/${title}`
+  const targetDir = __dirname + `/../blogs/${kebabCase(title)}`
 
   if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir)
   }
 
-  const [date, month, year] = new Date()
-    .toLocaleString()
-    .split(',')[0]
-    .split('/')
+  const date = new Date().toISOString()
   const blogContent = `---
 title: '${title}'
 description: ''
-date: '${year}-${month}-${date}'
+date: '${date}'
 cover: '${cover}'
 thumbnail: '${thumbnail}'
 tags: [${tags
@@ -63,13 +61,13 @@ inquirer
       type: 'input',
       name: 'thumbnail',
       message: 'Thumbnail url ?',
-      default: ({ title }: BlogInput) => `${title}-thumbnail.jpg`,
+      default: ({ title }: BlogInput) => `${kebabCase(title)}-thumbnail.jpg`,
     },
     {
       type: 'input',
       name: 'cover',
       message: 'Cover url ?',
-      default: ({ title }: BlogInput) => `${title}.jpg`,
+      default: ({ title }: BlogInput) => `${kebabCase(title)}.jpg`,
     },
     {
       type: 'input',
