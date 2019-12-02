@@ -182,7 +182,9 @@ export const query = graphql`
   query {
     books: allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: { frontmatter: { tags: { eq: "เล่าหนังสือ" } } }
+      filter: {
+        frontmatter: { tags: { eq: "เล่าหนังสือ" }, draft: { ne: true } }
+      }
     ) {
       edges {
         node {
@@ -209,7 +211,7 @@ export const query = graphql`
     }
     games: allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: { frontmatter: { tags: { eq: "เล่าเกม" } } }
+      filter: { frontmatter: { tags: { eq: "เล่าเกม" }, draft: { ne: true } } }
     ) {
       edges {
         node {
