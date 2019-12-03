@@ -13,7 +13,7 @@ type BlogCardProp = {
       title: string
       date: string
       tags: string[]
-      cover: {
+      coverImage: {
         publicURL: string
         name: string
       }
@@ -77,10 +77,10 @@ const BlogCard = ({ post }: BlogCardProp) => {
         `}
         to={post.fields.slug}
       >
-        {post.frontmatter.cover && (
+        {post.frontmatter.coverImage && (
           <img
-            src={post.frontmatter.cover.publicURL}
-            alt={post.frontmatter.cover.name}
+            src={post.frontmatter.coverImage.publicURL}
+            alt={post.frontmatter.coverImage.name}
           />
         )}
         <p>{post.excerpt}</p>

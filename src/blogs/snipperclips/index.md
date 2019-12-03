@@ -1,7 +1,7 @@
 ---
 title: 'Snipperclips'
 date: '2019-04-05'
-cover: 'snipperclips-1.jpg'
+coverImage: 'snipperclips-cover-image.jpg'
 tags: ['เล่าเกม']
 draft: false
 ---
@@ -19,11 +19,11 @@ draft: false
 
 เผื่อใครนึกภาพไม่ออกดูรูปด้านล่างได้เลยจ้า
 
+![snipperclips](snipperclips-1.jpg)
+
 ![snipperclips](snipperclips-2.jpg)
 
 ![snipperclips](snipperclips-3.jpg)
-
-![snipperclips](snipperclips-4.jpg)
 
 ตัวเกมหลักราคา $19.99 และมี DLC เป็น puzzle เพิ่มในราคา$9.99 หรือจะซื้อเป็นบันเดิลทีเดียวเลยก็ได้ราคา \$29.98 (ซื้อคู่ไม่ลดหน่อยหรอ 55)
 

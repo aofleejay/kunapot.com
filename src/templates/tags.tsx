@@ -27,7 +27,7 @@ export const query = graphql`
           id
           frontmatter {
             title
-            cover {
+            coverImage {
               name
               publicURL
             }

@@ -1,7 +1,7 @@
 ---
 title: 'Jumping Joe & Friends'
 date: '2019-03-21'
-cover: 'jumping-joe-and-friends-1.jpg'
+coverImage: 'jumping-joe-and-friends-cover-image.jpg'
 tags: ['เล่าเกม']
 draft: false
 ---
@@ -12,12 +12,12 @@ draft: false
 
 ระหว่างทางก็จะมีไอเท็มให้เก็บนะ เช่น พลังชีวิต, ระเบิดไว้ทำลายสิ่งกีดขวาง, จรวดเก็บแล้วพุ่งขึ้นไปหลายชั้นเลย นอกจากนั้นก็มีเหรียญให้เก็บเพื่อเอามาปลดล็อคโหมดต่างๆ และซื้อตัวละครเพิ่มด้วย
 
-![jumping joe & friends](jumping-joe-and-friends-2.jpg)
+![jumping joe & friends](jumping-joe-and-friends-1.jpg)
 
 เกมนี้ถ้าจะเอาไปเล่นกับเพื่อนก็ได้สูงสุดสี่คนกันเลย วิธีเล่นก็แข่งกันโดดไปมานี่แหละครับ หมดเวลาใครไปได้ไกลกว่าคนนั้นชนะ หรือถ้าโดนอุปสรรคจนตายก็ถือว่าแพ้ไป
 
-![jumping joe & friends](jumping-joe-and-friends-3.jpg)
+![jumping joe & friends](jumping-joe-and-friends-2.jpg)
 
-![jumping joe & friends](jumping-joe-and-friends-4.jpg)
+![jumping joe & friends](jumping-joe-and-friends-3.jpg)
 
 เกมดีราคาถูกแบบนี้ซื้อติดเครื่องไว้เล่นกับเพื่อนก็สนุกดีนะครับ ไว้เจอกันใหม่บทความหน้าครับ

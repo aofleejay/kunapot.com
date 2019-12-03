@@ -16,7 +16,7 @@ const BlogPost = ({ data }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description}
         keywords={post.frontmatter.tags}
-        image={post.frontmatter.cover.publicURL}
+        image={post.frontmatter.coverImage.publicURL}
         slug={post.fields.slug}
         article
       />
@@ -48,10 +48,10 @@ const BlogPost = ({ data }) => {
             </Link>
           ))}
         </p>
-        {post.frontmatter.cover && (
+        {post.frontmatter.coverImage && (
           <img
-            src={post.frontmatter.cover.publicURL}
-            alt={post.frontmatter.cover.name}
+            src={post.frontmatter.coverImage.publicURL}
+            alt={post.frontmatter.coverImage.name}
           />
         )}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -78,7 +78,7 @@ export const query = graphql`
         title
         description
         tags
-        cover {
+        coverImage {
           name
           publicURL
         }

@@ -13,11 +13,7 @@ interface AllMarkdownProps {
             id: string
             frontmatter: {
               title: string
-              cover: {
-                name: string
-                publicURL: string
-              }
-              thumbnail: {
+              bookCover: {
                 name: string
                 publicURL: string
               }
@@ -43,7 +39,7 @@ interface AllMarkdownProps {
                 name: string
                 publicURL: string
               }
-              thumbnail: {
+              coverImage: {
                 name: string
                 publicURL: string
               }
@@ -101,7 +97,7 @@ const IndexPage = (props: AllMarkdownProps) => {
               >
                 <Link to={node.fields.slug}>
                   <img
-                    src={node.frontmatter.thumbnail.publicURL}
+                    src={node.frontmatter.bookCover.publicURL}
                     css={css`
                       border: 1px darkgrey solid;
                     `}
@@ -162,7 +158,7 @@ const IndexPage = (props: AllMarkdownProps) => {
               >
                 <Link to={node.fields.slug}>
                   <img
-                    src={node.frontmatter.cover.publicURL}
+                    src={node.frontmatter.coverImage.publicURL}
                     css={css`
                       border: 1px darkgrey solid;
                     `}
@@ -191,11 +187,7 @@ export const query = graphql`
           id
           frontmatter {
             title
-            cover {
-              name
-              publicURL
-            }
-            thumbnail {
+            bookCover {
               name
               publicURL
             }
@@ -218,11 +210,7 @@ export const query = graphql`
           id
           frontmatter {
             title
-            cover {
-              name
-              publicURL
-            }
-            thumbnail {
+            coverImage {
               name
               publicURL
             }
