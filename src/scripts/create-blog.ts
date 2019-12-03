@@ -6,17 +6,17 @@ import kebabCase from 'lodash.kebabcase'
 type BlogInput = {
   title: string
   tags: string
-  published: boolean
-  thumbnail: string
-  cover: string
+  draft: boolean
+  coverImage: string
+  bookCover: string
 }
 
 const createBlog = ({
   title,
   tags,
-  published,
-  thumbnail,
-  cover,
+  draft,
+  coverImage,
+  bookCover,
 }: BlogInput) => {
   const targetDir = __dirname + `/../blogs/${kebabCase(title)}`
 
@@ -29,13 +29,13 @@ const createBlog = ({
 title: '${title}'
 description: ''
 date: '${date}'
-cover: '${cover}'
-thumbnail: '${thumbnail}'
+coverImage: '${coverImage}'
+bookCover: '${bookCover}'
 tags: [${tags
     .split(',')
     .map(tag => `'${tag}'`)
     .join()}]
-published: ${published}
+draft: ${draft}
 ---`
 
   fs.writeFileSync(path.join(targetDir + '/index.md'), blogContent, {
@@ -59,21 +59,21 @@ inquirer
     },
     {
       type: 'input',
-      name: 'thumbnail',
-      message: 'Thumbnail url ?',
-      default: ({ title }: BlogInput) => `${kebabCase(title)}-thumbnail.jpg`,
+      name: 'coverImage',
+      message: 'Cover image ?',
+      default: ({ title }: BlogInput) => `${kebabCase(title)}-cover-image.jpg`,
     },
     {
       type: 'input',
-      name: 'cover',
-      message: 'Cover url ?',
-      default: ({ title }: BlogInput) => `${kebabCase(title)}.jpg`,
+      name: 'bookCover',
+      message: 'Book cover ?',
+      default: ({ title }: BlogInput) => `${kebabCase(title)}-book-cover.jpg`,
     },
     {
       type: 'input',
-      name: 'published',
-      message: 'Should blog published ?',
-      default: false,
+      name: 'draft',
+      message: 'Draft ?',
+      default: true,
     },
   ])
   .then(answers => createBlog(answers))
