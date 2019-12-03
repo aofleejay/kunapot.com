@@ -13,15 +13,10 @@ const homeProps = {
             id: '2fe29c10-79c2-5bc4-b6a1-ea26d36a54d8',
             frontmatter: {
               title: 'เล่าหนังสือ - ฤาสิ้นสุดมนุษยภาพ',
-              cover: {
+              bookCover: {
                 name: '12-years-a-slave',
                 publicURL:
                   '/static/12-years-a-slave-da6375c6b3202b55f2cd031cc78cb5d5.jpg',
-              },
-              thumbnail: {
-                name: '12-years-a-slave-thumbnail',
-                publicURL:
-                  '/static/12-years-a-slave-thumbnail-67fd6f1378f29e8e6c8ef6f01efe3b8e.jpg',
               },
               date: '13 August, 2019',
               tags: ['เล่าหนังสือ'],
@@ -38,15 +33,10 @@ const homeProps = {
             id: 'b6d243c5-3e3b-5f46-9b14-ee940146e37a',
             frontmatter: {
               title: 'เล่าหนังสือ - เมื่อหัวว่าง จึงสร้างสรรค์',
-              cover: {
+              bookCover: {
                 name: 'เมื่อหัวว่าง-จึงสร้างสรรค์',
                 publicURL:
                   '/static/เมื่อหัวว่าง-จึงสร้างสรรค์-6595f3ec77e1ab106cce702385f7028b.jpg',
-              },
-              thumbnail: {
-                name: 'เมื่อหัวว่าง-จึงสร้างสรรค์-thumbnail',
-                publicURL:
-                  '/static/เมื่อหัวว่าง-จึงสร้างสรรค์-thumbnail-d49da8030fc2c88290704f7548e91b00.jpg',
               },
               date: '15 May, 2019',
               tags: ['เล่าหนังสือ'],
@@ -64,16 +54,10 @@ const homeProps = {
             frontmatter: {
               title:
                 'เล่าหนังสือ - ชีวิตดีขึ้นทุกๆด้านด้วยการจัดบ้านแค่ครั้งเดียว',
-              cover: {
+              bookCover: {
                 name: 'ชีวิตดีขึ้นทุกๆด้านด้วยการจัดบ้านแค่ครั้งเดียว',
                 publicURL:
                   '/static/ชีวิตดีขึ้นทุกๆด้านด้วยการจัดบ้านแค่ครั้งเดียว-5852729eb92b914de37c72cb751146ef.jpg',
-              },
-              thumbnail: {
-                name:
-                  'ชีวิตดีขึ้นทุกๆด้านด้วยการจัดบ้านแค่ครั้งเดียว-thumbnail',
-                publicURL:
-                  '/static/ชีวิตดีขึ้นทุกๆด้านด้วยการจัดบ้านแค่ครั้งเดียว-thumbnail-4d54799ba3df7424123ff0fb7da94961.jpg',
               },
               date: '04 April, 2019',
               tags: ['เล่าหนังสือ'],
@@ -91,17 +75,11 @@ const homeProps = {
             frontmatter: {
               title:
                 'เล่าหนังสือ - เทคนิคเปลี่ยนคุณให้เป็นคนไม่ผัดวันประกันพรุ่งและลงมือทำทันที',
-              cover: {
+              bookCover: {
                 name:
                   'เทคนิคเปลี่ยนคุณให้เป็นคนไม่ผัดวันประกันพรุ่งและลงมือทำทันที',
                 publicURL:
                   '/static/เทคนิคเปลี่ยนคุณให้เป็นคนไม่ผัดวันประกันพรุ่งและลงมือทำทันที-2836eaa427a8a790b5ab210f50263926.jpg',
-              },
-              thumbnail: {
-                name:
-                  'เทคนิคเปลี่ยนคุณให้เป็นคนไม่ผัดวันประกันพรุ่งและลงมือทำทันที-thumbnail',
-                publicURL:
-                  '/static/เทคนิคเปลี่ยนคุณให้เป็นคนไม่ผัดวันประกันพรุ่งและลงมือทำทันที-thumbnail-4818aaa90e6be708e528079c3ff6290a.jpg',
               },
               date: '23 February, 2019',
               tags: ['เล่าหนังสือ'],
@@ -123,12 +101,11 @@ const homeProps = {
             id: '04d2c14e-0cd5-5b25-a13b-a7fd99bd5acd',
             frontmatter: {
               title: 'เล่าเกม - Plug & Play',
-              cover: {
+              coverImage: {
                 name: 'plug-and-play-1',
                 publicURL:
                   '/static/plug-and-play-1-77f5451b346a7b8035a481fa9149e77d.jpg',
               },
-              thumbnail: null,
               date: '24 August, 2019',
               tags: ['เล่าเกม'],
             },
@@ -144,12 +121,11 @@ const homeProps = {
             id: '3f4de86f-9382-54cd-b994-08dccf243c06',
             frontmatter: {
               title: 'เล่าเกม - Super Animal Royale',
-              cover: {
+              coverImage: {
                 name: 'super-animal-royale-1',
                 publicURL:
                   '/static/super-animal-royale-1-db368fc26fe1194aceafcab33d8e13fe.jpg',
               },
-              thumbnail: null,
               date: '10 July, 2019',
               tags: ['เล่าเกม'],
             },
@@ -165,12 +141,11 @@ const homeProps = {
             id: '9bb319b6-3c1f-5ac0-8872-81b0efa1ec7b',
             frontmatter: {
               title: 'เล่าเกม - Snipperclips',
-              cover: {
+              coverImage: {
                 name: 'snipperclips-1',
                 publicURL:
                   '/static/snipperclips-1-ca2237516fb41eab925a7a2ca780991c.jpg',
               },
-              thumbnail: null,
               date: '05 April, 2019',
               tags: ['เล่าเกม'],
             },
@@ -186,12 +161,11 @@ const homeProps = {
             id: 'dc14b694-c69d-5f39-b429-2007e8615386',
             frontmatter: {
               title: 'เล่าเกม - Jumping Joe & Friends',
-              cover: {
+              coverImage: {
                 name: 'jumping-joe-and-friends-1',
                 publicURL:
                   '/static/jumping-joe-and-friends-1-519bcc4e703c5341f333e8a315fcd411.jpg',
               },
-              thumbnail: null,
               date: '21 March, 2019',
               tags: ['เล่าเกม'],
             },
