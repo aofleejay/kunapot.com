@@ -1,8 +1,9 @@
 ---
-title: 'เล่าเกม - Super Animal Royale'
+title: 'Super Animal Royale'
 date: '2019-07-10'
 cover: 'super-animal-royale-1.jpg'
 tags: ['เล่าเกม']
+draft: false
 ---
 
 ความที่อยากลองเล่นเกมแนว Battle Royale มานาน บวกกับช่วง Steam Summer Sale ที่ลดราคาเกมกันกระหน่ำเลย เลยคิดว่าต้องเสียตังหาเกมเล่นแล้วแหละ ก็ได้เจอกับ <a href="https://animalroyale.com/" target="_blank">Super Animal Royale</a> เกมนี้ เลยเป็นที่มาของเล่าเกมครั้งนี้ครับ

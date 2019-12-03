@@ -1,8 +1,9 @@
 ---
-title: 'เล่าเกม - Snipperclips'
+title: 'Snipperclips'
 date: '2019-04-05'
 cover: 'snipperclips-1.jpg'
 tags: ['เล่าเกม']
+draft: false
 ---
 
 ใครที่สนใจเกมแนวแก้ puzzle บน Nintendo Switch มาเล่นกับเพื่อน ผมว่า <a href="https://www.nintendo.com/games/detail/snipperclips-switch" target="_blank">Snipperclips</a> เป็นอีกเกมที่ไม่ควรพลาดเลยครับ ในเกมนี้เราและเพื่อนๆ จะรับบทเป็นเจ้ากระดาษ (ไอตัวสีแดงสีเหลืองบนรูปหน้าปกน่ะ) ช่วยกันทำภารกิจตะลุยด่านแก้ puzzle ด้วยกันครับ

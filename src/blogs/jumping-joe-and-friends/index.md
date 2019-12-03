@@ -1,8 +1,9 @@
 ---
-title: 'เล่าเกม - Jumping Joe & Friends'
+title: 'Jumping Joe & Friends'
 date: '2019-03-21'
 cover: 'jumping-joe-and-friends-1.jpg'
 tags: ['เล่าเกม']
+draft: false
 ---
 
 สำหรับใครที่กำลังหาเกมราคาย่อมเยาว์บน Nintendo Switch มาเล่นกับเพื่อนแล้วเนี่ย ผมบอกเลยว่า <a href="https://www.nintendo.com/games/detail/jumping-joe-and-friends-switch" target="_blank">Jumping Joe & Friends</a> เกมนี้ ซื้อมาเล่นแล้วคุ้มค่าแน่นอน จะไม่คุ้มได้ยังไงล่ะ **ผมซื้อมาตอนลดราคา 8.15 บาท!!** (ราคาเต็ม \$1.99) วันนี้ก็เลยจะมาเล่าเกมให้ฟัง
