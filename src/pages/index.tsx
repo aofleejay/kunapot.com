@@ -82,8 +82,10 @@ const IndexPage = (props: AllMarkdownProps) => {
         <h1>Books I've read.</h1>
         <div
           css={css`
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin-bottom: 15px;
           `}
         >
           {props.data.books.edges.map(({ node }) => {
@@ -91,8 +93,7 @@ const IndexPage = (props: AllMarkdownProps) => {
               <div
                 key={node.id}
                 css={css`
-                  flex-basis: 25%;
-                  padding: 3px;
+                  width: 100%;
                 `}
               >
                 <Link to={node.fields.slug}>
@@ -100,6 +101,7 @@ const IndexPage = (props: AllMarkdownProps) => {
                     src={node.frontmatter.bookCover.publicURL}
                     css={css`
                       border: 1px darkgrey solid;
+                      margin-bottom: 0;
                     `}
                     alt={node.frontmatter.title}
                   />
@@ -143,8 +145,9 @@ const IndexPage = (props: AllMarkdownProps) => {
         <h1>Games I've played.</h1>
         <div
           css={css`
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: 1fr 1fr 1fr;
           `}
         >
           {props.data.games.edges.map(({ node }) => {
@@ -152,8 +155,7 @@ const IndexPage = (props: AllMarkdownProps) => {
               <div
                 key={node.id}
                 css={css`
-                  flex-basis: 33.33%;
-                  padding: 3px;
+                  width: 100%;
                 `}
               >
                 <Link to={node.fields.slug}>
@@ -161,6 +163,7 @@ const IndexPage = (props: AllMarkdownProps) => {
                     src={node.frontmatter.coverImage.publicURL}
                     css={css`
                       border: 1px darkgrey solid;
+                      margin-bottom: 0;
                     `}
                     alt={node.frontmatter.title}
                   />
