@@ -2,7 +2,7 @@
 title: 'Snipperclips'
 date: '2019-04-05'
 coverImage: 'snipperclips-cover-image.jpg'
-tags: ['เล่าเกม']
+tags: ['เล่าเกม', 'Nintendo Switch']
 draft: false
 ---
 
