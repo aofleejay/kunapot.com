@@ -6,6 +6,7 @@ import { DiscussionEmbed } from 'disqus-react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { rhythm } from '../utils/typography'
+import defaultCoverImage from '../assets/default-cover-image.jpg'
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark
@@ -16,7 +17,9 @@ const BlogPost = ({ data }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description}
         keywords={post.frontmatter.tags}
-        image={post.frontmatter.coverImage.publicURL}
+        image={
+          post.frontmatter.coverImage && post.frontmatter.coverImage.publicURL
+        }
         slug={post.fields.slug}
         article
       />
@@ -48,12 +51,14 @@ const BlogPost = ({ data }) => {
             </Link>
           ))}
         </p>
-        {post.frontmatter.coverImage && (
-          <img
-            src={post.frontmatter.coverImage.publicURL}
-            alt={post.frontmatter.coverImage.name}
-          />
-        )}
+        <img
+          src={
+            post.frontmatter.coverImage
+              ? post.frontmatter.coverImage.publicURL
+              : defaultCoverImage
+          }
+          alt={post.frontmatter.coverImage && post.frontmatter.coverImage.name}
+        />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <DiscussionEmbed
           shortname={data.site.siteMetadata.title}

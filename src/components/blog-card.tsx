@@ -3,6 +3,7 @@ import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
 import { rhythm } from '../utils/typography'
+import defaultCoverImage from '../assets/default-cover-image.jpg'
 
 type BlogCardProp = {
   post: {
@@ -77,12 +78,14 @@ const BlogCard = ({ post }: BlogCardProp) => {
         `}
         to={post.fields.slug}
       >
-        {post.frontmatter.coverImage && (
-          <img
-            src={post.frontmatter.coverImage.publicURL}
-            alt={post.frontmatter.coverImage.name}
-          />
-        )}
+        <img
+          src={
+            post.frontmatter.coverImage
+              ? post.frontmatter.coverImage.publicURL
+              : defaultCoverImage
+          }
+          alt={post.frontmatter.coverImage && post.frontmatter.coverImage.name}
+        />
         <p>{post.excerpt}</p>
       </Link>
     </div>

@@ -3,6 +3,8 @@ import React from 'react'
 import { css } from '@emotion/core'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import defaultCoverImage from '../assets/default-cover-image.jpg'
+import defaultBookCover from '../assets/default-book-cover.jpg'
 
 interface AllMarkdownProps {
   data: {
@@ -98,7 +100,11 @@ const IndexPage = (props: AllMarkdownProps) => {
               >
                 <Link to={node.fields.slug}>
                   <img
-                    src={node.frontmatter.bookCover.publicURL}
+                    src={
+                      node.frontmatter.bookCover
+                        ? node.frontmatter.bookCover.publicURL
+                        : defaultBookCover
+                    }
                     css={css`
                       border: 1px darkgrey solid;
                       margin-bottom: 0;
@@ -160,7 +166,11 @@ const IndexPage = (props: AllMarkdownProps) => {
               >
                 <Link to={node.fields.slug}>
                   <img
-                    src={node.frontmatter.coverImage.publicURL}
+                    src={
+                      node.frontmatter.coverImage
+                        ? node.frontmatter.coverImage.publicURL
+                        : defaultCoverImage
+                    }
                     css={css`
                       border: 1px darkgrey solid;
                       margin-bottom: 0;
