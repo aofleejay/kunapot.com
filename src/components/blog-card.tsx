@@ -58,18 +58,20 @@ const BlogCard = ({ post }: BlogCardProp) => {
         >
           |
         </span>
-        {post.frontmatter.tags.map(tag => (
-          <Link
-            key={tag}
-            to={`/tags/${tag}`}
-            css={css`
-              text-decoration: none;
-              color: inherit;
-            `}
-          >
-            <span>{tag}</span>
-          </Link>
-        ))}
+        {post.frontmatter.tags
+          .map<React.ReactNode>(tag => (
+            <Link
+              key={tag}
+              to={`/tags/${tag}`}
+              css={css`
+                text-decoration: none;
+                color: inherit;
+              `}
+            >
+              <span>{tag}</span>
+            </Link>
+          ))
+          .reduce((prev, curr) => [prev, ', ', curr])}
       </p>
       <Link
         css={css`
