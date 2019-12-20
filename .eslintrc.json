@@ -3,7 +3,8 @@
     "node": true,
     "browser": true,
     "es6": true,
-    "jest": true
+    "jest": true,
+    "cypress/globals": true
   },
   "extends": ["eslint:recommended", "plugin:react/recommended", "prettier"],
   "globals": {
@@ -18,7 +19,7 @@
     "sourceType": "module"
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "cypress"],
   "settings": {
     "react": {
       "version": "detect"
