@@ -1,7 +1,7 @@
 ---
 title: 'Super Animal Royale'
 date: '2019-07-10'
-coverImage: 'super-animal-royale-cover-image.jpg'
+coverImage: './super-animal-royale-cover-image.jpg'
 tags: ['เล่าเกม']
 draft: false
 ---

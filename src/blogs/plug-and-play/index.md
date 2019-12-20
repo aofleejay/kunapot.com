@@ -2,7 +2,7 @@
 title: 'Plug & Play'
 description: 'เกมที่ใช้เวลาเล่นราวยี่สิบนาทีเพื่อให้ได้รู้ว่า สภาพตอนนาทีสุดท้ายกับนาทีแรกที่เล่นเกมนั้น งงไม่ต่างกัน ถถถ'
 date: '2019-08-24'
-coverImage: 'plug-and-play-cover-image.jpg'
+coverImage: './plug-and-play-cover-image.jpg'
 tags: ['เล่าเกม']
 draft: false
 ---

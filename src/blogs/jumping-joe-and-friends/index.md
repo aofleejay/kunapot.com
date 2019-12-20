@@ -1,7 +1,7 @@
 ---
 title: 'Jumping Joe & Friends'
 date: '2019-03-21'
-coverImage: 'jumping-joe-and-friends-cover-image.jpg'
+coverImage: './jumping-joe-and-friends-cover-image.jpg'
 tags: ['เล่าเกม']
 draft: false
 ---
