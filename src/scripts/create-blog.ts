@@ -29,8 +29,8 @@ const createBlog = ({
 title: '${title}'
 description: ''
 date: '${date}'
-coverImage: '${coverImage}'
-bookCover: '${bookCover}'
+# coverImage: '${coverImage}'
+# bookCover: '${bookCover}'
 tags: [${tags
     .split(',')
     .map(tag => `'${kebabCase(tag)}'`)
