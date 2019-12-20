@@ -33,7 +33,7 @@ coverImage: '${coverImage}'
 bookCover: '${bookCover}'
 tags: [${tags
     .split(',')
-    .map(tag => `'${tag}'`)
+    .map(tag => `'${kebabCase(tag)}'`)
     .join()}]
 draft: ${draft}
 ---`
