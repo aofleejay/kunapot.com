@@ -88,6 +88,10 @@ const IndexPage = (props: AllMarkdownProps) => {
             grid-gap: 10px;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             margin-bottom: 15px;
+
+            @media only screen and (max-width: 600px) {
+              grid-template-columns: 1fr 1fr 1fr;
+            }
           `}
         >
           {props.data.books.edges.map(({ node }) => {
@@ -154,6 +158,10 @@ const IndexPage = (props: AllMarkdownProps) => {
             display: grid;
             grid-gap: 10px;
             grid-template-columns: 1fr 1fr 1fr;
+
+            @media only screen and (max-width: 600px) {
+              grid-template-columns: 1fr 1fr;
+            }
           `}
         >
           {props.data.games.edges.map(({ node }) => {
