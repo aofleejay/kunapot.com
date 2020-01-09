@@ -17,6 +17,7 @@ const systemFontStack = [
 const typography = new Typography({
   headerFontFamily: systemFontStack,
   bodyFontFamily: systemFontStack,
+  baseFontSize: '18px',
 })
 
 export default typography

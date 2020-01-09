@@ -136,7 +136,6 @@ const IndexPage = (props: AllMarkdownProps) => {
             >
               <p
                 css={css`
-                  font-size: 18px;
                   margin-bottom: 0;
                 `}
               >
