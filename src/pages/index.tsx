@@ -134,8 +134,20 @@ const IndexPage = (props: AllMarkdownProps) => {
                 text-decoration: none;
               `}
             >
-              <p>
-                {blog.title} - {blog.date}
+              <p
+                css={css`
+                  font-size: 18px;
+                  margin-bottom: 0;
+                `}
+              >
+                {blog.title}
+              </p>
+              <p
+                css={css`
+                  font-size: 12px;
+                `}
+              >
+                {blog.date}
               </p>
             </a>
           )
