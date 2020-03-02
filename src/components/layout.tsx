@@ -83,7 +83,7 @@ const Layout: React.FC = ({ children }) => {
               css={css`
                 margin: 0 auto;
                 max-width: 700px;
-                padding: ${rhythm(2)} ${rhythm(1)};
+                padding: ${rhythm(1)};
               `}
             >
               {children}
