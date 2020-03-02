@@ -12,7 +12,7 @@ type SEOProps = {
   slug?: string
 }
 
-const SEO = (props: SEOProps) => {
+const SEO: React.FC<SEOProps> = props => {
   return (
     <StaticQuery
       query={query}

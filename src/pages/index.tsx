@@ -1,10 +1,7 @@
 import { graphql, Link } from 'gatsby'
 import React, { useState } from 'react'
 import { css } from '@emotion/core'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Menu from '../components/menu'
-import MenuItem from '../components/menuItem'
+import { Menu, MenuItem, SEO, Layout } from '../components'
 import defaultCoverImage from '../assets/default-cover-image.jpg'
 import defaultBookCover from '../assets/default-book-cover.jpg'
 
@@ -39,10 +36,6 @@ interface AllMarkdownProps {
             id: string
             frontmatter: {
               title: string
-              cover: {
-                name: string
-                publicURL: string
-              }
               coverImage: {
                 name: string
                 publicURL: string

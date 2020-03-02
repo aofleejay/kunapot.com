@@ -1,9 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import BlogCard from '../components/blog-card'
+import { Layout, SEO, BlogCard } from '../components'
 
 const TagsPage = ({ data }) => {
   return (

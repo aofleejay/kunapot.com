@@ -2,9 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { DiscussionEmbed } from 'disqus-react'
-
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import { Layout, SEO } from '../components'
 import { rhythm } from '../utils/typography'
 import defaultCoverImage from '../assets/default-cover-image.jpg'
 

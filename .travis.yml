@@ -17,7 +17,7 @@ before_script:
   - 'yarn'
 script:
   - 'yarn lint'
-  - 'yarn test'
-  - 'yarn coveralls'
+  # - 'yarn test'
+  # - 'yarn coveralls'
 after_success:
   - 'yarn deploy'
