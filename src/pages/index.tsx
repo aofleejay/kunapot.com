@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import { css } from '@emotion/core'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Menu from '../components/menu'
+import MenuItem from '../components/menuItem'
 import defaultCoverImage from '../assets/default-cover-image.jpg'
 import defaultBookCover from '../assets/default-book-cover.jpg'
 
@@ -87,41 +89,6 @@ const Bio: React.FC = () => {
       <h1>aofleejay</h1>
       <p>Just another blog</p>
     </section>
-  )
-}
-
-const Menu: React.FC = ({ children }) => {
-  return (
-    <section
-      id="menu"
-      css={css`
-        text-align: center;
-      `}
-    >
-      {children}
-    </section>
-  )
-}
-
-interface MenuItemProps {
-  isActive: boolean
-  onClick: () => void
-}
-
-const MenuItem: React.FC<MenuItemProps> = ({ children, onClick, isActive }) => {
-  return (
-    <p
-      css={css`
-        display: inline-block;
-        margin-left: 10px;
-        margin-right: 10px;
-        cursor: pointer;
-        color: ${isActive ? 'var(--textLink)' : 'grey'};
-      `}
-      onClick={onClick}
-    >
-      {children}
-    </p>
   )
 }
 
