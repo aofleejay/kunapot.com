@@ -58,6 +58,7 @@ interface AllMarkdownProps {
           date: string
           title: string
           link: string
+          thumbnail: string
         },
       ]
     }
@@ -138,6 +139,7 @@ const IndexPage: React.FC<AllMarkdownProps> = props => {
                 >
                   {blog.date}
                 </p>
+                <img src={blog.thumbnail} alt={blog.title} />
               </a>
             )
           })}
@@ -281,6 +283,7 @@ export const query = graphql`
         date(fromNow: true)
         title
         link
+        thumbnail
       }
     }
     site {
