@@ -76,63 +76,81 @@ interface AllMarkdownProps {
   }
 }
 
-const IndexPage = (props: AllMarkdownProps) => {
-  const [activeMenu, setActiveMenu] = useState('coding')
+const Bio: React.FC = () => {
+  return (
+    <section
+      id="bio"
+      css={css`
+        text-align: center;
+      `}
+    >
+      <h1>aofleejay</h1>
+      <p>Just another blog</p>
+    </section>
+  )
+}
+
+const Menu: React.FC = ({ children }) => {
+  return (
+    <section
+      id="menu"
+      css={css`
+        text-align: center;
+      `}
+    >
+      {children}
+    </section>
+  )
+}
+
+interface MenuItemProps {
+  isActive: boolean
+  onClick: () => void
+}
+
+const MenuItem: React.FC<MenuItemProps> = ({ children, onClick, isActive }) => {
+  return (
+    <p
+      css={css`
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+        cursor: pointer;
+        color: ${isActive ? 'var(--textLink)' : 'grey'};
+      `}
+      onClick={onClick}
+    >
+      {children}
+    </p>
+  )
+}
+
+const IndexPage: React.FC<AllMarkdownProps> = props => {
+  const [activeMenu, setActiveMenu] = useState<string>('coding')
   return (
     <Layout>
       <SEO />
-      <section
-        id="bio"
-        css={css`
-          text-align: center;
-        `}
-      >
-        <h1>aofleejay</h1>
-        <p>Just another blog</p>
-      </section>
-      <section
-        id="menu"
-        css={css`
-          text-align: center;
-        `}
-      >
-        <p
-          css={css`
-            display: inline-block;
-            margin-left: 10px;
-            margin-right: 10px;
-            cursor: pointer;
-            color: ${activeMenu === 'coding' ? 'var(--textLink)' : 'grey'};
-          `}
+      <Bio />
+      <Menu>
+        <MenuItem
+          isActive={activeMenu === 'coding'}
           onClick={() => setActiveMenu('coding')}
         >
           CODING
-        </p>
-        <p
-          css={css`
-            display: inline-block;
-            margin-left: 10px;
-            margin-right: 10px;
-            cursor: pointer;
-            color: ${activeMenu === 'book' ? 'var(--textLink)' : 'grey'};
-          `}
+        </MenuItem>
+        <MenuItem
+          isActive={activeMenu === 'book'}
           onClick={() => setActiveMenu('book')}
         >
           BOOK
-        </p>
-        <p
-          css={css`
-            display: inline-block;
-            margin-left: 10px;
-            margin-right: 10px;
-            cursor: pointer;
-            color: ${activeMenu === 'game' ? 'var(--textLink)' : 'grey'};
-          `}
+        </MenuItem>
+        <MenuItem
+          isActive={activeMenu === 'game'}
           onClick={() => setActiveMenu('game')}
         >
           GAME
-        </p>
-      </section>
+        </MenuItem>
+      </Menu>
       <section id="content">
         {activeMenu === 'coding' &&
           props.data.mediumBlogs.nodes.map(blog => {
