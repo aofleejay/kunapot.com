@@ -86,8 +86,33 @@ const Bio: React.FC = () => {
   )
 }
 
+function useLocalStorage<V>(
+  key: string,
+  initialValue: V,
+): [V, (newValue: V) => void] {
+  const [value, setValue] = useState(() => {
+    try {
+      const storedValue = window.localStorage.getItem(key)
+      return storedValue ? JSON.parse(storedValue) : initialValue
+    } catch (error) {
+      return initialValue
+    }
+  })
+
+  const updateValue = (newValue: V): void => {
+    try {
+      setValue(newValue)
+      window.localStorage.setItem(key, JSON.stringify(newValue))
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+  return [value, updateValue]
+}
+
 const IndexPage: React.FC<AllMarkdownProps> = props => {
-  const [activeMenu, setActiveMenu] = useState<string>('coding')
+  const [activeMenu, setActiveMenu] = useLocalStorage('tab', 'coding')
   return (
     <Layout>
       <SEO />
