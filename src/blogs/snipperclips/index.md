@@ -1,8 +1,9 @@
 ---
-title: 'เล่าเกม - Snipperclips'
+title: 'Snipperclips'
 date: '2019-04-05'
-cover: 'snipperclips-1.jpg'
-tags: ['เล่าเกม']
+coverImage: './snipperclips-cover-image.jpg'
+tags: ['เล่าเกม', 'nintendo-switch']
+draft: false
 ---
 
 ใครที่สนใจเกมแนวแก้ puzzle บน Nintendo Switch มาเล่นกับเพื่อน ผมว่า <a href="https://www.nintendo.com/games/detail/snipperclips-switch" target="_blank">Snipperclips</a> เป็นอีกเกมที่ไม่ควรพลาดเลยครับ ในเกมนี้เราและเพื่อนๆ จะรับบทเป็นเจ้ากระดาษ (ไอตัวสีแดงสีเหลืองบนรูปหน้าปกน่ะ) ช่วยกันทำภารกิจตะลุยด่านแก้ puzzle ด้วยกันครับ
@@ -18,11 +19,11 @@ tags: ['เล่าเกม']
 
 เผื่อใครนึกภาพไม่ออกดูรูปด้านล่างได้เลยจ้า
 
+![snipperclips](snipperclips-1.jpg)
+
 ![snipperclips](snipperclips-2.jpg)
 
 ![snipperclips](snipperclips-3.jpg)
-
-![snipperclips](snipperclips-4.jpg)
 
 ตัวเกมหลักราคา $19.99 และมี DLC เป็น puzzle เพิ่มในราคา$9.99 หรือจะซื้อเป็นบันเดิลทีเดียวเลยก็ได้ราคา \$29.98 (ซื้อคู่ไม่ลดหน่อยหรอ 55)
 

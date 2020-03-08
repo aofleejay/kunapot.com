@@ -1,13 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `aofleejay`,
-    author: `Kunapot Pairat`,
-    description: `เล่าโค้ด | เล่าหนังสือ | เล่าเกม`,
+    title: `Just another blog.`,
+    author: `aofleejay`,
     siteUrl: 'https://aofleejay.com',
-    keywords: ['เล่าโค้ด', 'เล่าหนังสือ', 'เล่าเกม'],
+    keywords: ['เล่าหนังสือ', 'เล่าเกม'],
     social: {
-      medium: '@aofleejay',
-      github: '@aofleejay',
+      medium: 'https://medium.com/@aofleejay/latest',
+      github: 'https://github.com/aofleejay',
     },
     facebookAppID: '489184495212718',
   },
@@ -19,7 +18,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-tslint`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -72,6 +70,13 @@ module.exports = {
     },
     'gatsby-plugin-dark-mode',
     `gatsby-plugin-sitemap`,
+    {
+      resolve: 'gatsby-source-medium-feed',
+      options: {
+        userName: '@aofleejay',
+        name: 'MediumFeed',
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

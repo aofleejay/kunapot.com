@@ -1,98 +1,92 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+import { FaGithubSquare, FaMedium, FaSun, FaMoon, FaHome } from 'react-icons/fa'
 
 import { rhythm } from '../utils/typography'
-import moon from '../assets/moon.svg'
-import sun from '../assets/cloudy.svg'
 
-export default ({ children }) => {
+const Layout: React.FC = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          social {
+            github
+            medium
+          }
+        }
+      }
+    }
+  `)
+
+  const { github, medium } = data.site.siteMetadata.social
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => {
         return (
           <>
-            <div css={css``}>
-              <div
+            <div
+              css={css`
+                margin: 0 auto;
+                max-width: 700px;
+                padding: ${rhythm(1)};
+                text-align: right;
+              `}
+            >
+              <Link
                 css={css`
-                  margin: 0 auto;
-                  max-width: 700px;
-                  padding: ${rhythm(1)};
+                  text-decoration: none;
+                  margin-left: ${rhythm(0.5)};
                 `}
+                to={`/`}
               >
-                <Link
-                  css={css`
-                    text-decoration: none;
-                  `}
-                  to={`/`}
-                >
-                  HOME
-                </Link>
-                <span
-                  css={css`
-                    padding: 0 ${rhythm(0.5)};
-                  `}
-                >
-                  |
-                </span>
-                <a
-                  css={css`
-                    text-decoration: none;
-                  `}
-                  href="https://medium.com/@aofleejay/latest"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  SOFTWARE DEVELOPMENT
-                </a>
-                <span
-                  css={css`
-                    padding: 0 ${rhythm(0.5)};
-                  `}
-                >
-                  |
-                </span>
-                <Link
-                  to={`/about/`}
-                  css={css`
-                    text-decoration: none;
-                  `}
-                >
-                  ABOUT
-                </Link>
-                <span
-                  css={css`
-                    padding: 0 ${rhythm(0.5)};
-                  `}
-                >
-                  |
-                </span>
-                <img
-                  src={theme === 'dark' ? sun : moon}
-                  css={css`
-                    display: inline-block;
-                    cursor: pointer;
-                    width: 25px;
-                    vertical-align: bottom;
-                    margin-bottom: 0;
-                  `}
-                  onClick={() =>
-                    toggleTheme(theme === 'dark' ? 'light' : 'dark')
-                  }
-                />
-              </div>
+                <FaHome size={20} />
+              </Link>
+              <a
+                css={css`
+                  text-decoration: none;
+                  margin-left: ${rhythm(0.5)};
+                `}
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithubSquare size={20} />
+              </a>
+              <a
+                css={css`
+                  text-decoration: none;
+                  margin-left: ${rhythm(0.5)};
+                `}
+                href={medium}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaMedium size={20} />
+              </a>
+              <a
+                css={css`
+                  text-decoration: none;
+                  cursor: pointer;
+                  margin-left: ${rhythm(0.5)};
+                `}
+                onClick={e => {
+                  e.preventDefault()
+                  toggleTheme(theme === 'dark' ? 'light' : 'dark')
+                }}
+              >
+                {theme === 'dark' ? <FaSun size={20} /> : <FaMoon size={20} />}
+              </a>
             </div>
-            <div css={css``}>
-              <div
-                css={css`
-                  margin: 0 auto;
-                  max-width: 700px;
-                  padding: ${rhythm(2)} ${rhythm(1)};
-                `}
-              >
-                {children}
-              </div>
+            <div
+              css={css`
+                margin: 0 auto;
+                max-width: 700px;
+                padding: ${rhythm(1)};
+              `}
+            >
+              {children}
             </div>
           </>
         )
@@ -100,3 +94,5 @@ export default ({ children }) => {
     </ThemeToggler>
   )
 }
+
+export default Layout

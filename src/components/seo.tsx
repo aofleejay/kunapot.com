@@ -2,30 +2,29 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-interface SEOProps {
-  title: string
-  description: string
-  author: string
-  keywords: string[]
-  image: string
-  article: boolean
-  slug: string
+type SEOProps = {
+  title?: string
+  description?: string
+  author?: string
+  keywords?: string[]
+  image?: string
+  article?: boolean
+  slug?: string
 }
 
-const SEO = (props: SEOProps) => {
+const SEO: React.FC<SEOProps> = props => {
   return (
     <StaticQuery
       query={query}
       render={data => {
-        const title = props.title || data.site.siteMetadata.description
-        const description =
-          props.description || data.site.siteMetadata.description
+        const title = props.title || data.site.siteMetadata.title
+        const description = props.description || data.site.siteMetadata.title
         const author = props.author || data.site.siteMetadata.author
         const keywords = props.keywords || data.site.siteMetadata.keywords
         const slug = props.slug || '/'
 
         return (
-          <Helmet title={`${title} - ${data.site.siteMetadata.title}`}>
+          <Helmet title={title}>
             <meta name="description" content={description} />
             <meta name="author" content={author} />
             <meta name="keywords" content={keywords.join()} />
@@ -70,7 +69,6 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-        description
         author
         keywords
         siteUrl
