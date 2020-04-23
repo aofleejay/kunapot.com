@@ -6,7 +6,6 @@ const Grid: React.FC = ({ children }) => {
     <div
       css={css`
         display: grid;
-        max-width: 1400px;
         grid-template-columns: repeat(3, 1fr);
         gap: 4rem;
         padding 4rem 2rem;
