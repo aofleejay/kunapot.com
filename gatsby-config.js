@@ -9,6 +9,9 @@ module.exports = {
       github: 'https://github.com/aofleejay',
     },
     facebookAppID: '489184495212718',
+    disqus: {
+      shortName: 'aofleejay',
+    },
   },
   plugins: [
     {

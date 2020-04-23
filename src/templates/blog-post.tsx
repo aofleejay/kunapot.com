@@ -24,7 +24,9 @@ type BlogPostProps = {
     }
     site: {
       siteMetadata: {
-        siteUrl: string
+        disqus: {
+          shortName: string
+        }
       }
     }
   }
@@ -97,7 +99,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
         />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <DiscussionEmbed
-          shortname={data.site.siteMetadata.siteUrl}
+          shortname={data.site.siteMetadata.disqus.shortName}
           config={{
             url: post.fields.slug,
             identifier: post.fields.slug,
@@ -132,7 +134,9 @@ export const query = graphql`
     }
     site {
       siteMetadata {
-        siteUrl
+        disqus {
+          shortName
+        }
       }
     }
   }
