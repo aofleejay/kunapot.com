@@ -44,6 +44,7 @@ const Layout: React.FC = ({ children }) => {
               <Link
                 css={css`
                   margin-left: 1rem;
+                  color: var(--textTitle);
                 `}
                 to={'/'}
               >
@@ -55,6 +56,7 @@ const Layout: React.FC = ({ children }) => {
                 rel="noopener noreferrer"
                 css={css`
                   margin-left: 1rem;
+                  color: var(--textTitle);
                 `}
               >
                 <FaMedium />
@@ -65,6 +67,7 @@ const Layout: React.FC = ({ children }) => {
                 rel="noopener noreferrer"
                 css={css`
                   margin-left: 1rem;
+                  color: var(--textTitle);
                 `}
               >
                 <FaGithubSquare />
@@ -73,6 +76,7 @@ const Layout: React.FC = ({ children }) => {
                 onClick={() => toggleTheme(theme === 'dark' ? 'light' : 'dark')}
                 css={css`
                   margin-left: 1rem;
+                  color: var(--textTitle);
                   cursor: pointer;
                 `}
               >
@@ -92,7 +96,14 @@ const Layout: React.FC = ({ children }) => {
             `}
             >
               Made by{' '}
-              <a href={github} target="_blank" rel="noopener noreferrer">
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                css={css`
+                  color: var(--textTitle);
+                `}
+              >
                 {author}
               </a>
               . Build with{' '}
@@ -100,6 +111,9 @@ const Layout: React.FC = ({ children }) => {
                 href="https://www.gatsbyjs.org"
                 target="_blank"
                 rel="noopener noreferrer"
+                css={css`
+                  color: var(--textTitle);
+                `}
               >
                 Gatsby
               </a>

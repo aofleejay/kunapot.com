@@ -18,8 +18,10 @@ const systemFontStack = [
 const typography = new Typography({
   headerFontFamily: systemFontStack,
   bodyFontFamily: systemFontStack,
-  baseFontSize: '16px',
-  baseLineHeight: 1.8,
+  headerColor: 'var(--textTitle)',
+  bodyWeight: 300,
+  baseFontSize: '18px',
+  baseLineHeight: 1.666,
   googleFonts: [
     {
       name: 'Sarabun',
@@ -31,6 +33,9 @@ const typography = new Typography({
     a: {
       color: 'var(--textNormal)',
       textDecoration: 'none',
+    },
+    p: {
+      letterSpacing: '0.2px',
     },
   }),
 })

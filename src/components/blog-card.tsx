@@ -44,6 +44,8 @@ const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
             css={css`
               margin-bottom: 0;
               font-size: 1.2rem;
+              font-weight: bold;
+              color: var(--textTitle);
             `}
           >
             {post.frontmatter.title}
@@ -52,7 +54,6 @@ const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
             css={css`
               margin-bottom: 1rem;
               font-size: 0.8rem;
-              color: grey;
             `}
           >
             {post.frontmatter.date} - {post.frontmatter.tags.join(',')}

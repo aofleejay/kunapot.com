@@ -1,7 +1,6 @@
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import React from 'react'
-import { css } from '@emotion/core'
-import { BlogCard, Grid, Layout } from '../components'
+import { BlogCard, Grid, Layout, SEO } from '../components'
 
 interface IndexPageProps {
   data: {
@@ -33,6 +32,7 @@ interface IndexPageProps {
 const IndexPage: React.FC<IndexPageProps> = props => {
   return (
     <Layout>
+      <SEO />
       <Grid>
         {props.data.allMarkdownRemark.edges.map(({ node }) => (
           <BlogCard key={node.id} post={node} />
