@@ -70,17 +70,20 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
           >
             |
           </span>
-          {post.frontmatter.tags.map(tag => (
-            <Link
-              key={tag}
-              to={`/tags/${tag}`}
-              css={css`
-                text-decoration: none;
-                color: inherit;
-              `}
-            >
-              <span>{tag}</span>
-            </Link>
+          {post.frontmatter.tags.map((tag, i) => (
+            <>
+              {i > 0 && ', '}
+              <Link
+                key={tag}
+                to={`/tags/${tag}`}
+                css={css`
+                  text-decoration: none;
+                  color: inherit;
+                `}
+              >
+                <span>{tag}</span>
+              </Link>
+            </>
           ))}
         </p>
         <img

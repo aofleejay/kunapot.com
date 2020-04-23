@@ -54,7 +54,7 @@ const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
               color: var(--textTertiary);
             `}
           >
-            {post.frontmatter.date} - {post.frontmatter.tags.join(',')}
+            {post.frontmatter.date} - {post.frontmatter.tags.join(', ')}
           </p>
           <p>{post.excerpt}</p>
         </div>
