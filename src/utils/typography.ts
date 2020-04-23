@@ -18,8 +18,7 @@ const systemFontStack = [
 const typography = new Typography({
   headerFontFamily: systemFontStack,
   bodyFontFamily: systemFontStack,
-  headerColor: 'var(--textTitle)',
-  bodyWeight: 300,
+  headerColor: 'var(--textPrimary)',
   baseFontSize: '18px',
   baseLineHeight: 1.666,
   googleFonts: [
@@ -31,7 +30,7 @@ const typography = new Typography({
   includeNormalize: true,
   overrideStyles: () => ({
     a: {
-      color: 'var(--textNormal)',
+      color: 'var(--textSecondary)',
       textDecoration: 'none',
     },
     p: {

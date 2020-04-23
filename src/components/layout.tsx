@@ -44,7 +44,7 @@ const Layout: React.FC = ({ children }) => {
               <Link
                 css={css`
                   margin-left: 1rem;
-                  color: var(--textTitle);
+                  color: var(--textPrimary);
                 `}
                 to={'/'}
               >
@@ -56,7 +56,7 @@ const Layout: React.FC = ({ children }) => {
                 rel="noopener noreferrer"
                 css={css`
                   margin-left: 1rem;
-                  color: var(--textTitle);
+                  color: var(--textPrimary);
                 `}
               >
                 <FaMedium />
@@ -67,7 +67,7 @@ const Layout: React.FC = ({ children }) => {
                 rel="noopener noreferrer"
                 css={css`
                   margin-left: 1rem;
-                  color: var(--textTitle);
+                  color: var(--textPrimary);
                 `}
               >
                 <FaGithubSquare />
@@ -76,7 +76,7 @@ const Layout: React.FC = ({ children }) => {
                 onClick={() => toggleTheme(theme === 'dark' ? 'light' : 'dark')}
                 css={css`
                   margin-left: 1rem;
-                  color: var(--textTitle);
+                  color: var(--textPrimary);
                   cursor: pointer;
                 `}
               >
@@ -101,7 +101,7 @@ const Layout: React.FC = ({ children }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 css={css`
-                  color: var(--textTitle);
+                  color: var(--textPrimary);
                 `}
               >
                 {author}
@@ -112,7 +112,7 @@ const Layout: React.FC = ({ children }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 css={css`
-                  color: var(--textTitle);
+                  color: var(--textPrimary);
                 `}
               >
                 Gatsby
