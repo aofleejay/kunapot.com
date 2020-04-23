@@ -2,11 +2,11 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
-import { rhythm } from '../utils/typography'
 import defaultCoverImage from '../assets/default-cover-image.jpg'
 
 type BlogCardProp = {
   post: {
+    id: string
     fields: {
       slug: string
     }
@@ -25,72 +25,42 @@ type BlogCardProp = {
 
 const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
   return (
-    <div
-      css={css`
-        margin-bottom: ${rhythm(2)};
-      `}
-    >
-      <Link
-        css={css`
-          text-decoration: none;
-          color: inherit;
-        `}
-        to={post.fields.slug}
-      >
-        <h1
-          css={css`
-            margin-bottom: ${rhythm(1 / 2)};
-          `}
-        >
-          {post.frontmatter.title}
-        </h1>
-      </Link>
-      <p
-        css={css`
-          color: #bbb;
-        `}
-      >
-        {post.frontmatter.date}
-        <span
-          css={css`
-            padding: 0 ${rhythm(1 / 2)};
-          `}
-        >
-          |
-        </span>
-        {post.frontmatter.tags
-          .map<React.ReactNode>(tag => (
-            <Link
-              key={tag}
-              to={`/tags/${tag}`}
-              css={css`
-                text-decoration: none;
-                color: inherit;
-              `}
-            >
-              <span>{tag}</span>
-            </Link>
-          ))
-          .reduce((prev, curr) => [prev, ', ', curr])}
-      </p>
-      <Link
-        css={css`
-          text-decoration: none;
-          color: inherit;
-        `}
-        to={post.fields.slug}
-      >
+    <article>
+      <Link to={post.fields.slug}>
         <img
-          src={
-            post.frontmatter.coverImage
-              ? post.frontmatter.coverImage.publicURL
-              : defaultCoverImage
-          }
-          alt={post.frontmatter.coverImage && post.frontmatter.coverImage.name}
+          css={css`
+            border-radius: 4px;
+            margin-bottom: 0;
+          `}
+          src={post.frontmatter.coverImage.publicURL}
         />
-        <p>{post.excerpt}</p>
+        <div
+          css={css`
+            display: grid;
+            gap: 0 1rem;
+          `}
+        >
+          <p
+            css={css`
+              margin-bottom: 0;
+              font-size: 1.2rem;
+            `}
+          >
+            {post.frontmatter.title}
+          </p>
+          <p
+            css={css`
+              margin-bottom: 1rem;
+              font-size: 0.8rem;
+              color: grey;
+            `}
+          >
+            {post.frontmatter.date} - {post.frontmatter.tags.join(',')}
+          </p>
+          <p>{post.excerpt}</p>
+        </div>
       </Link>
-    </div>
+    </article>
   )
 }
 

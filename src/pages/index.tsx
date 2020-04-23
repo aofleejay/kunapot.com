@@ -1,7 +1,7 @@
 import { graphql, Link } from 'gatsby'
 import React from 'react'
 import { css } from '@emotion/core'
-import { Layout } from '../components'
+import { BlogCard, Grid, Layout } from '../components'
 
 interface IndexPageProps {
   data: {
@@ -16,7 +16,7 @@ interface IndexPageProps {
                 name: string
                 publicURL: string
               }
-              date: Date
+              date: string
               tags: [string]
             }
             fields: {
@@ -33,60 +33,11 @@ interface IndexPageProps {
 const IndexPage: React.FC<IndexPageProps> = props => {
   return (
     <Layout>
-      <div
-        css={css`
-          display: grid;
-          max-width: 1400px;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 2rem 4rem;
-          padding 4rem 2rem;
-
-          @media only screen and (max-width: 600px) {
-            grid-template-columns: 1fr;
-            gap: 0;
-            padding 2rem 1rem;
-          }
-        `}
-      >
+      <Grid>
         {props.data.allMarkdownRemark.edges.map(({ node }) => (
-          <article key={node.id}>
-            <Link to={node.fields.slug}>
-              <img
-                css={css`
-                  border-radius: 4px;
-                  margin-bottom: 0;
-                `}
-                src={node.frontmatter.coverImage.publicURL}
-              />
-              <div
-                css={css`
-                  display: grid;
-                  gap: 0 1rem;
-                `}
-              >
-                <p
-                  css={css`
-                    margin-bottom: 0;
-                    font-size: 1.2rem;
-                  `}
-                >
-                  {node.frontmatter.title}
-                </p>
-                <p
-                  css={css`
-                    margin-bottom: 1rem;
-                    font-size: 0.8rem;
-                    color: grey;
-                  `}
-                >
-                  {node.frontmatter.date} - {node.frontmatter.tags.join(',')}
-                </p>
-                <p>{node.excerpt}</p>
-              </div>
-            </Link>
-          </article>
+          <BlogCard key={node.id} post={node} />
         ))}
-      </div>
+      </Grid>
     </Layout>
   )
 }
