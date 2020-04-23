@@ -2,8 +2,6 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
-import defaultCoverImage from '../assets/default-cover-image.jpg'
-
 type BlogCardProp = {
   post: {
     id: string

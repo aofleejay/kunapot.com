@@ -3,9 +3,34 @@ import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { DiscussionEmbed } from 'disqus-react'
 import { Layout, SEO } from '../components'
-import defaultCoverImage from '../assets/default-cover-image.jpg'
 
-const BlogPost = ({ data }) => {
+type BlogPostProps = {
+  data: {
+    markdownRemark: {
+      html: string
+      frontmatter: {
+        title: string
+        description: string
+        tags: string[]
+        coverImage: {
+          name: string
+          publicURL: string
+        }
+        date: string
+      }
+      fields: {
+        slug: string
+      }
+    }
+    site: {
+      siteMetadata: {
+        title: string
+      }
+    }
+  }
+}
+
+const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
   const post = data.markdownRemark
 
   return (
@@ -63,9 +88,7 @@ const BlogPost = ({ data }) => {
             border-radius: 4px;
           `}
           src={
-            post.frontmatter.coverImage
-              ? post.frontmatter.coverImage.publicURL
-              : defaultCoverImage
+            post.frontmatter.coverImage && post.frontmatter.coverImage.publicURL
           }
           alt={post.frontmatter.coverImage && post.frontmatter.coverImage.name}
         />
