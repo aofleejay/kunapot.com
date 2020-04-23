@@ -18,7 +18,7 @@ const systemFontStack = [
 const typography = new Typography({
   headerFontFamily: systemFontStack,
   bodyFontFamily: systemFontStack,
-  baseFontSize: '18px',
+  baseFontSize: '16px',
   baseLineHeight: 1.8,
   googleFonts: [
     {
@@ -26,7 +26,13 @@ const typography = new Typography({
       styles: ['100', '200', '300', '400', '500', '600', '700', '800'],
     },
   ],
+  includeNormalize: true,
+  overrideStyles: () => ({
+    a: {
+      color: 'var(--textNormal)',
+      textDecoration: 'none',
+    },
+  }),
 })
 
 export default typography
-export const rhythm = typography.rhythm

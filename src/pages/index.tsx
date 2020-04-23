@@ -1,35 +1,11 @@
 import { graphql, Link } from 'gatsby'
-import React, { useState } from 'react'
+import React from 'react'
 import { css } from '@emotion/core'
-import { Menu, MenuItem, SEO, Layout } from '../components'
-import defaultCoverImage from '../assets/default-cover-image.jpg'
-import defaultBookCover from '../assets/default-book-cover.jpg'
+import { Layout } from '../components'
 
-interface AllMarkdownProps {
+interface IndexPageProps {
   data: {
-    books: {
-      edges: [
-        {
-          node: {
-            id: string
-            frontmatter: {
-              title: string
-              bookCover: {
-                name: string
-                publicURL: string
-              }
-              date: Date
-              tags: [string]
-            }
-            fields: {
-              slug: string
-            }
-            excerpt: string
-          }
-        },
-      ]
-    }
-    games: {
+    allMarkdownRemark: {
       edges: [
         {
           node: {
@@ -51,237 +27,75 @@ interface AllMarkdownProps {
         },
       ]
     }
-    mediumBlogs: {
-      nodes: [
-        {
-          id: string
-          date: string
-          title: string
-          link: string
-          thumbnail: string
-        },
-      ]
-    }
-    site: {
-      siteMetadata: {
-        social: {
-          medium: string
-        }
-      }
-    }
   }
 }
 
-const Bio: React.FC = () => {
-  return (
-    <section
-      id="bio"
-      css={css`
-        text-align: center;
-      `}
-    >
-      <h1>aofleejay</h1>
-      <p>Just another blog</p>
-    </section>
-  )
-}
-
-function useLocalStorage<V>(
-  key: string,
-  initialValue: V,
-): [V, (newValue: V) => void] {
-  const [value, setValue] = useState(() => {
-    try {
-      const storedValue = window.localStorage.getItem(key)
-      return storedValue ? JSON.parse(storedValue) : initialValue
-    } catch (error) {
-      return initialValue
-    }
-  })
-
-  const updateValue = (newValue: V): void => {
-    try {
-      setValue(newValue)
-      window.localStorage.setItem(key, JSON.stringify(newValue))
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  return [value, updateValue]
-}
-
-const IndexPage: React.FC<AllMarkdownProps> = props => {
-  const [activeMenu, setActiveMenu] = useLocalStorage('tab', 'coding')
+const IndexPage: React.FC<IndexPageProps> = props => {
   return (
     <Layout>
-      <SEO />
-      <Bio />
-      <Menu>
-        <MenuItem
-          isActive={activeMenu === 'coding'}
-          onClick={() => setActiveMenu('coding')}
-        >
-          CODING
-        </MenuItem>
-        <MenuItem
-          isActive={activeMenu === 'book'}
-          onClick={() => setActiveMenu('book')}
-        >
-          BOOK
-        </MenuItem>
-        <MenuItem
-          isActive={activeMenu === 'game'}
-          onClick={() => setActiveMenu('game')}
-        >
-          GAME
-        </MenuItem>
-      </Menu>
-      <section id="content">
-        {activeMenu === 'coding' &&
-          props.data.mediumBlogs.nodes.map(blog => {
-            return (
-              <a
-                key={blog.id}
-                href={blog.link}
-                target="_blank"
-                rel="noopener noreferrer"
+      <div
+        css={css`
+          display: grid;
+          max-width: 1400px;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem 4rem;
+          padding 4rem 2rem;
+
+          @media only screen and (max-width: 600px) {
+            grid-template-columns: 1fr;
+            gap: 0;
+            padding 2rem 1rem;
+          }
+        `}
+      >
+        {props.data.allMarkdownRemark.edges.map(({ node }) => (
+          <article key={node.id}>
+            <Link to={node.fields.slug}>
+              <img
                 css={css`
-                  text-decoration: none;
+                  border-radius: 4px;
+                  margin-bottom: 0;
+                `}
+                src={node.frontmatter.coverImage.publicURL}
+              />
+              <div
+                css={css`
+                  display: grid;
+                  gap: 0 1rem;
                 `}
               >
                 <p
                   css={css`
                     margin-bottom: 0;
+                    font-size: 1.2rem;
                   `}
                 >
-                  {blog.title}
+                  {node.frontmatter.title}
                 </p>
                 <p
                   css={css`
-                    font-size: 12px;
+                    margin-bottom: 1rem;
+                    font-size: 0.8rem;
+                    color: grey;
                   `}
                 >
-                  {blog.date}
+                  {node.frontmatter.date} - {node.frontmatter.tags.join(',')}
                 </p>
-                <img src={blog.thumbnail} alt={blog.title} />
-              </a>
-            )
-          })}
-        {activeMenu === 'game' && (
-          <div
-            css={css`
-              display: grid;
-              grid-gap: 10px;
-              grid-template-columns: 1fr 1fr 1fr;
-
-              @media only screen and (max-width: 600px) {
-                grid-template-columns: 1fr 1fr;
-              }
-            `}
-          >
-            {props.data.games.edges.map(({ node }) => {
-              return (
-                <div
-                  key={node.id}
-                  css={css`
-                    width: 100%;
-                  `}
-                >
-                  <Link to={node.fields.slug}>
-                    <img
-                      src={
-                        node.frontmatter.coverImage
-                          ? node.frontmatter.coverImage.publicURL
-                          : defaultCoverImage
-                      }
-                      css={css`
-                        border: 1px darkgrey solid;
-                        margin-bottom: 0;
-                      `}
-                      alt={node.frontmatter.title}
-                    />
-                  </Link>
-                </div>
-              )
-            })}
-          </div>
-        )}
-        {activeMenu === 'book' && (
-          <div
-            css={css`
-              display: grid;
-              grid-gap: 10px;
-              grid-template-columns: 1fr 1fr 1fr 1fr;
-              margin-bottom: 15px;
-
-              @media only screen and (max-width: 600px) {
-                grid-template-columns: 1fr 1fr 1fr;
-              }
-            `}
-          >
-            {props.data.books.edges.map(({ node }) => {
-              return (
-                <div
-                  key={node.id}
-                  css={css`
-                    width: 100%;
-                  `}
-                >
-                  <Link to={node.fields.slug}>
-                    <img
-                      src={
-                        node.frontmatter.bookCover
-                          ? node.frontmatter.bookCover.publicURL
-                          : defaultBookCover
-                      }
-                      css={css`
-                        border: 1px darkgrey solid;
-                        margin-bottom: 0;
-                      `}
-                      alt={node.frontmatter.title}
-                    />
-                  </Link>
-                </div>
-              )
-            })}
-          </div>
-        )}
-      </section>
+                <p>{node.excerpt}</p>
+              </div>
+            </Link>
+          </article>
+        ))}
+      </div>
     </Layout>
   )
 }
 
 export const query = graphql`
   query {
-    books: allMarkdownRemark(
+    allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: {
-        frontmatter: { tags: { eq: "เล่าหนังสือ" }, draft: { ne: true } }
-      }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            bookCover {
-              name
-              publicURL
-            }
-            date(formatString: "DD MMMM, YYYY")
-            tags
-          }
-          fields {
-            slug
-          }
-          excerpt(truncate: true, pruneLength: 250)
-        }
-      }
-    }
-    games: allMarkdownRemark(
-      sort: { fields: frontmatter___date, order: DESC }
-      filter: { frontmatter: { tags: { eq: "เล่าเกม" }, draft: { ne: true } } }
+      filter: { frontmatter: { draft: { ne: true } } }
     ) {
       edges {
         node {
@@ -298,23 +112,7 @@ export const query = graphql`
           fields {
             slug
           }
-          excerpt(truncate: true, pruneLength: 250)
-        }
-      }
-    }
-    mediumBlogs: allMediumFeed {
-      nodes {
-        id
-        date(fromNow: true)
-        title
-        link
-        thumbnail
-      }
-    }
-    site {
-      siteMetadata {
-        social {
-          medium
+          excerpt(truncate: true, pruneLength: 150)
         }
       }
     }

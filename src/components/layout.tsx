@@ -4,13 +4,12 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import { FaGithubSquare, FaMedium, FaSun, FaMoon, FaHome } from 'react-icons/fa'
 
-import { rhythm } from '../utils/typography'
-
 const Layout: React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
+          author
           social {
             github
             medium
@@ -20,74 +19,92 @@ const Layout: React.FC = ({ children }) => {
     }
   `)
 
-  const { github, medium } = data.site.siteMetadata.social
+  const {
+    author,
+    social: { github, medium },
+  } = data.site.siteMetadata
+
   return (
     <ThemeToggler>
       {({ theme, toggleTheme }) => {
         return (
           <>
-            <div
+            <header
               css={css`
-                margin: 0 auto;
-                max-width: 700px;
-                padding: ${rhythm(1)};
-                text-align: right;
-              `}
+              text-align: right;
+              max-width: 1400px;
+              padding 2rem;
+              border-bottom: solid 1px var(--hr);
+
+              @media only screen and (max-width: 600px) {
+                padding 2rem 1rem;
+              }
+            `}
             >
               <Link
                 css={css`
-                  text-decoration: none;
-                  margin-left: ${rhythm(0.5)};
+                  margin-left: 1rem;
                 `}
-                to={`/`}
+                to={'/'}
               >
-                <FaHome size={20} />
+                <FaHome />
               </Link>
               <a
-                css={css`
-                  text-decoration: none;
-                  margin-left: ${rhythm(0.5)};
-                `}
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithubSquare size={20} />
-              </a>
-              <a
-                css={css`
-                  text-decoration: none;
-                  margin-left: ${rhythm(0.5)};
-                `}
                 href={medium}
                 target="_blank"
                 rel="noopener noreferrer"
+                css={css`
+                  margin-left: 1rem;
+                `}
               >
-                <FaMedium size={20} />
+                <FaMedium />
               </a>
               <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
                 css={css`
-                  text-decoration: none;
-                  cursor: pointer;
-                  margin-left: ${rhythm(0.5)};
+                  margin-left: 1rem;
                 `}
-                onClick={e => {
-                  e.preventDefault()
-                  toggleTheme(theme === 'dark' ? 'light' : 'dark')
-                }}
               >
-                {theme === 'dark' ? <FaSun size={20} /> : <FaMoon size={20} />}
+                <FaGithubSquare />
               </a>
-            </div>
-            <div
+              <span
+                onClick={() => toggleTheme(theme === 'dark' ? 'light' : 'dark')}
+                css={css`
+                  margin-left: 1rem;
+                  cursor: pointer;
+                `}
+              >
+                {theme === 'dark' ? <FaSun /> : <FaMoon />}
+              </span>
+            </header>
+            <main>{children}</main>
+            <footer
               css={css`
-                margin: 0 auto;
-                max-width: 700px;
-                padding: ${rhythm(1)};
-              `}
+              max-width: 1400px;
+              padding 2rem;
+              border-top: solid 1px var(--hr);
+
+              @media only screen and (max-width: 600px) {
+                padding 2rem 1rem;
+              }
+            `}
             >
-              {children}
-            </div>
+              Made by{' '}
+              <a href={github} target="_blank" rel="noopener noreferrer">
+                {author}
+              </a>
+              . Build with{' '}
+              <a
+                href="https://www.gatsbyjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Gatsby
+              </a>
+              .
+            </footer>
           </>
         )
       }}

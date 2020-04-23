@@ -3,7 +3,6 @@ import { graphql, Link } from 'gatsby'
 import { css } from '@emotion/core'
 import { DiscussionEmbed } from 'disqus-react'
 import { Layout, SEO } from '../components'
-import { rhythm } from '../utils/typography'
 import defaultCoverImage from '../assets/default-cover-image.jpg'
 
 const BlogPost = ({ data }) => {
@@ -21,7 +20,17 @@ const BlogPost = ({ data }) => {
         slug={post.fields.slug}
         article
       />
-      <div>
+      <div
+        css={css`
+          max-width: 700px;
+          margin: 0 auto;
+          padding 4rem 2rem;
+
+          @media only screen and (max-width: 600px) {
+            padding 2rem 1rem;
+          }
+        `}
+      >
         <h1>{post.frontmatter.title}</h1>
         <p
           css={css`
@@ -31,7 +40,7 @@ const BlogPost = ({ data }) => {
           {post.frontmatter.date}
           <span
             css={css`
-              padding: 0 ${rhythm(1 / 2)};
+              padding: 0 1rem;
             `}
           >
             |
@@ -50,6 +59,9 @@ const BlogPost = ({ data }) => {
           ))}
         </p>
         <img
+          css={css`
+            border-radius: 4px;
+          `}
           src={
             post.frontmatter.coverImage
               ? post.frontmatter.coverImage.publicURL
