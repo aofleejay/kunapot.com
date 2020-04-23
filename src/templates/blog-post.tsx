@@ -96,6 +96,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
         <DiscussionEmbed
           shortname={data.site.siteMetadata.title}
           config={{
+            url: post.fields.slug,
             identifier: post.fields.slug,
             title: post.frontmatter.title,
           }}
