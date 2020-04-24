@@ -11,7 +11,7 @@
 - **View your site locally**
 
   ```
-  yarn develop
+  yarn dev
   ```
 
 - **View the production site locally**

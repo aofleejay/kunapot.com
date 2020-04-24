@@ -6,7 +6,7 @@
   "author": "aofleejay",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "format": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\" --write",
