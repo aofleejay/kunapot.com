@@ -1,13 +1,16 @@
 import React from 'react'
 import { css } from '@emotion/core'
 
-const Grid: React.FC = ({ children }) => {
+type GridProps = {
+  column?: number
+}
+
+const Grid: React.FC<GridProps> = ({ children, column }) => {
   return (
     <div
       css={css`
         display: grid;
-        max-width: 1400px;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(${column}, 1fr);
         gap: 4rem;
         padding 4rem 2rem;
 
@@ -21,6 +24,10 @@ const Grid: React.FC = ({ children }) => {
       {children}
     </div>
   )
+}
+
+Grid.defaultProps = {
+  column: 1,
 }
 
 export default Grid

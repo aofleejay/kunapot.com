@@ -33,7 +33,7 @@ const IndexPage: React.FC<IndexPageProps> = props => {
   return (
     <Layout>
       <SEO />
-      <Grid>
+      <Grid column={3}>
         {props.data.allMarkdownRemark.edges.map(({ node }) => (
           <BlogCard key={node.id} post={node} />
         ))}
