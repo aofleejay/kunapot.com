@@ -28,13 +28,25 @@ const typography = new Typography({
     },
   ],
   includeNormalize: true,
-  overrideStyles: () => ({
+  overrideStyles: ({ rhythm }) => ({
     a: {
       color: 'var(--textSecondary)',
       textDecoration: 'none',
     },
     p: {
       letterSpacing: '0.2px',
+    },
+    blockquote: {
+      fontStyle: 'italic',
+      paddingLeft: rhythm(13 / 16),
+      marginLeft: 0,
+      borderLeft: `${rhythm(3 / 16)} solid var(--textSecondary)`,
+    },
+    'blockquote > :last-child': {
+      marginBottom: 0,
+    },
+    hr: {
+      backgroundColor: 'var(--hr)',
     },
   }),
 })
