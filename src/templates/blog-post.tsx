@@ -24,6 +24,7 @@ type BlogPostProps = {
     }
     site: {
       siteMetadata: {
+        siteUrl: string
         disqus: {
           shortName: string
         }
@@ -51,10 +52,10 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
         css={css`
           max-width: 700px;
           margin: 0 auto;
-          padding 4rem 2rem;
+          padding 4rem 2rem 0 2rem;
 
           @media only screen and (max-width: 600px) {
-            padding 2rem 1rem;
+            padding 2rem 1rem 0 1rem;
           }
         `}
       >
@@ -97,14 +98,29 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
           }
           alt={post.frontmatter.coverImage && post.frontmatter.coverImage.name}
         />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          css={css`
+            margin-bottom: 2rem;
+          `}
+        />
+        <p
+          css={css`
+            text-align: center;
+          `}
+        >
+          . . .
+        </p>
         <DiscussionEmbed
           shortname={data.site.siteMetadata.disqus.shortName}
           config={{
-            url: post.fields.slug,
+            url: `${data.site.siteMetadata.siteUrl}${post.fields.slug}`,
             identifier: post.fields.slug,
             title: post.frontmatter.title,
           }}
+          css={css`
+            margin-bottom: 0;
+          `}
         />
       </div>
     </Layout>
@@ -134,6 +150,7 @@ export const query = graphql`
     }
     site {
       siteMetadata {
+        siteUrl
         disqus {
           shortName
         }
