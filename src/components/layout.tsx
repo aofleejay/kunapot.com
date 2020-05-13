@@ -2,7 +2,15 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
-import { FaGithubSquare, FaMedium, FaSun, FaMoon, FaHome } from 'react-icons/fa'
+import {
+  FaGithubSquare,
+  FaMedium,
+  FaSun,
+  FaMoon,
+  FaHome,
+  FaGripLinesVertical,
+} from 'react-icons/fa'
+import profileImage from '../assets/profile.jpg'
 
 const Layout: React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -77,6 +85,30 @@ const Layout: React.FC = ({ children }) => {
                 >
                   <FaGithubSquare />
                 </a>
+                <Link
+                  css={css`
+                    margin-left: 1rem;
+                    color: var(--textPrimary);
+                  `}
+                  to={'/about'}
+                >
+                  <img
+                    src={profileImage}
+                    css={css`
+                      width: 20px;
+                      margin-bottom: 0;
+                      border-radius: 4px;
+                    `}
+                  />
+                </Link>
+                <span
+                  css={css`
+                    margin-left: 1rem;
+                    color: var(--hr);
+                  `}
+                >
+                  <FaGripLinesVertical />
+                </span>
                 <span
                   onClick={() =>
                     toggleTheme(theme === 'dark' ? 'light' : 'dark')

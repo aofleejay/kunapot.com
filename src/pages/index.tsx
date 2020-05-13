@@ -57,7 +57,7 @@ export const query = graphql`
               name
               publicURL
             }
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMM D, YYYY")
             tags
           }
           fields {

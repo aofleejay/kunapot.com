@@ -23,24 +23,33 @@ type BlogCardProp = {
 
 const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
   return (
-    <article>
+    <article
+      css={css`
+        box-shadow: 0 4px 8px 2px var(--shadow);
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+      `}
+    >
       <Link to={post.fields.slug}>
         <img
           css={css`
-            border-radius: 4px;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
             margin-bottom: 0;
           `}
           src={post.frontmatter.coverImage.publicURL}
         />
-        <div
-          css={css`
-            display: grid;
-            gap: 0 1rem;
-          `}
-        >
+      </Link>
+      <div
+        css={css`
+          display: grid;
+          padding: 1rem 1.5rem;
+        `}
+      >
+        <Link to={post.fields.slug}>
           <p
             css={css`
-              margin-bottom: 0;
+              margin-bottom: 0.3rem;
               font-size: 1.2rem;
               font-weight: bold;
               color: var(--textPrimary);
@@ -48,17 +57,55 @@ const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
           >
             {post.frontmatter.title}
           </p>
+        </Link>
+        <p
+          css={css`
+            margin-bottom: 0.6rem;
+            font-size: 0.8rem;
+          `}
+        >
+          {post.frontmatter.date}
+        </p>
+        <Link to={post.fields.slug}>
           <p
             css={css`
-              margin-bottom: 1rem;
+              font-size: 0.8rem;
               color: var(--textTertiary);
+              margin-bottom: 0.6rem;
             `}
           >
-            {post.frontmatter.date} - {post.frontmatter.tags.join(', ')}
+            {post.excerpt}
           </p>
-          <p>{post.excerpt}</p>
-        </div>
-      </Link>
+        </Link>
+        <p
+          css={css`
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+          `}
+        >
+          <Link to={post.fields.slug}>
+            <span>Read more...</span>
+          </Link>
+          <span>
+            {post.frontmatter.tags.map(tag => (
+              <Link key={tag} to={`/tags/${tag}`}>
+                <span
+                  css={css`
+                    background-color: var(--fadeBg);
+                    border-radius: 4px;
+                    padding: 2px 4px;
+                    margin-left: 2px;
+                    margin-right: 2px;
+                  `}
+                >
+                  {tag}
+                </span>
+              </Link>
+            ))}
+          </span>
+        </p>
+      </div>
     </article>
   )
 }
