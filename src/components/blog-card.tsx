@@ -28,6 +28,11 @@ const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
         box-shadow: 0 4px 8px 2px var(--shadow);
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
+
+        &:hover {
+          transition: transform 0.4s ease-out;
+          transform: translateY(-0.5rem);
+        }
       `}
     >
       <Link to={post.fields.slug}>
