@@ -2,8 +2,8 @@ import inquirer from 'inquirer'
 import sharp from 'sharp'
 
 enum ImageType {
-  coverImage = 'cover image',
-  bookCover = 'book cover',
+  coverImage = 'cover image', // eslint-disable-line no-unused-vars
+  bookCover = 'book cover', // eslint-disable-line no-unused-vars
 }
 
 type Input = {
