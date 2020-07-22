@@ -134,6 +134,7 @@ const Layout: React.FC = ({ children }) => {
             <footer
               css={css`
                 border-top: solid 1px var(--hr);
+                background-color: var(--fadeBg);
               `}
             >
               <div

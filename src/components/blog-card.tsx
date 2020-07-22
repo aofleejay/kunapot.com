@@ -25,9 +25,11 @@ const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
   return (
     <article
       css={css`
-        box-shadow: 0 4px 8px 2px var(--shadow);
-        border-bottom-left-radius: 4px;
-        border-bottom-right-radius: 4px;
+        border: 2px solid var(--fadeBg);
+        overflow: hidden;
+        border-radius: 4px;
+        transition: transform 0.4s ease-out;
+        transform: translateY(0.5rem);
 
         &:hover {
           transition: transform 0.4s ease-out;
@@ -38,8 +40,6 @@ const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
       <Link to={post.fields.slug}>
         <img
           css={css`
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
             margin-bottom: 0;
           `}
           src={post.frontmatter.coverImage.publicURL}
