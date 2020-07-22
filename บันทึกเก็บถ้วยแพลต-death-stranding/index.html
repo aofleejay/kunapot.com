@@ -1,0 +1,991 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style id="typography.js">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}html{font:112.5%/1.666 'Sarabun',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen-Sans','Ubuntu','Cantarell','Helvetica Neue','Helvetica','Arial',sans-serif;box-sizing:border-box;overflow-y:scroll;}*{box-sizing:inherit;}*:before{box-sizing:inherit;}*:after{box-sizing:inherit;}body{color:hsla(0,0%,0%,0.8);font-family:'Sarabun',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen-Sans','Ubuntu','Cantarell','Helvetica Neue','Helvetica','Arial',sans-serif;font-weight:normal;word-wrap:break-word;font-kerning:normal;-moz-font-feature-settings:"kern", "liga", "clig", "calt";-ms-font-feature-settings:"kern", "liga", "clig", "calt";-webkit-font-feature-settings:"kern", "liga", "clig", "calt";font-feature-settings:"kern", "liga", "clig", "calt";}img{max-width:100%;margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}h1{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:var(--textPrimary);font-family:'Sarabun',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen-Sans','Ubuntu','Cantarell','Helvetica Neue','Helvetica','Arial',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:2rem;line-height:1.1;}h2{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:var(--textPrimary);font-family:'Sarabun',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen-Sans','Ubuntu','Cantarell','Helvetica Neue','Helvetica','Arial',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.51572rem;line-height:1.1;}h3{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:var(--textPrimary);font-family:'Sarabun',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen-Sans','Ubuntu','Cantarell','Helvetica Neue','Helvetica','Arial',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1.31951rem;line-height:1.1;}h4{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:var(--textPrimary);font-family:'Sarabun',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen-Sans','Ubuntu','Cantarell','Helvetica Neue','Helvetica','Arial',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:1rem;line-height:1.1;}h5{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:var(--textPrimary);font-family:'Sarabun',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen-Sans','Ubuntu','Cantarell','Helvetica Neue','Helvetica','Arial',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.87055rem;line-height:1.1;}h6{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;color:var(--textPrimary);font-family:'Sarabun',-apple-system,'BlinkMacSystemFont','Segoe UI','Roboto','Oxygen-Sans','Ubuntu','Cantarell','Helvetica Neue','Helvetica','Arial',sans-serif;font-weight:bold;text-rendering:optimizeLegibility;font-size:0.81225rem;line-height:1.1;}hgroup{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}ul{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}ol{margin-left:1.666rem;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;list-style-position:outside;list-style-image:none;}dl{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}dd{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}p{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;letter-spacing:0.2px;}figure{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}pre{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:0.85rem;line-height:1.666rem;}table{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-size:1rem;line-height:1.666rem;border-collapse:collapse;width:100%;}fieldset{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}blockquote{margin-left:0;margin-right:1.666rem;margin-top:0;padding-bottom:0;padding-left:1.35363rem;padding-right:0;padding-top:0;margin-bottom:1.666rem;font-style:italic;border-left:0.31238rem solid var(--textSecondary);}form{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}noscript{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}iframe{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}hr{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:calc(1.666rem - 1px);background:hsla(0,0%,0%,0.2);border:none;height:1px;background-color:var(--hr);}address{margin-left:0;margin-right:0;margin-top:0;padding-bottom:0;padding-left:0;padding-right:0;padding-top:0;margin-bottom:1.666rem;}b{font-weight:bold;}strong{font-weight:bold;}dt{font-weight:bold;}th{font-weight:bold;}li{margin-bottom:calc(1.666rem / 2);}ol li{padding-left:0;}ul li{padding-left:0;}li > ol{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}li > ul{margin-left:1.666rem;margin-bottom:calc(1.666rem / 2);margin-top:calc(1.666rem / 2);}blockquote *:last-child{margin-bottom:0;}li *:last-child{margin-bottom:0;}p *:last-child{margin-bottom:0;}li > p{margin-bottom:calc(1.666rem / 2);}code{font-size:0.85rem;line-height:1.666rem;}kbd{font-size:0.85rem;line-height:1.666rem;}samp{font-size:0.85rem;line-height:1.666rem;}abbr{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}acronym{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;}abbr[title]{border-bottom:1px dotted hsla(0,0%,0%,0.5);cursor:help;text-decoration:none;}thead{text-align:left;}td,th{text-align:left;border-bottom:1px solid hsla(0,0%,0%,0.12);font-feature-settings:"tnum";-moz-font-feature-settings:"tnum";-ms-font-feature-settings:"tnum";-webkit-font-feature-settings:"tnum";padding-left:1.11067rem;padding-right:1.11067rem;padding-top:0.833rem;padding-bottom:calc(0.833rem - 1px);}th:first-child,td:first-child{padding-left:0;}th:last-child,td:last-child{padding-right:0;}a{color:var(--textSecondary);text-decoration:none;}blockquote > :last-child{margin-bottom:0;}</style><style data-href="/styles.1d9f8c246066d016e978.css">body{--bg:#fff;--fadeBg:#eee;--textPrimary:rgba(0,0,0,0.88);--textSecondary:rgba(0,0,0,0.6);--textTertiary:rgba(0,0,0,0.4);--hr:rgba(0,0,0,0.2);--shadow:rgba(0,0,0,0.1);background-color:var(--bg);color:var(--textSecondary);transition:color .2s ease-out,background-color .2s ease-out}body.dark{-webkit-font-smoothing:antialiased;--bg:#222;--fadeBg:#333;--textPrimary:hsla(0,0%,100%,0.85);--textSecondary:hsla(0,0%,100%,0.6);--textTertiary:hsla(0,0%,100%,0.4);--hr:hsla(0,0%,100%,0.2);--shadow:rgba(0,0,0,0.15)}</style><meta name="generator" content="Gatsby 2.19.32"/><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><title data-react-helmet="true">บันทึกเก็บถ้วยแพลต Death Stranding</title><meta data-react-helmet="true" name="description" content="หลังจากใช้เวลาราว 96 ชั่วโมงกับการไล่เก็บถ้วยแพลตตินัม เลยเขียนบทความเก็บไว้สักหน่อย"/><meta data-react-helmet="true" name="author" content="aofleejay"/><meta data-react-helmet="true" name="keywords" content="เล่าเกม,death-stranding"/><meta data-react-helmet="true" property="og:url" content="https://aofleejay.com/บันทึกเก็บถ้วยแพลต-death-stranding/"/><meta data-react-helmet="true" property="og:title" content="บันทึกเก็บถ้วยแพลต Death Stranding"/><meta data-react-helmet="true" property="og:description" content="หลังจากใช้เวลาราว 96 ชั่วโมงกับการไล่เก็บถ้วยแพลตตินัม เลยเขียนบทความเก็บไว้สักหน่อย"/><meta data-react-helmet="true" property="og:type" content="article"/><meta data-react-helmet="true" property="og:image" content="https://aofleejay.com/static/บันทึกเก็บถ้วยแพลต-death-stranding-cover-image-b9ce9d1663b584db7a1c0e7e29794a95.jpg"/><meta data-react-helmet="true" property="og:locale" content="th_TH"/><meta data-react-helmet="true" property="fb:app_id" content="489184495212718"/><link rel="icon" href="/icons/icon-48x48.png?v=06069b42de3b4e7bdd119e9769b71184"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#209CEE"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=06069b42de3b4e7bdd119e9769b71184"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=06069b42de3b4e7bdd119e9769b71184"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=06069b42de3b4e7bdd119e9769b71184"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=06069b42de3b4e7bdd119e9769b71184"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=06069b42de3b4e7bdd119e9769b71184"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=06069b42de3b4e7bdd119e9769b71184"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=06069b42de3b4e7bdd119e9769b71184"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=06069b42de3b4e7bdd119e9769b71184"/><link href="//fonts.googleapis.com/css?family=Sarabun:100,200,300,400,500,600,700,800" rel="stylesheet" type="text/css"/><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link as="script" rel="preload" href="/webpack-runtime-ed8b8b411a76385175bb.js"/><link as="script" rel="preload" href="/styles-8d604daea67ba1d0724c.js"/><link as="script" rel="preload" href="/app-717c651610ecc3038934.js"/><link as="script" rel="preload" href="/commons-a45aaa50387fd9288b5b.js"/><link as="script" rel="preload" href="/component---src-templates-blog-post-tsx-287ff91a57bccbd68482.js"/><link as="fetch" rel="preload" href="/page-data/บันทึกเก็บถ้วยแพลต-death-stranding/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><script>
+void function() {
+  window.__onThemeChange = function() {}
+
+  var preferredTheme
+  try {
+    preferredTheme = localStorage.getItem('theme')
+  } catch (err) { }
+
+  function setTheme(newTheme) {
+    window.__theme = newTheme
+    preferredTheme = newTheme
+    document.body.className = newTheme
+    window.__onThemeChange(newTheme)
+  }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (err) {}
+  }
+
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  darkQuery.addListener(function(e) {
+    window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+  })
+
+  setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+}()
+    </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><style data-emotion-css="1nii3r2">.css-1nii3r2{border-bottom:solid 1px var(--hr);}</style><header class="css-1nii3r2"><style data-emotion-css="1etgdks">.css-1etgdks{max-width:1400px;margin:0 auto;text-align:right;padding:2rem;}@media only screen and (max-width:600px){.css-1etgdks{padding:2rem 1rem;}}</style><nav class="css-1etgdks"><style data-emotion-css="1ggqdun">.css-1ggqdun{margin-left:1rem;color:var(--textPrimary);}</style><a class="css-1ggqdun" href="/"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 576 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg></a><a href="https://medium.com/@aofleejay/latest" target="_blank" rel="noopener noreferrer" class="css-1ggqdun"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M0 32v448h448V32H0zm372.2 106.1l-24 23c-2.1 1.6-3.1 4.2-2.7 6.7v169.3c-.4 2.6.6 5.2 2.7 6.7l23.5 23v5.1h-118V367l24.3-23.6c2.4-2.4 2.4-3.1 2.4-6.7V199.8l-67.6 171.6h-9.1L125 199.8v115c-.7 4.8 1 9.7 4.4 13.2l31.6 38.3v5.1H71.2v-5.1l31.6-38.3c3.4-3.5 4.9-8.4 4.1-13.2v-133c.4-3.7-1-7.3-3.8-9.8L75 138.1V133h87.3l67.4 148L289 133.1h83.2v5z"></path></svg></a><a href="https://github.com/aofleejay" target="_blank" rel="noopener noreferrer" class="css-1ggqdun"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"></path></svg></a><a class="css-1ggqdun" href="/about"><style data-emotion-css="1qz9m2c">.css-1qz9m2c{width:20px;margin-bottom:0;border-radius:4px;}</style><img src="/static/profile-ad9da9444fe3c48a59dfed390d52fc59.jpg" class="css-1qz9m2c"/></a><style data-emotion-css="1qo6qls">.css-1qo6qls{margin-left:1rem;color:var(--hr);}</style><span class="css-1qo6qls"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 256 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M96 496V16c0-8.8-7.2-16-16-16H48c-8.8 0-16 7.2-16 16v480c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16zm128 0V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v480c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16z"></path></svg></span><style data-emotion-css="8jhu7y">.css-8jhu7y{margin-left:1rem;color:var(--textPrimary);cursor:pointer;}</style><span class="css-8jhu7y"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path></svg></span></nav></header><style data-emotion-css="1t38o0i">.css-1t38o0i{max-width:1400px;margin:0 auto;}</style><main class="css-1t38o0i"><style data-emotion-css="1xxk7qe">.css-1xxk7qe{max-width:700px;margin:0 auto;padding:4rem 2rem 0 2rem;}@media only screen and (max-width:600px){.css-1xxk7qe{padding:2rem 1rem 0 1rem;}}</style><div class="css-1xxk7qe"><h1>บันทึกเก็บถ้วยแพลต Death Stranding</h1><style data-emotion-css="qp4dny">.css-qp4dny{color:#bbb;}</style><p class="css-qp4dny">22 July, 2020<style data-emotion-css="17i1bd7">.css-17i1bd7{padding:0 1rem;}</style><span class="css-17i1bd7">|</span><style data-emotion-css="nn640c">.css-nn640c{-webkit-text-decoration:none;text-decoration:none;color:inherit;}</style><a class="css-nn640c" href="/tags/เล่าเกม"><span>เล่าเกม</span></a>, <a class="css-nn640c" href="/tags/death-stranding"><span>death-stranding</span></a></p><style data-emotion-css="wtpnzt">.css-wtpnzt{border-radius:4px;}</style><img src="/static/บันทึกเก็บถ้วยแพลต-death-stranding-cover-image-b9ce9d1663b584db7a1c0e7e29794a95.jpg" alt="บันทึกเก็บถ้วยแพลต-death-stranding-cover-image" class="css-wtpnzt"/><style data-emotion-css="8fkoyy">.css-8fkoyy{margin-bottom:2rem;}</style><div class="css-8fkoyy"><p>หลังจากใช้เวลาราว 96 ชั่วโมงกับการไล่เก็บถ้วยแพลตตินัม เลยเขียนบทความเก็บไว้สักหน่อย</p>
+<blockquote>
+<p>บทความนี้มีการเปิดเผยเนื้อหาภายในเกม และมีการใส่ความเห็นส่วนตัว ประสบการณ์จริงที่ได้รับอาจแตกต่างกันไป</p>
+</blockquote>
+<blockquote>
+<p>เปอร์เซ็นต์ของผู้ที่ได้รับถ้วยรางวัลอ้างอิงจากวันที่ 17/07/20</p>
+</blockquote>
+<hr>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/4e312492d750fb531406a96279e82037/490e5/death-stranding-sam.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABQAD/8QAFQEBAQAAAAAAAAAAAAAAAAAAAQD/2gAMAwEAAhADEAAAASkytxYg4v/EABkQAAIDAQAAAAAAAAAAAAAAAAECAxARE//aAAgBAQABBQJRpgkCr2SjX//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAEDAQE/AVf/xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPwFH/8QAFxAAAwEAAAAAAAAAAAAAAAAAAAERIP/aAAgBAQAGPwKEbz//xAAZEAEBAQEBAQAAAAAAAAAAAAABACFhMUH/2gAIAQEAAT8h9hsh3D9uhOJYB5K3/9oADAMBAAIAAwAAABBH3//EABURAQEAAAAAAAAAAAAAAAAAABEA/9oACAEDAQE/EElf/8QAFhEBAQEAAAAAAAAAAAAAAAAAAQAR/9oACAECAQE/EE0s3//EABkQAQADAQEAAAAAAAAAAAAAAAEAETEhkf/aAAgBAQABPxBAFHlxebWBLypZvkzDhBOKLljX2f/Z'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/4e312492d750fb531406a96279e82037/ae84d/death-stranding-sam.webp 175w,
+/static/4e312492d750fb531406a96279e82037/7fb5e/death-stranding-sam.webp 350w,
+/static/4e312492d750fb531406a96279e82037/2fc75/death-stranding-sam.webp 700w,
+/static/4e312492d750fb531406a96279e82037/05ee9/death-stranding-sam.webp 1050w,
+/static/4e312492d750fb531406a96279e82037/b48f1/death-stranding-sam.webp 1400w,
+/static/4e312492d750fb531406a96279e82037/134ac/death-stranding-sam.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/4e312492d750fb531406a96279e82037/6b97f/death-stranding-sam.jpg 175w,
+/static/4e312492d750fb531406a96279e82037/86423/death-stranding-sam.jpg 350w,
+/static/4e312492d750fb531406a96279e82037/43804/death-stranding-sam.jpg 700w,
+/static/4e312492d750fb531406a96279e82037/518fe/death-stranding-sam.jpg 1050w,
+/static/4e312492d750fb531406a96279e82037/e3000/death-stranding-sam.jpg 1400w,
+/static/4e312492d750fb531406a96279e82037/490e5/death-stranding-sam.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/4e312492d750fb531406a96279e82037/43804/death-stranding-sam.jpg"
+          alt="death-stranding-sam"
+          title="death-stranding-sam"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+<hr>
+<h2>ถ้วยรางวัลทั้งหมด (63 ถ้วย)</h2>
+<ul>
+<li>
+<p><strong>Greatest of Great Deliverers</strong> <span style="color:red;">(2.7%)</span> - ได้ถ้วยรางวัลครบทุกถ้วย</p>
+<p>ถ้วยนี้เป็นถ้วยสุดท้ายที่จะได้รับ หลังจากได้ถ้วยรางวัลที่เหลือครบแล้วก็จะได้ถ้วยนี้แบบอัตโนมัติ</p>
+</li>
+</ul>
+<hr>
+<p>เกมนี้จะเล่าเรื่องเป็นตอนๆ ทั้งหมด 15 ตอน เมื่อเล่นแต่ละตอนจบจะได้ถ้วยรางวัลมา</p>
+<ul>
+<li><strong>Delivering Is What I Do</strong> <span style="color:green;">(97.1%)</span> - เล่นเนื้อเรื่องจบ prologue: Porter</li>
+<li><strong>Rebuilding America</strong> <span style="color:green;">(90.0%)</span> - เล่นเนื้อเรื่องจบ Episode 1: Bridget</li>
+<li><strong>We Need You</strong> <span style="color:green;">(58.0%)</span> - เล่นเนื้อเรื่องจบ Episode 2: Amelie</li>
+<li><strong>I Won’t Break</strong> <span style="color:#BBBB00;">(42.9%)</span> - เล่นเนื้อเรื่องจบ Episode 3: Fragile</li>
+<li><strong>BB...</strong> <span style="color:#BBBB00;">(42.6%)</span> - เล่นเนื้อเรื่องจบ Episode 4: Unger</li>
+<li><strong>We’re Whole Again</strong> <span style="color:#BBBB00;">(38.0%)</span> - เล่นเนื้อเรื่องจบ Episode 5: Mama</li>
+<li><strong>BBs: A Bridge Between This World and the One Beyond</strong> <span style="color:#BBBB00;">(35.5%)</span> - เล่นเนื้อเรื่องจบ Episode 6: Deadman</li>
+<li><strong>“BB”</strong> <span style="color:#BBBB00;">(35.4%)</span> - เล่นเนื้อเรื่องจบ Episode 7: Clifford</li>
+<li><strong>Sixty Deaths and Sixty Births in a Day</strong> <span style="color:#BBBB00;">(32.3%)</span> - เล่นเนื้อเรื่องจบ Episode 8: Heartman</li>
+<li><strong>The Particle of God</strong> <span style="color:#BBBB00;">(31.6%)</span> - เล่นเนื้อเรื่องจบ Episode 9: Higgs</li>
+<li><strong>I’m Your Die-Hardman</strong> <span style="color:#BBBB00;">(31.2%)</span> - เล่นเนื้อเรื่องจบ Episode 10: Die-Hardman</li>
+<li><strong>Bring Back My Baby</strong> <span style="color:#BBBB00;">(30.9%)</span> - เล่นเนื้อเรื่องจบ Episode 11: Clifford Unger</li>
+<li><strong>She’s waiting for you on the Beach.</strong> <span style="color:#BBBB00;">(30.6%)</span> - เล่นเนื้อเรื่องจบ Episode 12: Bridges</li>
+<li><strong>Thank You, Sam</strong> <span style="color:#BBBB00;">(30.2%)</span> - เล่นเนื้อเรื่องจบ Episode 13: Sam Strand</li>
+<li><strong>Thanks for Everything</strong> <span style="color:#BBBB00;">(29.3%)</span> - เล่นเนื้อเรื่องจบ Episode 14: Lou</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Everyday Delivery</strong> <span style="color:green;">(62.7%)</span> - ส่ง standard order ครั้งแรก</li>
+<li>
+<p><strong>Deliveries Done</strong> <span style="color:#BBBB00;">(29.1%)</span> - ส่ง standard order รวม 36 order</p>
+<p>Standard order อีกมุมนึงก็เหมือนเควสเสริมครับ สามารถรับได้ที่ delivery terminal เลย ใครที่ขยันส่งของหน่อยสามารถได้สองถ้วยนี้ก่อนจบเนื้อเรื่องนะครับ อีกอย่างการส่ง standard order ก็จะช่วยเพิ่มความสัมพันธ์ของเรากับสถานที่ต่างๆ ทำให้ได้อุปกรณ์ดีๆมาใช้ระหว่างเกมด้วย <strong>และถ้าจะเก็บถ้วยแพลตตินัมแล้ว ยังไงก็ได้รับสองถ้วยนี้แน่นอนครับ</strong></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Birth of a Legend</strong> <span style="color:red;">(4.7%)</span> - ส่ง <strong>10</strong> premium delivery ในแต่ละประเภท โดยต้องได้ระดับ S ในการส่งแต่ละครั้ง</li>
+<li>
+<p><strong>Growth of a Legend</strong> <span style="color:red;">(3.0%)</span> - ส่ง <strong>20</strong> premium delivery ในแต่ละประเภท โดยต้องได้ระดับ S ในการส่งแต่ละครั้ง</p>
+<p>สองถ้วยนี้ใช้เวลาในการเก็บนานและเป็นถ้วยท้ายๆที่จะได้เลยครับ มีรายละเอียดพอสมควรดังนี้ครับ</p>
+<ol>
+<li><strong>การจะได้ premium delivery ก่อนอื่นต้องเล่นเกมในโหมด hard เท่านั้น</strong> (ใครเล่น normal สามารถเปลี่ยนได้ ไม่ต้องเริ่มเล่นใหม่) โดยตอนรับออเดอร์จะสามารถ<strong>กดปุ่มทิศทางขวา เพื่อเปลี่ยนเป็น premium delivery</strong> ได้ ซึ่งเงื่อนไขก็จะยากกว่าปกติ และเราต้องทำให้ได้ rank S ถึงจะนับว่าสำเร็จ</li>
+<li><strong>ตัวออเดอร์จะแบ่งออกเป็น 4 ประเภท</strong> ได้แก่ <strong>condition</strong> เน้นของไม่เสียหาย, <strong>quantity</strong> เน้นปริมาณกล่องที่ต้องส่ง, <strong>delivery time</strong> เน้นความเร็ว และ <strong>miscellaneous</strong> ภารกิจอื่นๆ เช่น หาของที่ตามจุดต่างๆ, เอาของคืนจากพวก MULEs</li>
+</ol>
+<p>ถ้าอยากรู้ว่าทำไปถึงไหนแล้วสามารถดูใน Bridge Links ได้โดยกด <strong>Option -> Bridge Links -> เลือกแท็บ Orders</strong> จะอยู่ในหัวข้อ <strong>Types of Premium Delivery Completed with an Evaluation of "Legend of Legends"</strong></p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/63a5d5291cadf07e4a79d7605afcf5e8/490e5/death-stranding-premium-deliveries.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMFBP/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABkJq4kEDC3//EABsQAAIBBQAAAAAAAAAAAAAAAAECAAMEEBIx/9oACAEBAAEFAmJc9xb01ZAo0n//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAwEBPwGn/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAGhAAAgIDAAAAAAAAAAAAAAAAAQIAEAMSUf/aAAgBAQAGPwJmN5NhGPK//8QAGRABAAMBAQAAAAAAAAAAAAAAAQARITGR/9oACAEBAAE/IdyHsVQMORutQyZdtK9gFT//2gAMAwEAAgADAAAAEHcP/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAERIf/aAAgBAwEBPxCFgz//xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8QxWy//8QAGxABAQACAwEAAAAAAAAAAAAAAREAITFBUZH/2gAIAQEAAT8QPkdpnGbYIQt0YNKv3CaF1UmnzFOPNeXbImus/9k='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/63a5d5291cadf07e4a79d7605afcf5e8/ae84d/death-stranding-premium-deliveries.webp 175w,
+/static/63a5d5291cadf07e4a79d7605afcf5e8/7fb5e/death-stranding-premium-deliveries.webp 350w,
+/static/63a5d5291cadf07e4a79d7605afcf5e8/2fc75/death-stranding-premium-deliveries.webp 700w,
+/static/63a5d5291cadf07e4a79d7605afcf5e8/05ee9/death-stranding-premium-deliveries.webp 1050w,
+/static/63a5d5291cadf07e4a79d7605afcf5e8/b48f1/death-stranding-premium-deliveries.webp 1400w,
+/static/63a5d5291cadf07e4a79d7605afcf5e8/134ac/death-stranding-premium-deliveries.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/63a5d5291cadf07e4a79d7605afcf5e8/6b97f/death-stranding-premium-deliveries.jpg 175w,
+/static/63a5d5291cadf07e4a79d7605afcf5e8/86423/death-stranding-premium-deliveries.jpg 350w,
+/static/63a5d5291cadf07e4a79d7605afcf5e8/43804/death-stranding-premium-deliveries.jpg 700w,
+/static/63a5d5291cadf07e4a79d7605afcf5e8/518fe/death-stranding-premium-deliveries.jpg 1050w,
+/static/63a5d5291cadf07e4a79d7605afcf5e8/e3000/death-stranding-premium-deliveries.jpg 1400w,
+/static/63a5d5291cadf07e4a79d7605afcf5e8/490e5/death-stranding-premium-deliveries.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/63a5d5291cadf07e4a79d7605afcf5e8/43804/death-stranding-premium-deliveries.jpg"
+          alt="death-stranding-premium-deliveries"
+          title="death-stranding-premium-deliveries"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>A Helping Hand</strong> <span style="color:orange;">(14.9%)</span> - ขอให้ผู้เล่นคนอื่นส่งของให้ครั้งแรก</p>
+<p>สามารถทำได้ช่วงกลางๆเกม โดยเลือก <strong>Option -> Supply Requests</strong> จากนั้นทำการเลือกสิ่งของที่ต้องการ ก็จะปลดล็อคถ้วยรางวัลครับ</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>The Automation Revolution</strong> <span style="color:#BBBB00;">(47.6%)</span> - ส่งสินค้าด้วย bot ครั้งแรก</p>
+<p><strong>ได้ตามเนื้อเรื่อง</strong> โดยช่วงกลางๆเกม จะสามารถใช้ bot ส่งสินค้าได้ โดย<strong>ไปที่ delivery terminal และเลือก Standard Orders (Bot-deliverable)</strong> เมื่อ bot เดินทางไปส่งสินค้าจนเสร็จก็จะได้ถ้วยนี้มาครับ</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Apprentice Builder</strong> <span style="color:green;">(84.3%)</span> - สร้างสิ่งก่อสร้าง หรือสัญลักษณ์ หรือใช้อุปกรณ์ครั้งแรก</li>
+<li>
+<p><strong>Master Builder</strong> <span style="color:orange;">(8.8%)</span> - สร้างสิ่งก่อสร้างอย่างละ 1 ชิ้น</p>
+<p>สิ่งก่อสร้าง ต้องใช้ PCC มีทั้งหมด 7 แบบ ดังนี้</p>
+<ul>
+<li>Postbox</li>
+<li>Watchtower</li>
+<li>Bridge</li>
+<li>Generator</li>
+<li>Safe House</li>
+<li>Timefall Shelter</li>
+<li>Zip-line</li>
+</ul>
+<p>สามารถกดดูว่าเราสร้างสิ่งก่อสร้างไปเท่าไหร่แล้ว โดยเลือก <strong>Option -> Bridge Links -> Structures</strong> จะอยู่ในหัวข้อ <strong>Total Number of Structures Built</strong> ครับ</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/58a818f5ca64ff24e80014eabe3f490a/490e5/death-stranding-structures.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMFBP/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABjrqYkEDC3//EABoQAQABBQAAAAAAAAAAAAAAAAIBAAMEEBL/2gAIAQEAAQUCalrWPbLEGOK//8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8Bp//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABoQAAICAwAAAAAAAAAAAAAAAAECABADElH/2gAIAQEABj8CLG8mwjHlf//EABkQAAMBAQEAAAAAAAAAAAAAAAABESExkf/aAAgBAQABPyHSR9Y65dwXB1VaWDE2xPRJQ//aAAwDAQACAAMAAAAQ9w//xAAXEQADAQAAAAAAAAAAAAAAAAAAAREh/9oACAEDAQE/EIWDP//EABYRAQEBAAAAAAAAAAAAAAAAAAEAEf/aAAgBAgEBPxDFbL//xAAbEAEBAQEBAAMAAAAAAAAAAAABEQAhUUFhkf/aAAgBAQABPxCQKqk7kv1BWwMOKv7jqF1UnHzNYwv5etE58b//2Q=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/58a818f5ca64ff24e80014eabe3f490a/ae84d/death-stranding-structures.webp 175w,
+/static/58a818f5ca64ff24e80014eabe3f490a/7fb5e/death-stranding-structures.webp 350w,
+/static/58a818f5ca64ff24e80014eabe3f490a/2fc75/death-stranding-structures.webp 700w,
+/static/58a818f5ca64ff24e80014eabe3f490a/05ee9/death-stranding-structures.webp 1050w,
+/static/58a818f5ca64ff24e80014eabe3f490a/b48f1/death-stranding-structures.webp 1400w,
+/static/58a818f5ca64ff24e80014eabe3f490a/134ac/death-stranding-structures.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/58a818f5ca64ff24e80014eabe3f490a/6b97f/death-stranding-structures.jpg 175w,
+/static/58a818f5ca64ff24e80014eabe3f490a/86423/death-stranding-structures.jpg 350w,
+/static/58a818f5ca64ff24e80014eabe3f490a/43804/death-stranding-structures.jpg 700w,
+/static/58a818f5ca64ff24e80014eabe3f490a/518fe/death-stranding-structures.jpg 1050w,
+/static/58a818f5ca64ff24e80014eabe3f490a/e3000/death-stranding-structures.jpg 1400w,
+/static/58a818f5ca64ff24e80014eabe3f490a/490e5/death-stranding-structures.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/58a818f5ca64ff24e80014eabe3f490a/43804/death-stranding-structures.jpg"
+          alt="death-stranding-structures"
+          title="death-stranding-structures"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>A New Day for the UCA</strong> <span style="color:green;">(83.8%)</span> - เชื่อมต่อ facility หนึ่งแห่งเข้ากับ UCA</li>
+<li><strong>In Sam We Trust</strong> <span style="color:red;">(4.6%)</span> - เชื่อมต่อ facility ทั้งหมดเข้ากับ UCA</li>
+<li><strong>Well Connected</strong> <span style="color:green;">(75.0%)</span> - ได้ความสัมพันธ์ 3 ดาว กับ facility หนึ่งแห่ง</li>
+<li>
+<p><strong>Best Beloved</strong> <span style="color:red;">(4.0%)</span> - ได้ความสัมพันธ์ 5 ดาวกับทุก facility</p>
+<p>ปลายทางของถ้วยรางวัลสี่ถ้วยนี้คือ Best Beloved ครับ ที่เหลือเป็นทางผ่าน
+อย่างแรกต้องหา facility และที่พักของ prepper ทั้งหมดให้เจอก่อนครับ เพราะถ้าเล่นตามเนื้อเรื่องอย่างเดียวจะเจอไม่ครบ นี่คือรายชื่อของ prepper ที่ไม่เจอในภารกิจหลักครับ</p>
+<ul>
+<li>Luden's Fan</li>
+<li>Musician</li>
+<li>Collector</li>
+<li>Veteran Porter</li>
+<li>Novelist's son</li>
+<li>First Prepper</li>
+</ul>
+<p>บางคนก็อาจจะยังไม่เข้าร่วมกับ UCA ตั้งแต่เจอกันครั้งแรก อาจจะต้องทำภารกิจหรือหา lost cargo ไปส่งเพื่อเพิ่มความสัมพันธ์กับเขาครับ</p>
+<p>ปล. ถ้าส่งของแล้วความสัมพันธ์ไม่ค่อยเพิ่มขึ้นเลย แนะนำให้ไปนอนพักก่อน รอจนได้รับอีเมลจากคนเหล่านั้นแล้วค่อยไปเพิ่มความสัมพันธ์ต่อครับ</p>
+<p>สามารถดูความสัมพันธ์ได้ที่ <strong>Option -> Bridge Links -> แท็บ Social (NPCs)</strong> ครับ</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/e2844bc24f96fbee07ddc20d9a2a1e25/490e5/death-stranding-stars.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMFBP/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABloqYUEDC3//EABsQAAIBBQAAAAAAAAAAAAAAAAECAAMEEBIi/9oACAEBAAEFAj3Di2RWpgDSf//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/Aaf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAbEAACAQUAAAAAAAAAAAAAAAABAhAAAxExUf/aAAgBAQAGPwJmO5uZFMeR/8QAGhABAAMBAQEAAAAAAAAAAAAAAQARIUExkf/aAAgBAQABPyF9u83XYeRUuQyKcbSvsAqf/9oADAMBAAIAAwAAABDfD//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAwEBPxDEV//EABYRAAMAAAAAAAAAAAAAAAAAAAABEf/aAAgBAgEBPxCNkP/EABwQAQADAAIDAAAAAAAAAAAAAAEAESFBUTGR0f/aAAgBAQABPxBW00ucPyB1WhRb4IMWvuDHLVacPUFwhd1epSZxP//Z'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/e2844bc24f96fbee07ddc20d9a2a1e25/ae84d/death-stranding-stars.webp 175w,
+/static/e2844bc24f96fbee07ddc20d9a2a1e25/7fb5e/death-stranding-stars.webp 350w,
+/static/e2844bc24f96fbee07ddc20d9a2a1e25/2fc75/death-stranding-stars.webp 700w,
+/static/e2844bc24f96fbee07ddc20d9a2a1e25/05ee9/death-stranding-stars.webp 1050w,
+/static/e2844bc24f96fbee07ddc20d9a2a1e25/b48f1/death-stranding-stars.webp 1400w,
+/static/e2844bc24f96fbee07ddc20d9a2a1e25/134ac/death-stranding-stars.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/e2844bc24f96fbee07ddc20d9a2a1e25/6b97f/death-stranding-stars.jpg 175w,
+/static/e2844bc24f96fbee07ddc20d9a2a1e25/86423/death-stranding-stars.jpg 350w,
+/static/e2844bc24f96fbee07ddc20d9a2a1e25/43804/death-stranding-stars.jpg 700w,
+/static/e2844bc24f96fbee07ddc20d9a2a1e25/518fe/death-stranding-stars.jpg 1050w,
+/static/e2844bc24f96fbee07ddc20d9a2a1e25/e3000/death-stranding-stars.jpg 1400w,
+/static/e2844bc24f96fbee07ddc20d9a2a1e25/490e5/death-stranding-stars.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/e2844bc24f96fbee07ddc20d9a2a1e25/43804/death-stranding-stars.jpg"
+          alt="death-stranding-stars"
+          title="death-stranding-stars"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Like and Be Liked</strong> <span style="color:green;">(88.9%)</span> - กดไลค์ให้สิ่งก่อสร้างครั้งแรก</p>
+<p>กดไลค์ให้กับสิ่งก่อสร้าง, สัญลักษณ์ หรืออุปกรณ์สักชิ้นก็จะได้ถ้วยรางวัลมาเลยครับ</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/3c5ede03d27e5eef1e931503b41f9bf3/490e5/death-stranding-like.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIEA//EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAVTZS8iD/8QAHBAAAwABBQAAAAAAAAAAAAAAAQIDAAQQEhQy/9oACAEBAAEFAq1d001ODdgZTwANv//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABsQAAIBBQAAAAAAAAAAAAAAAAABAhASMTJB/9oACAEBAAY/ArZYJLhqOv8A/8QAGBABAAMBAAAAAAAAAAAAAAAAAQARIRD/2gAIAQEAAT8hqoiYwpa3ZRxKBhz/2gAMAwEAAgADAAAAEFAP/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8QSf/EABURAQEAAAAAAAAAAAAAAAAAAAEQ/9oACAECAQE/EBn/xAAcEAEAAwACAwAAAAAAAAAAAAABABEhMZFRYXH/2gAIAQEAAT8QWF0qheNwkRxD2zxX2OJXbCLIKGXLRU0cHqGYB1P/2Q=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/3c5ede03d27e5eef1e931503b41f9bf3/ae84d/death-stranding-like.webp 175w,
+/static/3c5ede03d27e5eef1e931503b41f9bf3/7fb5e/death-stranding-like.webp 350w,
+/static/3c5ede03d27e5eef1e931503b41f9bf3/2fc75/death-stranding-like.webp 700w,
+/static/3c5ede03d27e5eef1e931503b41f9bf3/05ee9/death-stranding-like.webp 1050w,
+/static/3c5ede03d27e5eef1e931503b41f9bf3/b48f1/death-stranding-like.webp 1400w,
+/static/3c5ede03d27e5eef1e931503b41f9bf3/134ac/death-stranding-like.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/3c5ede03d27e5eef1e931503b41f9bf3/6b97f/death-stranding-like.jpg 175w,
+/static/3c5ede03d27e5eef1e931503b41f9bf3/86423/death-stranding-like.jpg 350w,
+/static/3c5ede03d27e5eef1e931503b41f9bf3/43804/death-stranding-like.jpg 700w,
+/static/3c5ede03d27e5eef1e931503b41f9bf3/518fe/death-stranding-like.jpg 1050w,
+/static/3c5ede03d27e5eef1e931503b41f9bf3/e3000/death-stranding-like.jpg 1400w,
+/static/3c5ede03d27e5eef1e931503b41f9bf3/490e5/death-stranding-like.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/3c5ede03d27e5eef1e931503b41f9bf3/43804/death-stranding-like.jpg"
+          alt="death-stranding-like"
+          title="death-stranding-like"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>The People’s Porter</strong> <span style="color:green;">(69.4%)</span> - ได้ 2,400 ไลค์</li>
+<li>
+<p><strong>The World’s Most Popular Porter</strong> <span style="color:#BBBB00;">(36.8%)</span> - ได้ 50,000 ไลค์</p>
+<p>ทำภารกิจก็จะได้ไลค์จาก NPC หรือสร้างสิ่งก่อสร้างก็อาจจะได้ไลค์จากผู้เล่นคนอื่นในเกม <strong>และถ้าจะเก็บถ้วยแพลตตินัมแล้วยังไงก็ได้รับสองถ้วยนี้แน่นอนครับ</strong></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Good Samaritan</strong> <span style="color:green;">(95.7%)</span> - ส่ง lost cargo ชิ้นแรก</p>
+<p>หา lost cargo ที่ตกอยู่ตามทางไปส่งสักชิ้นก็จะได้ถ้วยรางวัลมาครับ</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Giver of Gifts</strong> <span style="color:green;">(50.8%)</span> - บริจาคของครั้งแรก</p>
+<p>เราสามารถเอาของไปให้ผู้เล่นคนอื่นใช้ได้ ผ่าน share locker ครับ โดยไปที่ delivery terminal แล้วเลือก <strong>Share Locker -> Donate Weapons &#x26; Equipment</strong> แล้วเลือกให้ของสักชิ้น ก็จะได้ถ้วยรางวัลมาครับ</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Chiral Crafter</strong> <span style="color:green;">(72.3%)</span> - รีไซเคิล chiral crystal ครั้งแรก</p>
+<p><strong>ได้ตามเนื้อเรื่อง</strong>หลังจากรีไซเคิล chiral crystal เป็นครั้งแรกครับ</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>A Thirst for Knowledge</strong> <span style="color:green;">(56.6%)</span> - กู้คืน memory chip อันแรก</li>
+<li>
+<p><strong>Fount of Knowledge</strong> <span style="color:red;">(3.0%)</span> - กู้คืน memory chip ทั้งหมด</p>
+<p>Memory chip มีทั้งหมด <strong>56</strong> อัน และกระจัดกระจายอยู่ในทุกที่ ถ้าไม่อยากเปิดบทสรุปก็อาศัยดูตามสัญลักษณ์ที่ผู้เล่นคนอื่นๆสร้างไว้ หรือใช้ watchtower ในการส่องหาก็ได้ เมื่อได้ memory chip มาแล้ว สามารถเอามากู้คืนที่ได้ delivery terminal ครับ</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7119fc557c0a01c2f44011e5b27a2ab6/490e5/death-stranding-memory-chips.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAIFAwT/xAAWAQEBAQAAAAAAAAAAAAAAAAACAAH/2gAMAwEAAhADEAAAAZSUuFDAYt//xAAaEAADAAMBAAAAAAAAAAAAAAABAhIAAwQQ/9oACAEBAAEFAmNtJPnMivrkRn//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAwEBPwGn/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8Bh//EABsQAAIBBQAAAAAAAAAAAAAAAAECEAADERIx/9oACAEBAAY/Aixm5sKc45H/xAAaEAACAwEBAAAAAAAAAAAAAAAAAREhMUGR/9oACAEBAAE/IWbF6UNdUdH0lwqE3YhHokoP/9oADAMBAAIAAwAAABBnz//EABcRAAMBAAAAAAAAAAAAAAAAAAEQESH/2gAIAQMBAT8QgYv/xAAWEQEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQIBAT8Q0sF//8QAGRABAQEBAQEAAAAAAAAAAAAAAREAIVFB/9oACAEBAAE/EHhFFWel8Ct55kKiy8jlEJqbzjnAJW8ouMeb/9k='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/7119fc557c0a01c2f44011e5b27a2ab6/ae84d/death-stranding-memory-chips.webp 175w,
+/static/7119fc557c0a01c2f44011e5b27a2ab6/7fb5e/death-stranding-memory-chips.webp 350w,
+/static/7119fc557c0a01c2f44011e5b27a2ab6/2fc75/death-stranding-memory-chips.webp 700w,
+/static/7119fc557c0a01c2f44011e5b27a2ab6/05ee9/death-stranding-memory-chips.webp 1050w,
+/static/7119fc557c0a01c2f44011e5b27a2ab6/b48f1/death-stranding-memory-chips.webp 1400w,
+/static/7119fc557c0a01c2f44011e5b27a2ab6/134ac/death-stranding-memory-chips.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/7119fc557c0a01c2f44011e5b27a2ab6/6b97f/death-stranding-memory-chips.jpg 175w,
+/static/7119fc557c0a01c2f44011e5b27a2ab6/86423/death-stranding-memory-chips.jpg 350w,
+/static/7119fc557c0a01c2f44011e5b27a2ab6/43804/death-stranding-memory-chips.jpg 700w,
+/static/7119fc557c0a01c2f44011e5b27a2ab6/518fe/death-stranding-memory-chips.jpg 1050w,
+/static/7119fc557c0a01c2f44011e5b27a2ab6/e3000/death-stranding-memory-chips.jpg 1400w,
+/static/7119fc557c0a01c2f44011e5b27a2ab6/490e5/death-stranding-memory-chips.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/7119fc557c0a01c2f44011e5b27a2ab6/43804/death-stranding-memory-chips.jpg"
+          alt="death-stranding-memory-chips"
+          title="death-stranding-memory-chips"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>The Custom Kid</strong> <span style="color:green;">(73.9%)</span> - ได้ของไว้ปรับแต่งสิ่งก่อสร้าง</p>
+<p><strong>ได้ตามเนื้อเรื่อง</strong></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Soak and Sigh</strong> <span style="color:#BBBB00;">(34.4%)</span> - แช่บ่อน้ำร้อนครั้งแรก</p>
+<p>บ่อน้ำร้อนมีทั้งหมด 7 แห่ง ไม่จำเป็นต้องหาให้ครบนะครับ แค่เจอแล้วลงไปแช่ก็จะได้ถ้วยรางวัลนี้มาครับ</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/32618cbc42aa6f0f33a907a91db09183/490e5/death-stranding-bath.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAwABBP/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHnM8lWKP/EABcQAAMBAAAAAAAAAAAAAAAAAAABESD/2gAIAQEAAQUCZK5j/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BR//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAECAQE/Aar/xAAYEAACAwAAAAAAAAAAAAAAAAAAASAx0f/aAAgBAQAGPwLEXH//xAAZEAADAQEBAAAAAAAAAAAAAAAAARFBUZH/2gAIAQEAAT8hdSReJgacIWjZSs//2gAMAwEAAgADAAAAELDP/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8Qg//EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oACAECAQE/ECH/xAAbEAADAAIDAAAAAAAAAAAAAAAAAREhUUFxof/aAAgBAQABPxCHHm1HoiqiLMDcjZdoZsrZTln/2Q=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/32618cbc42aa6f0f33a907a91db09183/ae84d/death-stranding-bath.webp 175w,
+/static/32618cbc42aa6f0f33a907a91db09183/7fb5e/death-stranding-bath.webp 350w,
+/static/32618cbc42aa6f0f33a907a91db09183/2fc75/death-stranding-bath.webp 700w,
+/static/32618cbc42aa6f0f33a907a91db09183/05ee9/death-stranding-bath.webp 1050w,
+/static/32618cbc42aa6f0f33a907a91db09183/b48f1/death-stranding-bath.webp 1400w,
+/static/32618cbc42aa6f0f33a907a91db09183/134ac/death-stranding-bath.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/32618cbc42aa6f0f33a907a91db09183/6b97f/death-stranding-bath.jpg 175w,
+/static/32618cbc42aa6f0f33a907a91db09183/86423/death-stranding-bath.jpg 350w,
+/static/32618cbc42aa6f0f33a907a91db09183/43804/death-stranding-bath.jpg 700w,
+/static/32618cbc42aa6f0f33a907a91db09183/518fe/death-stranding-bath.jpg 1050w,
+/static/32618cbc42aa6f0f33a907a91db09183/e3000/death-stranding-bath.jpg 1400w,
+/static/32618cbc42aa6f0f33a907a91db09183/490e5/death-stranding-bath.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/32618cbc42aa6f0f33a907a91db09183/43804/death-stranding-bath.jpg"
+          alt="death-stranding-bath"
+          title="death-stranding-bath"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>The Post Guides the Present</strong> <span style="color:#BBBB00;">(17.0%)</span> - อ่านอีเมล 100 ฉบับ</li>
+<li>
+<p><strong>The Past Guides the Present</strong> <span style="color:orange;">(7.5%)</span> - อ่านบทสัมภาษณ์ 100 ฉบับ</p>
+<p>ต้องขยันส่งของกันสักหน่อยครับ แล้วจะมีอีเมล์และบทสัมภาษณ์มาให้เรื่อยๆครับ <strong>แต่ถ้าจะเก็บถ้วยแพลตตินัมแล้วยังไงก็ได้รับสองถ้วยนี้แน่นอนครับ</strong></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Pathfinder</strong> <span style="color:#BBBB00;">(45.9%)</span> - ช่วยให้ porter เดินทางในเขต MULEs หรือ Terrorist ได้</p>
+<p>จัดการพวก MULEs หรือ Terrorist ให้หมดทั้งค่ายก็จะได้ถ้วยรางวัลมาครับ</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Childminder</strong> <span style="color:#BBBB00;">(17.3%)</span> - ได้ความสัมพันธ์ 5 ดาว กับ BB</li>
+<li>
+<p><strong>A Baby Blessing</strong> <span style="color:green;">(80.4%)</span> - ได้ไลค์แรกจาก BB</p>
+<p>หลักๆคือเล่นกับน้องบ่อยๆครับ เข้าที่พักก็ไปกดเล่นกับน้องบ้าง ผมทำแค่นี้ ช่วงท้ายๆเกมก็ได้ถ้วยรางวัลมาครับ</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Prominent Porter</strong> <span style="color:green;">(76.8%)</span> - ได้ระดับการขนส่ง 10 ในประเภทใดก็ได้</li>
+<li>
+<p><strong>Great Deliverer</strong> <span style="color:red;">(3.2%)</span> - ได้ระดับการขนส่ง 60 ในทุกประเภท</p>
+<p>ระดับการขนส่งทั้ง 4 ประเภทคือ</p>
+<ul>
+<li><strong>Delivery Time</strong> - ทำภารกิจที่มีการจับเวลาเยอะๆ</li>
+<li><strong>Cargo Condtion</strong> - ทำภารกิจที่สั่งให้เรารักษาสภาพสินค้า</li>
+<li><strong>Delivery Volume</strong> - ทำภารกิจที่ให้เราส่งของปริมาณมาก</li>
+<li><strong>Miscellaneous</strong> - ทำภารกิจเบ็ดเตล็ดเยอะๆ เช่น หาของ, เอาของคืนจาก MULEs</li>
+</ul>
+<p>สามารถเข้าดูระดับของตัวละครได้ที่ <strong>Option -> Bridge Links</strong> ครับ</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/7254a5556bd22280adb167029bea4143/490e5/death-stranding-grades.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABy00oUJxy3//EABwQAAIABwAAAAAAAAAAAAAAAAECAAMEEBESE//aAAgBAQABBQItuz4NqVFaWAOcf//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/Aaf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAbEAACAgMBAAAAAAAAAAAAAAABEQAQAgNBgf/aAAgBAQAGPwIkhwJ+1sY5M6//xAAcEAEAAgEFAAAAAAAAAAAAAAABABEhMUGBkaH/2gAIAQEAAT8hYHWqwF6205iCSkKSslV3KxP/2gAMAwEAAgADAAAAELgP/8QAFhEBAQEAAAAAAAAAAAAAAAAAARAh/9oACAEDAQE/EAGT/8QAFREBAQAAAAAAAAAAAAAAAAAAEQD/2gAIAQIBAT8QGL//xAAcEAEBAAICAwAAAAAAAAAAAAABEQAhMUFRcZH/2gAIAQEAAT8QhsDvWXECDEhsHHWBo2+5IqgX04syjbxRcBGus//Z'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/7254a5556bd22280adb167029bea4143/ae84d/death-stranding-grades.webp 175w,
+/static/7254a5556bd22280adb167029bea4143/7fb5e/death-stranding-grades.webp 350w,
+/static/7254a5556bd22280adb167029bea4143/2fc75/death-stranding-grades.webp 700w,
+/static/7254a5556bd22280adb167029bea4143/05ee9/death-stranding-grades.webp 1050w,
+/static/7254a5556bd22280adb167029bea4143/b48f1/death-stranding-grades.webp 1400w,
+/static/7254a5556bd22280adb167029bea4143/134ac/death-stranding-grades.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/7254a5556bd22280adb167029bea4143/6b97f/death-stranding-grades.jpg 175w,
+/static/7254a5556bd22280adb167029bea4143/86423/death-stranding-grades.jpg 350w,
+/static/7254a5556bd22280adb167029bea4143/43804/death-stranding-grades.jpg 700w,
+/static/7254a5556bd22280adb167029bea4143/518fe/death-stranding-grades.jpg 1050w,
+/static/7254a5556bd22280adb167029bea4143/e3000/death-stranding-grades.jpg 1400w,
+/static/7254a5556bd22280adb167029bea4143/490e5/death-stranding-grades.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/7254a5556bd22280adb167029bea4143/43804/death-stranding-grades.jpg"
+          alt="death-stranding-grades"
+          title="death-stranding-grades"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Catcher Crusher</strong> <span style="color:green;">(58.6%)</span> - เอาชนะ catcher</p>
+<p><strong>ได้ตามเนื้อเรื่อง</strong>หลังจากเอาชนะ catcher ได้</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Snooze ’n’ Soothe</strong> <span style="color:green;">(65.2%)</span> - ฟื้นฟูตัวเองจากการนอนหลับครั้งแรก</p>
+<p>เราสามารถกดโอค้างเพื่อนั่งพักแล้วกดสี่เหลี่ยมเพื่อนอนหลับพักผ่อนได้ แค่นี้ก็จะได้ถ้วยรางวัลมาครับ</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/144c57a39751d15dd1143d5f6d94c4a6/490e5/death-stranding-sleep.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAgQA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/2gAMAwEAAhADEAAAASYTJRp8f//EABkQAAIDAQAAAAAAAAAAAAAAAAABAxAUEf/aAAgBAQABBQLSjQOaTt//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAgEBPwFX/8QAGRAAAgMBAAAAAAAAAAAAAAAAADIBESAh/9oACAEBAAY/AlFOVGP/xAAbEAACAgMBAAAAAAAAAAAAAAAAARFRECFBgf/aAAgBAQABPyFldZ+j+hFQcnP/2gAMAwEAAgADAAAAEAvv/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPxA//8QAFhEAAwAAAAAAAAAAAAAAAAAAABEh/9oACAECAQE/EHKKf//EABwQAQADAAIDAAAAAAAAAAAAAAEAETEhQVGx4f/aAAgBAQABPxChV90QZY048vxHj0rk9w12Mg3a7O2f/9k='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/144c57a39751d15dd1143d5f6d94c4a6/ae84d/death-stranding-sleep.webp 175w,
+/static/144c57a39751d15dd1143d5f6d94c4a6/7fb5e/death-stranding-sleep.webp 350w,
+/static/144c57a39751d15dd1143d5f6d94c4a6/2fc75/death-stranding-sleep.webp 700w,
+/static/144c57a39751d15dd1143d5f6d94c4a6/05ee9/death-stranding-sleep.webp 1050w,
+/static/144c57a39751d15dd1143d5f6d94c4a6/b48f1/death-stranding-sleep.webp 1400w,
+/static/144c57a39751d15dd1143d5f6d94c4a6/134ac/death-stranding-sleep.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/144c57a39751d15dd1143d5f6d94c4a6/6b97f/death-stranding-sleep.jpg 175w,
+/static/144c57a39751d15dd1143d5f6d94c4a6/86423/death-stranding-sleep.jpg 350w,
+/static/144c57a39751d15dd1143d5f6d94c4a6/43804/death-stranding-sleep.jpg 700w,
+/static/144c57a39751d15dd1143d5f6d94c4a6/518fe/death-stranding-sleep.jpg 1050w,
+/static/144c57a39751d15dd1143d5f6d94c4a6/e3000/death-stranding-sleep.jpg 1400w,
+/static/144c57a39751d15dd1143d5f6d94c4a6/490e5/death-stranding-sleep.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/144c57a39751d15dd1143d5f6d94c4a6/43804/death-stranding-sleep.jpg"
+          alt="death-stranding-sleep"
+          title="death-stranding-sleep"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Boots Are a Porter’s Best Friend</strong> <span style="color:green;">(72.3%)</span> - เปลี่ยนรองเท้าครั้งแรก</li>
+</ul>
+<hr>
+<ul>
+<li><strong>Hooked on Delivering!?</strong> <span style="color:#BBBB00;">(16.3%)</span> - ส่งสินค้ารวม 700 ชิ้น</li>
+<li><strong>Pumped Porter</strong> <span style="color:#BBBB00;">(34.7%)</span> - ส่งสินค้ารวม 3,000 Kg</li>
+<li>
+<p><strong>Well-Traveled</strong> <span style="color:#BBBB00;">(47.9%)</span> - เดินทาง 80 Km เพื่อส่งสินค้า</p>
+<p>ถ้วยรางวัลสำหรับสายขยันครับ <strong>แต่ถ้าจะเก็บถ้วยแพลตตินัมแล้วยังไงก็ได้รับสามถ้วยนี้แน่นอนครับ</strong></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>God Particle Go-Getter</strong> <span style="color:orange;">(12.4%)</span> - เจอห้องของ Higgs</p>
+<p>ระหว่างเล่นเกมหลายๆคนน่าจะเจอภารกิจให้ส่งพิซซ่าไปที่ที่พักของ <strong>Peter Englert</strong> อยู่บ้างนะครับ จริงๆมันคือที่พักของ Higgs นั่นเองครับ หลังจากเอาชนะเขาได้จะพบห้องของเขาเปิดอยู่ที่นี่ครับ เข้าไปก็จะได้ถ้วยรางวัลนี้มา</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/dadb01839426fefa5e38f6493b202d7c/490e5/death-stranding-higgs-home.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMEAf/EABYBAQEBAAAAAAAAAAAAAAAAAAACA//aAAwDAQACEAMQAAABjbLTnSTA/8QAHBAAAgAHAAAAAAAAAAAAAAAAAjIAAQMREiEj/9oACAEBAAEFAiqDbnhqJoSAv//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABsQAAEEAwAAAAAAAAAAAAAAAAEAAhESIFGB/9oACAEBAAY/Aqlg4oo6d4//xAAZEAEAAwEBAAAAAAAAAAAAAAABABEhMUH/2gAIAQEAAT8h10fEBO7AcUauVUFQ3F5U4T//2gAMAwEAAgADAAAAEO/f/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oACAEDAQE/EIx//8QAFxEBAAMAAAAAAAAAAAAAAAAAAAERYf/aAAgBAgEBPxCcW//EABwQAAIDAQADAAAAAAAAAAAAAAERACFBMWFxsf/aAAgBAQABPxC+ADQB95kR2HmkfMFB+DZcBSBw5CyMuCcAF4ffs//Z'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/dadb01839426fefa5e38f6493b202d7c/ae84d/death-stranding-higgs-home.webp 175w,
+/static/dadb01839426fefa5e38f6493b202d7c/7fb5e/death-stranding-higgs-home.webp 350w,
+/static/dadb01839426fefa5e38f6493b202d7c/2fc75/death-stranding-higgs-home.webp 700w,
+/static/dadb01839426fefa5e38f6493b202d7c/05ee9/death-stranding-higgs-home.webp 1050w,
+/static/dadb01839426fefa5e38f6493b202d7c/b48f1/death-stranding-higgs-home.webp 1400w,
+/static/dadb01839426fefa5e38f6493b202d7c/134ac/death-stranding-higgs-home.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/dadb01839426fefa5e38f6493b202d7c/6b97f/death-stranding-higgs-home.jpg 175w,
+/static/dadb01839426fefa5e38f6493b202d7c/86423/death-stranding-higgs-home.jpg 350w,
+/static/dadb01839426fefa5e38f6493b202d7c/43804/death-stranding-higgs-home.jpg 700w,
+/static/dadb01839426fefa5e38f6493b202d7c/518fe/death-stranding-higgs-home.jpg 1050w,
+/static/dadb01839426fefa5e38f6493b202d7c/e3000/death-stranding-higgs-home.jpg 1400w,
+/static/dadb01839426fefa5e38f6493b202d7c/490e5/death-stranding-higgs-home.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/dadb01839426fefa5e38f6493b202d7c/43804/death-stranding-higgs-home.jpg"
+          alt="death-stranding-higgs-home"
+          title="death-stranding-higgs-home"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Rest In Pieces</strong> <span style="color:#BBBB00;">(31.2%)</span> - ตัดสายสะดือ BTs ครั้งแรก</p>
+<p>กลางๆเกม Cufflink ของเราจะสามารถตัดสายสะดือของพวก BTs ได้ สามารถทำได้โดยย่องเข้าไปใกล้ๆตัวมัน เมื่อใกล้มากพอจะสามารถกดตัดสายสะดือได้ครับ เมื่อทำแล้วจะได้ถ้วยรางวัลมาครับ</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Any Porter in a Storm</strong> <span style="color:orange;">(8.7%)</span> - แลกของกับ Porter ในเกมครั้งแรก</p>
+<p>เมื่อเล่นไปสักช่วงหนึ่งจะเจอ NPC คนส่งของคนอื่นๆเดินอยู่ภายในเกม เขาจะพกกล่องใส่ของติดตัวไปด้วย อันนั้นแหละครับที่เราต้องไปแลกมา โดยเอากล่องของเราไปวางไว้ข้างหน้าของคนส่งของเลยครับ เขาจะยื่นกล่องของเขามาให้ เรารับไว้ก็จะได้ถ้วยรางวัลนี้ทันทีครับ</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Sleep Tight, Little BB</strong> <span style="color:green;">(65.1%)</span> - ปลอบ BB จนหยุดร้องไห้ครั้งแรก</p>
+<p>เวลาตกจากที่สูง, จมน้ำ หรือเจอพวก BTs น้องจะร้องครับ หาจังหวะปลอบน้องด้วยการเขย่าจอยโอ๋ๆน้อง พอน้องหยุดร้องได้ก็จะได้ถ้วยรางวัลมาครับ</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/495a4e0a070bb97a02d02814453e9d48/490e5/death-stranding-soothe.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAVAQEBAAAAAAAAAAAAAAAAAAACAf/aAAwDAQACEAMQAAABk9V3BZ5sR//EABoQAAICAwAAAAAAAAAAAAAAAAECAxAABBL/2gAIAQEAAQUCLdZNEEFbBr//xAAWEQADAAAAAAAAAAAAAAAAAAABEDH/2gAIAQMBAT8BEX//xAAXEQADAQAAAAAAAAAAAAAAAAAAAREx/9oACAECAQE/AXqKf//EABsQAAIBBQAAAAAAAAAAAAAAAAECEAAREjGB/9oACAEBAAY/ArYqOUpU7kR//8QAGhABAAIDAQAAAAAAAAAAAAAAAQARITFBUf/aAAgBAQABPyH0U7Ksfw0lwckQrwcR3P/aAAwDAQACAAMAAAAQnB//xAAVEQEBAAAAAAAAAAAAAAAAAAABEP/aAAgBAwEBPxACln//xAAWEQEBAQAAAAAAAAAAAAAAAAABIRD/2gAIAQIBAT8QTJjj/8QAGhABAAMBAQEAAAAAAAAAAAAAAQARITFRYf/aAAgBAQABPxDvFLEG+zsUK932WMYiy3SV8hAIIRRRAKU1n//Z'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/495a4e0a070bb97a02d02814453e9d48/ae84d/death-stranding-soothe.webp 175w,
+/static/495a4e0a070bb97a02d02814453e9d48/7fb5e/death-stranding-soothe.webp 350w,
+/static/495a4e0a070bb97a02d02814453e9d48/2fc75/death-stranding-soothe.webp 700w,
+/static/495a4e0a070bb97a02d02814453e9d48/05ee9/death-stranding-soothe.webp 1050w,
+/static/495a4e0a070bb97a02d02814453e9d48/b48f1/death-stranding-soothe.webp 1400w,
+/static/495a4e0a070bb97a02d02814453e9d48/134ac/death-stranding-soothe.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/495a4e0a070bb97a02d02814453e9d48/6b97f/death-stranding-soothe.jpg 175w,
+/static/495a4e0a070bb97a02d02814453e9d48/86423/death-stranding-soothe.jpg 350w,
+/static/495a4e0a070bb97a02d02814453e9d48/43804/death-stranding-soothe.jpg 700w,
+/static/495a4e0a070bb97a02d02814453e9d48/518fe/death-stranding-soothe.jpg 1050w,
+/static/495a4e0a070bb97a02d02814453e9d48/e3000/death-stranding-soothe.jpg 1400w,
+/static/495a4e0a070bb97a02d02814453e9d48/490e5/death-stranding-soothe.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/495a4e0a070bb97a02d02814453e9d48/43804/death-stranding-soothe.jpg"
+          alt="death-stranding-soothe"
+          title="death-stranding-soothe"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>A Shout in the Dark</strong> <span style="color:green;">(70.0%)</span> - ตะโกนแล้วมีคนตอบครั้งแรก</p>
+<p>ไปกดตะโกนใกล้ๆกับสิ่งก่อสร้างที่คนอื่นสร้างไว้ครับ จะมีเสียงตอบกลับมา และจะได้ถ้วยรางวัลทันทีครับ</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Public Service Porter</strong> <span style="color:#BBBB00;">(17.3%)</span> - ทำลายกล่อง chiralium ครั้งแรก</p>
+<p>ตรงที่พักของ junk dealer จะมีขยะอยู่ครับ ให้เอาไปทำลายที่ crater lake ที่เป็นทะเลสาบสีดำตรงทิศเหนือของ South Knot City ครับ โยนกล่องไปในทะเลสาบเลยก็จะได้ถ้วยรางวัลมาครับ</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Trail-Blazer</strong> <span style="color:red;">(3.5%)</span> - อัพเกรดสิ่งก่อสร้างทุกชนิดจนถึงเลเวลสูงสุด</p>
+<p>สิ่งก่อสร้างจะเต็มที่เลเวล 3 ครับ เราสามารถหาสิ่งก่อสร้างเลเวล 2 แล้วไปเติมวัตถุดิบให้เต็มก็ได้ครับ ทำกับสิ่งก่อสร้างจนครบทุกชนิดก็จะได้ถ้วยมาครับ</p>
+<p>สามารถดูรายละเอียดของสิ่งก่อสร้างที่เราเคยอัพเกรดได้โดยกด <strong>Option -> Bridge Links -> Structures</strong> จะอยู่ในส่วนของ <strong>Structures Fully Upgraded</strong> ครับ</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/58a818f5ca64ff24e80014eabe3f490a/490e5/death-stranding-structures.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAMFBP/EABYBAQEBAAAAAAAAAAAAAAAAAAIAAf/aAAwDAQACEAMQAAABjrqYkEDC3//EABoQAQABBQAAAAAAAAAAAAAAAAIBAAMEEBL/2gAIAQEAAQUCalrWPbLEGOK//8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQMBAT8Bp//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABoQAAICAwAAAAAAAAAAAAAAAAECABADElH/2gAIAQEABj8CLG8mwjHlf//EABkQAAMBAQEAAAAAAAAAAAAAAAABESExkf/aAAgBAQABPyHSR9Y65dwXB1VaWDE2xPRJQ//aAAwDAQACAAMAAAAQ9w//xAAXEQADAQAAAAAAAAAAAAAAAAAAAREh/9oACAEDAQE/EIWDP//EABYRAQEBAAAAAAAAAAAAAAAAAAEAEf/aAAgBAgEBPxDFbL//xAAbEAEBAQEBAAMAAAAAAAAAAAABEQAhUUFhkf/aAAgBAQABPxCQKqk7kv1BWwMOKv7jqF1UnHzNYwv5etE58b//2Q=='); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/58a818f5ca64ff24e80014eabe3f490a/ae84d/death-stranding-structures.webp 175w,
+/static/58a818f5ca64ff24e80014eabe3f490a/7fb5e/death-stranding-structures.webp 350w,
+/static/58a818f5ca64ff24e80014eabe3f490a/2fc75/death-stranding-structures.webp 700w,
+/static/58a818f5ca64ff24e80014eabe3f490a/05ee9/death-stranding-structures.webp 1050w,
+/static/58a818f5ca64ff24e80014eabe3f490a/b48f1/death-stranding-structures.webp 1400w,
+/static/58a818f5ca64ff24e80014eabe3f490a/134ac/death-stranding-structures.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/58a818f5ca64ff24e80014eabe3f490a/6b97f/death-stranding-structures.jpg 175w,
+/static/58a818f5ca64ff24e80014eabe3f490a/86423/death-stranding-structures.jpg 350w,
+/static/58a818f5ca64ff24e80014eabe3f490a/43804/death-stranding-structures.jpg 700w,
+/static/58a818f5ca64ff24e80014eabe3f490a/518fe/death-stranding-structures.jpg 1050w,
+/static/58a818f5ca64ff24e80014eabe3f490a/e3000/death-stranding-structures.jpg 1400w,
+/static/58a818f5ca64ff24e80014eabe3f490a/490e5/death-stranding-structures.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/58a818f5ca64ff24e80014eabe3f490a/43804/death-stranding-structures.jpg"
+          alt="death-stranding-structures"
+          title="death-stranding-structures"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><strong>I Couldn’t Hold it In!</strong> <span style="color:green;">(65.4%)</span> - ฉี่ข้างนอกครั้งแรก</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>All Roads Lead to the UCA</strong> <span style="color:#BBBB00;">(49.5%)</span> - สร้างถนนครั้งแรก</p>
+<p><strong>ได้ตามเนื้อเรื่อง</strong>จากภารกิจที่ให้ไปสร้างถนนเส้นแรก ไม่ต้องสร้างจนครบแค่สร้างจุดแรกก็จะได้ถ้วยรางวัลมาเลย</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Soothing Sounds</strong> <span style="color:green;">(57.5%)</span> - เล่นเพลงจาก Music Player</p>
+<p>เริ่มจากในห้องพักของเรา โดย<strong>เข้าไปที่แผนที่ UCA ตรงฝาผนังแล้วกด Option -> Music Player</strong> ลองเลือกเพลงดูก็จะได้ถ้วยรางวัลมาครับ</p>
+<p><span
+      class="gatsby-resp-image-wrapper"
+      style="position: relative; display: block; margin-left: auto; margin-right: auto;  max-width: 700px;"
+    >
+      <a
+    class="gatsby-resp-image-link"
+    href="/static/ef1d50bfdd84d62085be84fd46286d6b/490e5/death-stranding-music-player.jpg"
+    style="display: block"
+    target="_blank"
+    rel="noopener"
+  >
+    <span
+    class="gatsby-resp-image-background-image"
+    style="padding-bottom: 56.25%; position: relative; bottom: 0; left: 0; background-image: url('data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAALABQDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAIDBP/EABUBAQEAAAAAAAAAAAAAAAAAAAAC/9oADAMBAAIQAxAAAAHHPQ1RMQP/xAAYEAADAQEAAAAAAAAAAAAAAAAAAQIRMf/aAAgBAQABBQKrZrycczKY4k4f/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAIAQMBAT8BR//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABkQAAIDAQAAAAAAAAAAAAAAAAAxARARgf/aAAgBAQAGPwLMiODpCr//xAAaEAEAAwEBAQAAAAAAAAAAAAABABExIYGR/9oACAEBAAE/Ie7zqMdijIq/J0kMqYlYMn//2gAMAwEAAgADAAAAEFjv/8QAFREBAQAAAAAAAAAAAAAAAAAAARD/2gAIAQMBAT8QI//EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAgBAgEBPxCtf//EABsQAAMAAwEBAAAAAAAAAAAAAAABESFBUTGh/9oACAEBAAE/EEYJW37AgmFOloPOr32mQQ160QeQ0aMTR//Z'); background-size: cover; display: block;"
+  ></span>
+  <picture>
+        <source
+          srcset="/static/ef1d50bfdd84d62085be84fd46286d6b/ae84d/death-stranding-music-player.webp 175w,
+/static/ef1d50bfdd84d62085be84fd46286d6b/7fb5e/death-stranding-music-player.webp 350w,
+/static/ef1d50bfdd84d62085be84fd46286d6b/2fc75/death-stranding-music-player.webp 700w,
+/static/ef1d50bfdd84d62085be84fd46286d6b/05ee9/death-stranding-music-player.webp 1050w,
+/static/ef1d50bfdd84d62085be84fd46286d6b/b48f1/death-stranding-music-player.webp 1400w,
+/static/ef1d50bfdd84d62085be84fd46286d6b/134ac/death-stranding-music-player.webp 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/webp"
+        />
+        <source
+          srcset="/static/ef1d50bfdd84d62085be84fd46286d6b/6b97f/death-stranding-music-player.jpg 175w,
+/static/ef1d50bfdd84d62085be84fd46286d6b/86423/death-stranding-music-player.jpg 350w,
+/static/ef1d50bfdd84d62085be84fd46286d6b/43804/death-stranding-music-player.jpg 700w,
+/static/ef1d50bfdd84d62085be84fd46286d6b/518fe/death-stranding-music-player.jpg 1050w,
+/static/ef1d50bfdd84d62085be84fd46286d6b/e3000/death-stranding-music-player.jpg 1400w,
+/static/ef1d50bfdd84d62085be84fd46286d6b/490e5/death-stranding-music-player.jpg 1600w"
+          sizes="(max-width: 700px) 100vw, 700px"
+          type="image/jpeg"
+        />
+        <img
+          class="gatsby-resp-image-image"
+          src="/static/ef1d50bfdd84d62085be84fd46286d6b/43804/death-stranding-music-player.jpg"
+          alt="death-stranding-music-player"
+          title="death-stranding-music-player"
+          loading="lazy"
+          style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;"
+        />
+      </picture>
+  </a>
+    </span></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Building Bridges</strong> <span style="color:green;">(73.5%)</span> - ได้ Bridge Link lv.1</p>
+<p>ทำได้โดยการได้ไลค์จากผู้เล่นออนไลน์คนอื่นๆ เราแค่ไปสร้างสิ่งก่อสร้างไว้ เดี๋ยวก็จะมีคนมากดไลค์เองครับ</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>Homo Faber</strong> <span style="color:red;">(3.0%)</span> - สร้างของครบทุกชนิด</p>
+<p>เราสามารถสร้างของในเกมได้ทั้งหมด 72 ชนิด บางชนิดสามารถสร้างได้เลย แต่บางชนิดอาจต้องเพิ่มความสัมพันธ์กับ facility ต่างๆก่อนจึงจะสร้างได้</p>
+<p>จะมีมอเตอร์ไซค์คันนึงสร้างได้จากการเก็บ memory chip ครับ เมื่อสร้างจนครบก็จะได้ถ้วยรางวัลมา</p>
+</li>
+</ul>
+<hr>
+<h2>Tips ที่ผมใช้</h2>
+<h3>ทำถนนให้หมดทุกจุด</h3>
+<p>เกมนี้มีจุดทำถนนทั้งหมด 40 จุด เชื่อมต่อตั้งแต่บนสุด Lake knot city ถึงล่างสุด South knot city และตะวันตกสุด Mountain knot city ค่อยๆไล่ทำจากจุดที่เราเดินทางบ่อยๆก็ได้ครับ</p>
+<p>ถึงแม้การสร้างถนนครบทุกจุดจะไม่ได้รับรางวัลอะไร แต่มันจะทำให่เราเดินทางผ่าน facility และที่พักของ perpper บางคนได้สะดวกขึ้นมากๆเลยครับ ที่สำคัญก็จะทำให้เราเก็บถ้วยรางวัลได้ง่ายขึ้นอีกมากเลยครับ</p>
+<hr>
+<h3>ทำ zip-line</h3>
+<p>บางจุดที่ถนนไปไม่ถึงสามารถต่อ zip-line เพื่อความสะดวกได้ครับ หรือถ้าวางดีๆสามารถเดินทางข้ามฟากเลยก็ได้ เช่น จาก moutain knot city ทะลุมา timefall farm ทะลุไปยัง cosplayer เลยก็ได้เช่นกัน</p>
+<p>เราสามารถอัพเกรด zip-line เพื่อเพิ่มระยะระหว่าง zip-line สองจุดให้ยาวขึ้นได้ด้วย</p>
+<p>พยายามเช็คดูบ่อยๆว่า zip-line ตัวไหนใกล้พังแล้วบ้าง ให้รีบไปซ่อม เพราะถ้าเกิดมันพังขึ้นมานี่เดินกันขาลากแน่นอนครับ</p>
+<hr>
+<h3>เล่นแบบ hard แต่แรกน่าจะได้ถ้วยไวกว่า</h3>
+<p>เริ่มแรกผมเล่นด้วยความยากระดับ normal จนมารู้ทีหลังว่ามีสองถ้วยคือ <strong>Birth of a Legend</strong> และ <strong>Growth of a Legend</strong> ที่ต้องเล่นในระดับความยาก hard ซึ่งเราสามารถเปลี่ยนมาเล่น hard ได้ภายหลังครับ แต่ถ้าเริ่มเล่นแบบ hard แต่แรกผมว่าน่าจะใช้เวลาเก็บถ้วยน้อยกว่านี้ครับ</p>
+<hr>
+<h3>เคลียร์ค่าย MULEs ก่อนค่อยรับภารกิจ</h3>
+<p>บางภารกิจที่ให้เราไปเอาของจากพวก MULEs หลายครั้งผมเลือกที่จะไปถล่มค่ายของพวกมันก่อน แล้วค่อยรับภารกิจทีหลัง เหมาะกับภารกิจที่ต้องทำเวลาให้เร็วที่สุด หรือเพื่อเลี่ยงการปะทะสำหรับภารกิจที่ต้องดูแลให้ของไม่เสียหายครับ</p>
+<hr>
+<p>สรุปนี่เป็นอีกหนึ่งบันทึกที่เอามาแบ่งบันกัน หากตรงไหนมีข้อผิดพลาดสามารถคอมเม้นแจ้งไว้ได้เลยนะครับ :)</p></div><style data-emotion-css="xi606m">.css-xi606m{text-align:center;}</style><p class="css-xi606m">. . .</p><style data-emotion-css="gx0lhm">.css-gx0lhm{margin-bottom:0;}</style><div shortname="aofleejay" config="[object Object]" class="css-gx0lhm" id="disqus_thread"></div></div></main><style data-emotion-css="1jbgzcb">.css-1jbgzcb{border-top:solid 1px var(--hr);}</style><footer class="css-1jbgzcb"><style data-emotion-css="oozy6f">.css-oozy6f{max-width:1400px;margin:0 auto;padding:2rem;}@media only screen and (max-width:600px){.css-oozy6f{padding:2rem 1rem;}}</style><div class="css-oozy6f">Made by<!-- --> <style data-emotion-css="scjgcu">.css-scjgcu{color:var(--textPrimary);}</style><a href="https://github.com/aofleejay" target="_blank" rel="noopener noreferrer" class="css-scjgcu">aofleejay</a>. Build with<!-- --> <a href="https://www.gatsbyjs.org" target="_blank" rel="noopener noreferrer" class="css-scjgcu">Gatsby</a>.</div></footer></div></div><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'UA-75313761-4', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/บันทึกเก็บถ้วยแพลต-death-stranding/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-717c651610ecc3038934.js"],"component---src-templates-blog-post-tsx":["/component---src-templates-blog-post-tsx-287ff91a57bccbd68482.js"],"component---src-templates-tags-tsx":["/component---src-templates-tags-tsx-3471550203be64168235.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-69172eb7e03544c00826.js"],"component---src-pages-about-tsx":["/component---src-pages-about-tsx-e38fa39ff27161f3824f.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-56c4538d5cf4b346aab2.js"]};/*]]>*/</script><script src="/component---src-templates-blog-post-tsx-287ff91a57bccbd68482.js" async=""></script><script src="/commons-a45aaa50387fd9288b5b.js" async=""></script><script src="/app-717c651610ecc3038934.js" async=""></script><script src="/styles-8d604daea67ba1d0724c.js" async=""></script><script src="/webpack-runtime-ed8b8b411a76385175bb.js" async=""></script></body></html>
