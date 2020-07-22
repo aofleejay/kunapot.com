@@ -1,7 +1,7 @@
 ---
 title: 'บันทึกเก็บถ้วยแพลต Death Stranding'
 description: 'หลังจากใช้เวลาราว 96 ชั่วโมงกับการไล่เก็บถ้วยแพลตตินัม เลยเขียนบทความเก็บไว้สักหน่อย'
-date: '2020-07-21T23:46:59.697Z'
+date: '2020-07-22T17:47:30.011Z'
 coverImage: 'บันทึกเก็บถ้วยแพลต-death-stranding-cover-image.jpg'
 tags: ['เล่าเกม', 'death-stranding']
 draft: false
@@ -335,7 +335,7 @@ draft: false
 
 ---
 
-### ทำ Zip-line
+### ทำ zip-line
 
 บางจุดที่ถนนไปไม่ถึงสามารถต่อ zip-line เพื่อความสะดวกได้ครับ หรือถ้าวางดีๆสามารถเดินทางข้ามฟากเลยก็ได้ เช่น จาก moutain knot city ทะลุมา timefall farm ทะลุไปยัง cosplayer เลยก็ได้เช่นกัน
 
