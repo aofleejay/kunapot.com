@@ -48,6 +48,9 @@ const typography = new Typography({
     hr: {
       backgroundColor: 'var(--hr)',
     },
+    img: {
+      borderRadius: '4px',
+    },
   }),
 })
 
