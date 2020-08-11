@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 <url> <loc>https://aofleejay.com/12-years-a-slave/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://aofleejay.com/jumping-joe-and-friends/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/ghost-of-tsushima/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aofleejay.com/jumping-joe-and-friends/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/kind-words/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://aofleejay.com/life-is-strange/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/life-is-strange-before-the-storm/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aofleejay.com/life-is-strange/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/plug-and-play/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/sekiro/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/simulacra/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/slay-the-spire/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/snipperclips/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/super-animal-royale/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://aofleejay.com/the-last-of-us-part-ii/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/the-new-rules-of-coffee/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/what-if/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/การศึกษาของกระป๋องมีฝัน/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -21,13 +20,14 @@
 <url> <loc>https://aofleejay.com/บันทึกเก็บถ้วยแพลต-death-stranding/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/เทคนิคเปลี่ยนคุณให้เป็นคนไม่ผัดวันประกันพรุ่งและลงมือทำทันที/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/เมื่อหัวว่าง-จึงสร้างสรรค์/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aofleejay.com/the-last-of-us-part-ii/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/tags/เล่าหนังสือ/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/tags/เล่าเกม/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/tags/ghost-of-tsushima/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/tags/life-is-strange/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/tags/nintendo-switch/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://aofleejay.com/tags/the-last-of-us/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/tags/death-stranding/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://aofleejay.com/tags/the-last-of-us/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://aofleejay.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
