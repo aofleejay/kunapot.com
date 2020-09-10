@@ -37,7 +37,15 @@ const AboutPage: React.FC = () => {
         <p>
           I'm a software engineer from Bangkok, Thailand, and previously worked
           at THiNKNET. I write code on{' '}
-          <a href={github} target="_blank" rel="noopener noreferrer">
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            css={css`
+              color: var(--textPrimary);
+              font-weight: bold;
+            `}
+          >
             GitHub
           </a>{' '}
           and write blogs about software engineering on{' '}
@@ -47,6 +55,7 @@ const AboutPage: React.FC = () => {
             rel="noopener noreferrer"
             css={css`
               color: var(--textPrimary);
+              font-weight: bold;
             `}
           >
             Medium
@@ -56,6 +65,7 @@ const AboutPage: React.FC = () => {
             to="/"
             css={css`
               color: var(--textPrimary);
+              font-weight: bold;
             `}
           >
             this blog
@@ -70,6 +80,7 @@ const AboutPage: React.FC = () => {
             rel="noopener noreferrer"
             css={css`
               color: var(--textPrimary);
+              font-weight: bold;
             `}
           >
             GitHub
@@ -85,6 +96,7 @@ const AboutPage: React.FC = () => {
             to="/tags/เล่าเกม"
             css={css`
               color: var(--textPrimary);
+              font-weight: bold;
             `}
           >
             game summary
@@ -98,6 +110,7 @@ const AboutPage: React.FC = () => {
             to="/tags/เล่าหนังสือ"
             css={css`
               color: var(--textPrimary);
+              font-weight: bold;
             `}
           >
             my book summary
@@ -110,6 +123,7 @@ const AboutPage: React.FC = () => {
             href="mailto:aofleejay@hotmail.com"
             css={css`
               color: var(--textPrimary);
+              font-weight: bold;
             `}
           >
             here
