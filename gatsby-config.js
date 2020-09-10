@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Just another blog.`,
+    title: `aofleejay.com`,
     author: `aofleejay`,
     siteUrl: 'https://aofleejay.com',
     keywords: ['เล่าหนังสือ', 'เล่าเกม'],
