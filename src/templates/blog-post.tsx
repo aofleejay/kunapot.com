@@ -75,7 +75,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
         />
         <div
           dangerouslySetInnerHTML={{ __html: post.html }}
-          className="prose mx-auto mb-8"
+          className="prose mx-auto my-8"
         />
         <p className="text-center mb-8">. . .</p>
         <DiscussionEmbed

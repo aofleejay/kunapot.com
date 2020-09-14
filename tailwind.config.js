@@ -20,6 +20,46 @@ module.exports = {
       lg: '1024px',
       xl: '1280px',
     },
+    typography: {
+      default: {
+        css: {
+          color: 'var(--secondary)',
+          strong: {
+            color: 'var(--primary)',
+          },
+          em: {
+            color: 'var(--primary)',
+          },
+          blockquote: {
+            color: 'var(--primary)',
+          },
+          a: {
+            color: 'var(--primary)',
+          },
+          h1: {
+            color: 'var(--primary)',
+          },
+          h2: {
+            color: 'var(--primary)',
+          },
+          h3: {
+            color: 'var(--primary)',
+          },
+          h4: {
+            color: 'var(--primary)',
+          },
+          h5: {
+            color: 'var(--primary)',
+          },
+          h6: {
+            color: 'var(--primary)',
+          },
+          img: {
+            borderRadius: '0.25rem',
+          },
+        },
+      },
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',

@@ -31,31 +31,17 @@ const Layout: React.FC = ({ children }) => {
             <header className="shadow">
               <nav className="flex items-center p-4 sm:p-8 text-sm sm:text-base">
                 <div className="flex-grow space-x-4 sm:space-x-8">
-                  <Link to={'/'} className="text-primary">
-                    Home
-                  </Link>
-                  <a
-                    href={medium}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary"
-                  >
+                  <Link to={'/'}>Home</Link>
+                  <a href={medium} target="_blank" rel="noopener noreferrer">
                     Medium
                   </a>
-                  <a
-                    href={github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary"
-                  >
+                  <a href={github} target="_blank" rel="noopener noreferrer">
                     GitHub
                   </a>
-                  <Link to={'/about'} className="text-primary">
-                    About
-                  </Link>
+                  <Link to={'/about'}>About</Link>
                 </div>
                 <span
-                  className="text-primary cursor-pointer"
+                  className="cursor-pointer"
                   onClick={() =>
                     toggleTheme(theme === 'dark' ? 'light' : 'dark')
                   }
