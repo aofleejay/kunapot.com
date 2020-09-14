@@ -23,7 +23,7 @@ type BlogCardProp = {
 
 const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
   return (
-    <article className="flex flex-col overflow-hidden rounded shadow-md">
+    <article className="flex flex-col overflow-hidden rounded border border-faded shadow-md">
       <Link to={post.fields.slug}>
         <img className="mb-0" src={post.frontmatter.coverImage.publicURL} />
       </Link>

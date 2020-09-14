@@ -6,6 +6,7 @@ body {
   --bg: #fff;
   --primary: #1a202c;
   --secondary: #4a5568;
+  --faded: #f7fafc;
 
   background-color: var(--bg);
   color: var(--secondary);
@@ -17,4 +18,5 @@ body.dark {
   --bg: #1a202c;
   --primary: #ffffff;
   --secondary: #bcc3ce;
+  --faded: #2d3748;
 }

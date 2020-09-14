@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       colors: {
         primary: 'var(--primary)',
+        faded: 'var(--faded)',
       },
     },
     screens: {

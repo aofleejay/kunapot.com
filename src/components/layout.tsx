@@ -28,7 +28,7 @@ const Layout: React.FC = ({ children }) => {
       {({ theme, toggleTheme }) => {
         return (
           <>
-            <header className="shadow">
+            <header className="shadow border-b border-faded">
               <nav className="flex items-center p-4 sm:p-8 text-sm sm:text-base">
                 <div className="flex-grow space-x-4 sm:space-x-8">
                   <Link to={'/'}>Home</Link>
@@ -51,28 +51,26 @@ const Layout: React.FC = ({ children }) => {
               </nav>
             </header>
             <main className="container mx-auto">{children}</main>
-            <footer>
-              <div className="p-8">
-                Made by{' '}
-                <a
-                  href={github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-teal-500"
-                >
-                  {author}
-                </a>
-                . Build with{' '}
-                <a
-                  href="https://www.gatsbyjs.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-teal-500"
-                >
-                  Gatsby
-                </a>
-                .
-              </div>
+            <footer className="p-8">
+              Made by{' '}
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-500"
+              >
+                {author}
+              </a>
+              . Build with{' '}
+              <a
+                href="https://www.gatsbyjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-500"
+              >
+                Gatsby
+              </a>
+              .
             </footer>
           </>
         )
