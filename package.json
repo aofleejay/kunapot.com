@@ -20,13 +20,11 @@
     "resize:image": "ts-node src/scripts/resize-image.ts"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.14",
     "@types/typography": "^0.16.3",
     "disqus-react": "^1.0.7",
     "gatsby": "^2.13.6",
     "gatsby-image": "^2.0.20",
     "gatsby-plugin-dark-mode": "1.1.0",
-    "gatsby-plugin-emotion": "^4.1.0",
     "gatsby-plugin-google-analytics": "^2.0.14",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-offline": "^3.0.37",
@@ -51,6 +49,7 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.2.0",
     "@testing-library/react": "^9.3.2",
     "@types/inquirer": "^6.5.0",
     "@types/jest": "^25.1.4",
@@ -69,6 +68,7 @@
     "eslint": "^6.7.1",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-cypress": "^2.8.1",
+    "gatsby-plugin-postcss": "^2.3.11",
     "gh-pages": "^2.0.1",
     "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
@@ -78,6 +78,7 @@
     "pretty-quick": "^2.0.1",
     "react-test-renderer": "^16.13.0",
     "sharp": "^0.25.4",
+    "tailwindcss": "^1.8.10",
     "ts-jest": "^25.2.1",
     "ts-node": "^8.5.4",
     "typescript": "^3.8.3"

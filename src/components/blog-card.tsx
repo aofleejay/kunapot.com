@@ -1,5 +1,4 @@
 import React from 'react'
-import { css } from '@emotion/core'
 import { Link } from 'gatsby'
 
 type BlogCardProp = {
@@ -18,97 +17,39 @@ type BlogCardProp = {
       }
     }
     excerpt: string
+    timeToRead: number
   }
 }
 
 const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
   return (
-    <article
-      css={css`
-        border: 2px solid var(--fadeBg);
-        overflow: hidden;
-        border-radius: 4px;
-        transition: transform 0.4s ease-out;
-        transform: translateY(0.5rem);
-
-        &:hover {
-          transition: transform 0.4s ease-out;
-          transform: translateY(-0.5rem);
-        }
-      `}
-    >
+    <article className="flex flex-col overflow-hidden rounded shadow-md">
       <Link to={post.fields.slug}>
-        <img
-          css={css`
-            margin-bottom: 0;
-          `}
-          src={post.frontmatter.coverImage.publicURL}
-        />
+        <img className="mb-0" src={post.frontmatter.coverImage.publicURL} />
       </Link>
-      <div
-        css={css`
-          display: grid;
-          padding: 1rem 1.5rem;
-        `}
-      >
+      <div className="flex flex-grow flex-col m-6">
+        <span className="space-x-2 mb-2">
+          {post.frontmatter.tags.map((tag, i) => (
+            <>
+              {i > 0 && <span className="text-teal-500">•</span>}
+              <Link key={tag} to={`/tags/${tag}`}>
+                <span className="text-teal-500 text-sm">{tag}</span>
+              </Link>
+            </>
+          ))}
+        </span>
         <Link to={post.fields.slug}>
-          <p
-            css={css`
-              margin-bottom: 0.3rem;
-              font-size: 1.2rem;
-              font-weight: bold;
-              color: var(--textPrimary);
-            `}
-          >
+          <p className="mb-4 text-lg font-bold text-primary">
             {post.frontmatter.title}
           </p>
         </Link>
-        <p
-          css={css`
-            margin-bottom: 0.6rem;
-            font-size: 0.8rem;
-          `}
-        >
-          {post.frontmatter.date}
-        </p>
-        <Link to={post.fields.slug}>
-          <p
-            css={css`
-              font-size: 0.8rem;
-              color: var(--textTertiary);
-              margin-bottom: 0.6rem;
-            `}
-          >
-            {post.excerpt}
-          </p>
+        <Link to={post.fields.slug} className="flex-grow">
+          <p className="mb-4 text-sm">{post.excerpt}</p>
         </Link>
-        <p
-          css={css`
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.8rem;
-          `}
-        >
-          <Link to={post.fields.slug}>
-            <span>Read more...</span>
-          </Link>
-          <span>
-            {post.frontmatter.tags.map(tag => (
-              <Link key={tag} to={`/tags/${tag}`}>
-                <span
-                  css={css`
-                    background-color: var(--fadeBg);
-                    border-radius: 4px;
-                    padding: 2px 4px;
-                    margin-left: 2px;
-                    margin-right: 2px;
-                  `}
-                >
-                  {tag}
-                </span>
-              </Link>
-            ))}
-          </span>
+        <p className="text-xs space-x-2">
+          <span>{post.frontmatter.date}</span>
+          <span>•</span>
+          <span>{post.timeToRead} min read</span>
         </p>
       </div>
     </article>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
-import { css } from '@emotion/core'
 import { Layout, SEO } from '../components'
 
 const AboutPage: React.FC = () => {
@@ -22,55 +21,21 @@ const AboutPage: React.FC = () => {
   return (
     <Layout>
       <SEO />
-      <div
-        css={css`
-          max-width: 700px;
-          margin: 0 auto;
-          padding 4rem 2rem;
-
-          @media only screen and (max-width: 600px) {
-            padding 2rem 1rem 0 1rem;
-          }
-        `}
-      >
-        <h1>👋 Hi there, I'm Aof.</h1>
+      <div className="prose max-w-screen-md mx-auto p-4 my-8">
+        <h1 className="text-2xl font-bold mb-8">
+          👋 Hi there, I'm <span className="text-teal-500">Aof</span>.
+        </h1>
         <p>
           I'm a software engineer from Bangkok, Thailand, and previously worked
           at THiNKNET. I write code on{' '}
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            css={css`
-              color: var(--textPrimary);
-              font-weight: bold;
-            `}
-          >
+          <a href={github} target="_blank" rel="noopener noreferrer">
             GitHub
           </a>{' '}
           and write blogs about software engineering on{' '}
-          <a
-            href={medium}
-            target="_blank"
-            rel="noopener noreferrer"
-            css={css`
-              color: var(--textPrimary);
-              font-weight: bold;
-            `}
-          >
+          <a href={medium} target="_blank" rel="noopener noreferrer">
             Medium
           </a>{' '}
-          and also about books, games on{' '}
-          <Link
-            to="/"
-            css={css`
-              color: var(--textPrimary);
-              font-weight: bold;
-            `}
-          >
-            this blog
-          </Link>
-          .
+          and also about books, games on <Link to="/">this blog</Link>.
         </p>
         <p>
           💻 I occasionally write code for fun in my spare time on{' '}
@@ -78,10 +43,6 @@ const AboutPage: React.FC = () => {
             href={`${github}?tab=repositories`}
             target="_blank"
             rel="noopener noreferrer"
-            css={css`
-              color: var(--textPrimary);
-              font-weight: bold;
-            `}
           >
             GitHub
           </a>{' '}
@@ -92,43 +53,16 @@ const AboutPage: React.FC = () => {
         <p>
           🎮 I like to play games especially RPG, strategy, and decision-based
           games. I also do blogging about the{' '}
-          <Link
-            to="/tags/เล่าเกม"
-            css={css`
-              color: var(--textPrimary);
-              font-weight: bold;
-            `}
-          >
-            game summary
-          </Link>{' '}
-          here.
+          <Link to="/tags/เล่าเกม">game summary</Link> here.
         </p>
         <p>
           📖 I like to read books. My favorite books e.g. a song of ice and fire
           series, what if?. Here's{' '}
-          <Link
-            to="/tags/เล่าหนังสือ"
-            css={css`
-              color: var(--textPrimary);
-              font-weight: bold;
-            `}
-          >
-            my book summary
-          </Link>
-          .
+          <Link to="/tags/เล่าหนังสือ">my book summary</Link>.
         </p>
         <p>
           Thanks for visiting my website 🌷 and you can contact me{' '}
-          <a
-            href="mailto:aofleejay@hotmail.com"
-            css={css`
-              color: var(--textPrimary);
-              font-weight: bold;
-            `}
-          >
-            here
-          </a>
-          .
+          <a href="mailto:aofleejay@hotmail.com">here</a>.
         </p>
       </div>
     </Layout>

@@ -1,5 +1,4 @@
 import React from 'react'
-import { css } from '@emotion/core'
 
 type GridProps = {
   column?: number
@@ -8,18 +7,7 @@ type GridProps = {
 const Grid: React.FC<GridProps> = ({ children, column }) => {
   return (
     <div
-      css={css`
-        display: grid;
-        grid-template-columns: repeat(${column}, 1fr);
-        gap: 4rem;
-        padding 4rem 2rem;
-
-        @media only screen and (max-width: 600px) {
-          grid-template-columns: 1fr;
-          gap: 2rem 0;
-          padding 2rem 1rem;
-        }
-      `}
+      className={`grid grid-cols-1 lg:grid-cols-${column} mx-2 xl:mx-8 my-8 gap-8 xl:gap-12`}
     >
       {children}
     </div>

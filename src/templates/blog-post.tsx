@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import { css } from '@emotion/core'
 import { DiscussionEmbed } from 'disqus-react'
 import { Layout, SEO } from '../components'
 
@@ -21,6 +20,7 @@ type BlogPostProps = {
       fields: {
         slug: string
       }
+      timeToRead: number
     }
     site: {
       siteMetadata: {
@@ -48,51 +48,26 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
         slug={post.fields.slug}
         article
       />
-      <div
-        css={css`
-          max-width: 700px;
-          margin: 0 auto;
-          padding 4rem 2rem 0 2rem;
-
-          @media only screen and (max-width: 600px) {
-            padding 2rem 1rem 0 1rem;
-          }
-        `}
-      >
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          css={css`
-            color: #bbb;
-          `}
-        >
-          {post.frontmatter.date}
-          <span
-            css={css`
-              padding: 0 1rem;
-            `}
-          >
-            |
-          </span>
+      <div className="max-w-screen-md mx-auto p-4 my-8">
+        <h1 className="text-2xl font-bold text-primary mb-4">
+          {post.frontmatter.title}
+        </h1>
+        <p className="mb-8 space-x-4 text-gray-500">
+          <span>{post.timeToRead} min read</span>
+          <span>•</span>
+          <span>{post.frontmatter.date}</span>
+          <span>•</span>
           {post.frontmatter.tags.map((tag, i) => (
             <>
-              {i > 0 && ', '}
-              <Link
-                key={tag}
-                to={`/tags/${tag}`}
-                css={css`
-                  text-decoration: none;
-                  color: inherit;
-                `}
-              >
+              {i > 0 && <span>•</span>}
+              <Link key={tag} to={`/tags/${tag}`}>
                 <span>{tag}</span>
               </Link>
             </>
           ))}
         </p>
         <img
-          css={css`
-            border-radius: 4px;
-          `}
+          className="rounded"
           src={
             post.frontmatter.coverImage && post.frontmatter.coverImage.publicURL
           }
@@ -100,17 +75,9 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
         />
         <div
           dangerouslySetInnerHTML={{ __html: post.html }}
-          css={css`
-            margin-bottom: 2rem;
-          `}
+          className="prose mx-auto mb-8"
         />
-        <p
-          css={css`
-            text-align: center;
-          `}
-        >
-          . . .
-        </p>
+        <p className="text-center mb-8">. . .</p>
         <DiscussionEmbed
           shortname={data.site.siteMetadata.disqus.shortName}
           config={{
@@ -118,9 +85,6 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
             identifier: post.fields.slug,
             title: post.frontmatter.title,
           }}
-          css={css`
-            margin-bottom: 0;
-          `}
         />
       </div>
     </Layout>
@@ -142,11 +106,12 @@ export const query = graphql`
           name
           publicURL
         }
-        date(formatString: "DD MMMM, YYYY")
+        date(fromNow: true)
       }
       fields {
         slug
       }
+      timeToRead
     }
     site {
       siteMetadata {

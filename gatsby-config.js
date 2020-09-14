@@ -43,7 +43,6 @@ module.exports = {
         icon: `src/assets/favicon.png`,
       },
     },
-    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -81,6 +80,7 @@ module.exports = {
         name: 'MediumFeed',
       },
     },
+    `gatsby-plugin-postcss`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

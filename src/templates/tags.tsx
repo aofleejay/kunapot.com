@@ -22,6 +22,7 @@ interface TagsPageProps {
               slug: string
             }
             excerpt: string
+            timeToRead: number
           }
         },
       ]
@@ -64,6 +65,7 @@ export const query = graphql`
             slug
           }
           excerpt(truncate: true, pruneLength: 150)
+          timeToRead
         }
       }
     }

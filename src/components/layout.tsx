@@ -1,16 +1,7 @@
 import React from 'react'
-import { css } from '@emotion/core'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
-import {
-  FaGithubSquare,
-  FaMedium,
-  FaSun,
-  FaMoon,
-  FaHome,
-  FaGripLinesVertical,
-} from 'react-icons/fa'
-import profileImage from '../assets/profile.jpg'
+import { FaSun, FaMoon } from 'react-icons/fa'
 
 const Layout: React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -37,125 +28,51 @@ const Layout: React.FC = ({ children }) => {
       {({ theme, toggleTheme }) => {
         return (
           <>
-            <header
-              css={css`
-                border-bottom: solid 1px var(--hr);
-              `}
-            >
-              <nav
-                css={css`
-                  max-width: 1400px;
-                  margin: 0 auto;
-                  text-align: right;
-                  padding 2rem;
-
-                  @media only screen and (max-width: 600px) {
-                    padding 2rem 1rem;
-                  }
-                `}
-              >
-                <Link
-                  css={css`
-                    margin-left: 1rem;
-                    color: var(--textPrimary);
-                  `}
-                  to={'/'}
-                >
-                  <FaHome />
-                </Link>
-                <a
-                  href={medium}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  css={css`
-                    margin-left: 1rem;
-                    color: var(--textPrimary);
-                  `}
-                >
-                  <FaMedium />
-                </a>
-                <a
-                  href={github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  css={css`
-                    margin-left: 1rem;
-                    color: var(--textPrimary);
-                  `}
-                >
-                  <FaGithubSquare />
-                </a>
-                <Link
-                  css={css`
-                    margin-left: 1rem;
-                    color: var(--textPrimary);
-                  `}
-                  to={'/about'}
-                >
-                  <img
-                    src={profileImage}
-                    css={css`
-                      width: 20px;
-                      margin-bottom: 0;
-                      border-radius: 4px;
-                    `}
-                  />
-                </Link>
+            <header className="shadow">
+              <nav className="flex items-center p-4 sm:p-8 text-sm sm:text-base">
+                <div className="flex-grow space-x-4 sm:space-x-8">
+                  <Link to={'/'} className="text-primary">
+                    Home
+                  </Link>
+                  <a
+                    href={medium}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary"
+                  >
+                    Medium
+                  </a>
+                  <a
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary"
+                  >
+                    GitHub
+                  </a>
+                  <Link to={'/about'} className="text-primary">
+                    About
+                  </Link>
+                </div>
                 <span
-                  css={css`
-                    margin-left: 1rem;
-                    color: var(--hr);
-                  `}
-                >
-                  <FaGripLinesVertical />
-                </span>
-                <span
+                  className="text-primary cursor-pointer"
                   onClick={() =>
                     toggleTheme(theme === 'dark' ? 'light' : 'dark')
                   }
-                  css={css`
-                    margin-left: 1rem;
-                    color: var(--textPrimary);
-                    cursor: pointer;
-                  `}
                 >
                   {theme === 'dark' ? <FaSun /> : <FaMoon />}
                 </span>
               </nav>
             </header>
-            <main
-              css={css`
-                max-width: 1400px;
-                margin: 0 auto;
-              `}
-            >
-              {children}
-            </main>
-            <footer
-              css={css`
-                border-top: solid 1px var(--hr);
-                background-color: var(--fadeBg);
-              `}
-            >
-              <div
-                css={css`
-                  max-width: 1400px;
-                  margin: 0 auto;
-                  padding 2rem;
-
-                  @media only screen and (max-width: 600px) {
-                    padding 2rem 1rem;
-                  }
-                `}
-              >
+            <main className="container mx-auto">{children}</main>
+            <footer>
+              <div className="p-8">
                 Made by{' '}
                 <a
                   href={github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  css={css`
-                    color: var(--textPrimary);
-                  `}
+                  className="text-teal-500"
                 >
                   {author}
                 </a>
@@ -164,9 +81,7 @@ const Layout: React.FC = ({ children }) => {
                   href="https://www.gatsbyjs.org"
                   target="_blank"
                   rel="noopener noreferrer"
-                  css={css`
-                    color: var(--textPrimary);
-                  `}
+                  className="text-teal-500"
                 >
                   Gatsby
                 </a>
