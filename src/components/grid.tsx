@@ -1,21 +1,13 @@
 import React from 'react'
 
-type GridProps = {
-  column?: number
-}
-
-const Grid: React.FC<GridProps> = ({ children, column }) => {
+const Grid: React.FC = ({ children }) => {
   return (
     <div
-      className={`grid grid-cols-1 lg:grid-cols-${column} mx-2 xl:mx-8 my-8 gap-8 xl:gap-12`}
+      className={`grid grid-cols-1 lg:grid-cols-3 mx-2 xl:mx-8 my-8 gap-8 xl:gap-12`}
     >
       {children}
     </div>
   )
-}
-
-Grid.defaultProps = {
-  column: 1,
 }
 
 export default Grid

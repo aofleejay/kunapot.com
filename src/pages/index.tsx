@@ -41,7 +41,7 @@ const IndexPage: React.FC<IndexPageProps> = props => {
         </h1>
         <p>Software development, Book summary, Games.</p>
       </section>
-      <Grid column={3}>
+      <Grid>
         {props.data.allMarkdownRemark.edges.map(({ node }) => (
           <BlogCard key={node.id} post={node} />
         ))}
