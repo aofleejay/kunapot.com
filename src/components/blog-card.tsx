@@ -25,7 +25,13 @@ const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
   return (
     <article className="flex flex-col overflow-hidden rounded border border-faded shadow-md">
       <Link to={post.fields.slug}>
-        <img className="mb-0" src={post.frontmatter.coverImage.publicURL} />
+        <img
+          className="mb-0"
+          src={
+            post?.frontmatter?.coverImage?.publicURL ||
+            'https://picsum.photos/600/300'
+          }
+        />
       </Link>
       <div className="flex flex-grow flex-col m-6">
         <span className="space-x-2 mb-2">
