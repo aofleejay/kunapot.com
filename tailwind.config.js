@@ -35,7 +35,7 @@ module.exports = {
             color: 'var(--primary)',
           },
           a: {
-            color: 'var(--primary)',
+            color: 'var(--ascending)',
           },
           h1: {
             color: 'var(--primary)',
