@@ -57,7 +57,7 @@ const Layout: React.FC = ({ children }) => {
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-teal-500"
+                className="text-green-500"
               >
                 {author}
               </a>
@@ -66,7 +66,7 @@ const Layout: React.FC = ({ children }) => {
                 href="https://www.gatsbyjs.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-teal-500"
+                className="text-green-500"
               >
                 Gatsby
               </a>

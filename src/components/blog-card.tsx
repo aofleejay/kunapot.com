@@ -23,7 +23,7 @@ type BlogCardProp = {
 
 const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
   return (
-    <article className="flex flex-col overflow-hidden rounded border border-faded shadow-md">
+    <article className="flex flex-col overflow-hidden rounded border border-faded transition duration-500 ease-in-out transform hover:-translate-y-2 shadow-md hover:shadow-xl">
       <Link to={post.fields.slug}>
         <img
           className="mb-0"
@@ -37,9 +37,9 @@ const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
         <span className="space-x-2 mb-2">
           {post.frontmatter.tags.map((tag, i) => (
             <>
-              {i > 0 && <span className="text-teal-500">•</span>}
+              {i > 0 && <span className="text-green-500">•</span>}
               <Link key={tag} to={`/tags/${tag}`}>
-                <span className="text-teal-500 text-sm">{tag}</span>
+                <span className="text-green-500 text-sm">{tag}</span>
               </Link>
             </>
           ))}

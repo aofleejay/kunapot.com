@@ -23,7 +23,7 @@ const AboutPage: React.FC = () => {
       <SEO />
       <div className="prose max-w-screen-md mx-auto p-4 my-8">
         <h1 className="text-2xl font-bold mb-8">
-          👋 Hi there, I'm <span className="text-teal-500">Aof</span>.
+          👋 Hi there, I'm <span className="text-green-500">Aof</span>.
         </h1>
         <p>
           I'm a software engineer from Bangkok, Thailand, and previously worked
