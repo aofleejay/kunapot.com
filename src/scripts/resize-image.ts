@@ -1,7 +1,7 @@
 import inquirer from 'inquirer'
 import sharp from 'sharp'
 
-enum ImageType {
+enum ImageType { // eslint-disable-line no-unused-vars
   coverImage = 'cover image', // eslint-disable-line no-unused-vars
   bookCover = 'book cover', // eslint-disable-line no-unused-vars
 }
@@ -17,7 +17,7 @@ const resize = ({ imageType, inputFile, outputFolder }: Input) => {
     { name: ImageType.coverImage, width: 1600, height: 900 },
     { name: ImageType.bookCover, width: 900, height: 1300 },
   ]
-  const size = imageSize.find(size => size.name === imageType)
+  const size = imageSize.find((size) => size.name === imageType)
 
   if (size) {
     sharp(inputFile)
@@ -39,14 +39,14 @@ inquirer
       type: 'input',
       name: 'inputFile',
       message: 'Drag input file here ?',
-      validate: title => !!title || 'Enter input file bro!!',
+      validate: (title) => !!title || 'Enter input file bro!!',
     },
     {
       type: 'input',
       name: 'outputFolder',
       message: 'Drag output folder here ?',
-      validate: title => !!title || 'Enter output folder bro!!',
+      validate: (title) => !!title || 'Enter output folder bro!!',
     },
   ])
-  .then(answers => resize(answers))
-  .catch(error => console.error(error))
+  .then((answers) => resize(answers))
+  .catch((error) => console.error(error))
