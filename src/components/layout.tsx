@@ -31,17 +31,34 @@ const Layout: React.FC = ({ children }) => {
             <header className="shadow border-b border-faded">
               <nav className="flex items-center p-4 sm:p-8 text-sm sm:text-base">
                 <div className="flex-grow space-x-4 sm:space-x-8">
-                  <Link to={'/'}>Home</Link>
-                  <a href={medium} target="_blank" rel="noopener noreferrer">
+                  <Link to={'/'} className="hover:text-ascending duration-500">
+                    Home
+                  </Link>
+                  <a
+                    href={medium}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-ascending duration-500"
+                  >
                     Medium
                   </a>
-                  <a href={github} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-ascending duration-500"
+                  >
                     GitHub
                   </a>
-                  <Link to={'/about'}>About</Link>
+                  <Link
+                    to={'/about'}
+                    className="hover:text-ascending duration-500"
+                  >
+                    About
+                  </Link>
                 </div>
                 <span
-                  className="cursor-pointer"
+                  className="cursor-pointer hover:text-ascending duration-500"
                   onClick={() =>
                     toggleTheme(theme === 'dark' ? 'light' : 'dark')
                   }
@@ -57,7 +74,7 @@ const Layout: React.FC = ({ children }) => {
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-500"
+                className="text-ascending"
               >
                 {author}
               </a>
@@ -66,7 +83,7 @@ const Layout: React.FC = ({ children }) => {
                 href="https://www.gatsbyjs.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-green-500"
+                className="text-ascending"
               >
                 Gatsby
               </a>

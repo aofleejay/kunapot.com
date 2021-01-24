@@ -37,7 +37,7 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
       <section className="mx-8 my-16 text-center">
         <h1 className="text-2xl font-bold mb-2">
           <span className="text-primary mr-1">AOFLEEJAY</span>
-          <span className="text-green-500">BLOG</span>
+          <span className="text-ascending">BLOG</span>
         </h1>
         <p>Software development, Book summary, Games.</p>
       </section>

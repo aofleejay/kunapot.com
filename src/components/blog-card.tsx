@@ -34,14 +34,15 @@ const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
         />
       </Link>
       <div className="flex flex-grow flex-col m-6">
-        <span className="space-x-2 mb-2">
-          {post.frontmatter.tags.map((tag, i) => (
-            <>
-              {i > 0 && <span className="text-green-500">•</span>}
-              <Link key={tag} to={`/tags/${tag}`}>
-                <span className="text-green-500 text-sm">{tag}</span>
-              </Link>
-            </>
+        <span className="space-x-2 mb-3">
+          {post.frontmatter.tags.map((tag) => (
+            <Link
+              key={tag}
+              to={`/tags/${tag}`}
+              className="border border-ascending rounded-full py-1 px-4"
+            >
+              <span className="text-ascending text-sm">{tag}</span>
+            </Link>
           ))}
         </span>
         <Link to={post.fields.slug}>

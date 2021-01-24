@@ -52,18 +52,18 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
         <h1 className="text-2xl font-bold text-primary mb-4">
           {post.frontmatter.title}
         </h1>
-        <p className="mb-8 space-x-4 text-gray-500">
+        <p className="mb-4 space-x-4 text-gray-500">
           <span>{post.timeToRead} min read</span>
           <span>•</span>
           <span>{post.frontmatter.date}</span>
-          <span>•</span>
-          {post.frontmatter.tags.map((tag, i) => (
-            <>
-              {i > 0 && <span>•</span>}
-              <Link key={tag} to={`/tags/${tag}`}>
-                <span>{tag}</span>
-              </Link>
-            </>
+        </p>
+        <p className="mb-8 space-x-4">
+          {post.frontmatter.tags.map((tag) => (
+            <Link key={tag} to={`/tags/${tag}`}>
+              <span className="bg-ascending rounded-full py-1 px-4 text-white">
+                {tag}
+              </span>
+            </Link>
           ))}
         </p>
         <img

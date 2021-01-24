@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         primary: 'var(--primary)',
         faded: 'var(--faded)',
+        ascending: 'var(--ascending)',
       },
       typography: {
         DEFAULT: {
