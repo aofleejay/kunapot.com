@@ -3,7 +3,6 @@ title: 'The New Rules of Coffee'
 description: 'ผมเรียกตัวเองว่าคนกินกาแฟมือใหม่ บวกกับไปเดินในร้านหนังสือและได้เห็น "กฎเกณฑ์กาแฟฉบับใหม่ - The New Rule of Coffee" วางอยู่บนชั้นหนังสือ พลิกหน้าหลังดูสักหน่อยเลยตัดสินใจซื้อมา และเอามาเป็นเล่าหนังสือในวันนี้ครับ'
 date: '2020-03-08T14:06:06.053Z'
 coverImage: './the-new-rules-of-coffee-cover-image.jpg'
-bookCover: './the-new-rules-of-coffee-book-cover.jpg'
 tags: ['เล่าหนังสือ']
 draft: false
 ---

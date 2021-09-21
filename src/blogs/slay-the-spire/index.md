@@ -3,7 +3,6 @@ title: 'Slay the Spire'
 description: 'เล่าเกมตะลุยด่าย ต่อสู้กับศัตรูโดยใช้การ์ด'
 date: '2019-12-17T17:43:24.967Z'
 coverImage: './slay-the-spire-cover-image.jpg'
-bookCover: './slay-the-spire-book-cover.jpg'
 tags: ['เล่าเกม']
 draft: false
 ---

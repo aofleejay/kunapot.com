@@ -2,7 +2,6 @@
 title: 'เมื่อหัวว่าง จึงสร้างสรรค์'
 date: '2019-05-15'
 coverImage: './เมื่อหัวว่าง-จึงสร้างสรรค์-cover-image.jpg'
-bookCover: './เมื่อหัวว่าง-จึงสร้างสรรค์-book-cover.jpg'
 tags: ['เล่าหนังสือ']
 draft: false
 ---

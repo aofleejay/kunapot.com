@@ -8,16 +8,9 @@ type BlogInput = {
   tags: string
   draft: boolean
   coverImage: string
-  bookCover: string
 }
 
-const createBlog = ({
-  title,
-  tags,
-  draft,
-  coverImage,
-  bookCover,
-}: BlogInput) => {
+const createBlog = ({ title, tags, draft, coverImage }: BlogInput) => {
   const targetDir = __dirname + `/../blogs/${kebabCase(title)}`
 
   if (!fs.existsSync(targetDir)) {
@@ -30,10 +23,9 @@ title: '${title}'
 description: ''
 date: '${date}'
 # coverImage: '${coverImage}'
-# bookCover: '${bookCover}'
 tags: [${tags
     .split(',')
-    .map(tag => `'${kebabCase(tag)}'`)
+    .map((tag) => `'${kebabCase(tag)}'`)
     .join()}]
 draft: ${draft}
 ---`
@@ -49,7 +41,7 @@ inquirer
       type: 'input',
       name: 'title',
       message: 'Blog title ?',
-      validate: title => !!title || 'Enter title bro!!',
+      validate: (title) => !!title || 'Enter title bro!!',
     },
     {
       type: 'input',
@@ -61,13 +53,7 @@ inquirer
       type: 'input',
       name: 'coverImage',
       message: 'Cover image ?',
-      default: ({ title }: BlogInput) => `${kebabCase(title)}-cover-image.jpg`,
-    },
-    {
-      type: 'input',
-      name: 'bookCover',
-      message: 'Book cover ?',
-      default: ({ title }: BlogInput) => `${kebabCase(title)}-book-cover.jpg`,
+      default: ({ title }: BlogInput) => `${kebabCase(title)}-cover-image.webp`,
     },
     {
       type: 'input',
@@ -76,5 +62,5 @@ inquirer
       default: true,
     },
   ])
-  .then(answers => createBlog(answers))
-  .catch(error => console.error(error))
+  .then((answers) => createBlog(answers))
+  .catch((error) => console.error(error))

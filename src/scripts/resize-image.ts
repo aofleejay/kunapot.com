@@ -3,7 +3,6 @@ import sharp from 'sharp'
 
 enum ImageType { // eslint-disable-line no-unused-vars
   coverImage = 'cover image', // eslint-disable-line no-unused-vars
-  bookCover = 'book cover', // eslint-disable-line no-unused-vars
 }
 
 type Input = {
@@ -13,10 +12,7 @@ type Input = {
 }
 
 const resize = ({ imageType, inputFile, outputFolder }: Input) => {
-  const imageSize = [
-    { name: ImageType.coverImage, width: 1600, height: 900 },
-    { name: ImageType.bookCover, width: 900, height: 1300 },
-  ]
+  const imageSize = [{ name: ImageType.coverImage, width: 1600, height: 900 }]
   const size = imageSize.find((size) => size.name === imageType)
 
   if (size) {
@@ -33,7 +29,7 @@ inquirer
       type: 'list',
       name: 'imageType',
       message: 'Select image type ?',
-      choices: [ImageType.coverImage, ImageType.bookCover],
+      choices: [ImageType.coverImage],
     },
     {
       type: 'input',
