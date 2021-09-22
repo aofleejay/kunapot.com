@@ -30,11 +30,11 @@ interface TagsPageProps {
   }
 }
 
-const TagsPage: React.FC<TagsPageProps> = props => {
+const TagsPage: React.FC<TagsPageProps> = (props) => {
   return (
     <Layout>
       <SEO />
-      <Grid column={3}>
+      <Grid>
         {props.data.allMarkdownRemark.edges.map(({ node }) => (
           <BlogCard key={node.id} post={node} />
         ))}
@@ -44,7 +44,7 @@ const TagsPage: React.FC<TagsPageProps> = props => {
 }
 
 export const query = graphql`
-  query($tag: String!) {
+  query ($tag: String!) {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] }, draft: { ne: true } } }
