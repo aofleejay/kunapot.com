@@ -67,13 +67,6 @@ module.exports = {
     },
     'gatsby-plugin-dark-mode',
     `gatsby-plugin-sitemap`,
-    {
-      resolve: 'gatsby-source-medium-feed',
-      options: {
-        userName: '@aofleejay',
-        name: 'MediumFeed',
-      },
-    },
     `gatsby-plugin-postcss`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
