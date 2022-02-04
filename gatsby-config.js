@@ -62,6 +62,9 @@ module.exports = {
               height: 330,
             },
           },
+          {
+            resolve: `gatsby-remark-highlight-code`,
+          },
         ],
       },
     },
