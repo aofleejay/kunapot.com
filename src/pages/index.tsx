@@ -1,4 +1,5 @@
 import { graphql } from 'gatsby'
+import { IGatsbyImageData } from 'gatsby-plugin-image'
 import React from 'react'
 import { BlogCard, Grid, Layout, SEO } from '../components'
 
@@ -11,10 +12,7 @@ interface IndexPageProps {
             id: string
             frontmatter: {
               title: string
-              coverImage: {
-                name: string
-                publicURL: string
-              }
+              coverImage: IGatsbyImageData
               date: string
               tags: [string]
             }
@@ -62,8 +60,9 @@ export const query = graphql`
           frontmatter {
             title
             coverImage {
-              name
-              publicURL
+              childImageSharp {
+                gatsbyImageData
+              }
             }
             date(fromNow: true)
             tags

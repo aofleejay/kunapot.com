@@ -1,5 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import {
+  GatsbyImage,
+  getImage,
+  IGatsbyImageData,
+  ImageDataLike,
+} from 'gatsby-plugin-image'
 
 type BlogCardProp = {
   post: {
@@ -11,10 +17,7 @@ type BlogCardProp = {
       title: string
       date: string
       tags: string[]
-      coverImage: {
-        publicURL: string
-        name: string
-      }
+      coverImage: IGatsbyImageData
     }
     excerpt: string
     timeToRead: number
@@ -25,12 +28,9 @@ const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
   return (
     <article className="flex flex-col overflow-hidden rounded border border-faded transition duration-500 ease-in-out transform hover:-translate-y-2 shadow-md hover:shadow-xl">
       <Link to={post.fields.slug}>
-        <img
+        <GatsbyImage
           className="mb-0"
-          src={
-            post?.frontmatter?.coverImage?.publicURL ||
-            'https://picsum.photos/600/300'
-          }
+          image={getImage(post.frontmatter.coverImage)!}
         />
       </Link>
       <div className="flex flex-grow flex-col m-6">

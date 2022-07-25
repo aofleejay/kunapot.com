@@ -14,6 +14,8 @@ module.exports = {
     },
   },
   plugins: [
+    'gatsby-plugin-webpack-bundle-analyser-v2',
+    'gatsby-plugin-preact',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -29,6 +31,7 @@ module.exports = {
         path: `${__dirname}/src/blogs`,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

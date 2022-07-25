@@ -18,8 +18,8 @@ const resize = ({ imageType, inputFile, outputFolder }: Input) => {
   if (size) {
     sharp(inputFile)
       .resize(size.width, size.height)
-      .jpeg()
-      .toFile(`${outputFolder}/foo-cover-image.jpg`)
+      .webp()
+      .toFile(`${outputFolder}/foo-cover-image.webp`)
   }
 }
 
