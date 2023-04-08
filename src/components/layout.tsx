@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import { FaSun, FaMoon } from 'react-icons/fa'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader'
 deckDeckGoHighlightElement()
 
@@ -37,9 +38,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             <header className="shadow border-b border-faded">
               <nav className="flex items-center p-4 sm:p-8 text-sm sm:text-base">
                 <div className="flex-grow space-x-4 sm:space-x-8">
-                  <Link to={'/'} className="hover:text-ascending duration-500">
+                  <AniLink
+                    paintDrip
+                    hex="#38b2ac"
+                    to={'/'}
+                    className="hover:text-ascending duration-500"
+                  >
                     Home
-                  </Link>
+                  </AniLink>
                   <a
                     href={medium}
                     target="_blank"
@@ -56,12 +62,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   >
                     GitHub
                   </a>
-                  <Link
+                  <AniLink
+                    paintDrip
+                    hex="#38b2ac"
                     to={'/about'}
                     className="hover:text-ascending duration-500"
                   >
                     About
-                  </Link>
+                  </AniLink>
                 </div>
                 <span
                   className="cursor-pointer hover:text-ascending duration-500"

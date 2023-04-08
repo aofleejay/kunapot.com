@@ -1,6 +1,7 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import { DiscussionEmbed } from 'disqus-react'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { Layout, SEO } from '../components'
 
 type BlogPostProps = {
@@ -59,11 +60,11 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
         </p>
         <p className="mb-8 space-x-4">
           {post.frontmatter.tags.map((tag) => (
-            <Link key={tag} to={`/tags/${tag}`}>
+            <AniLink key={tag} paintDrip hex="#38b2ac" to={`/tags/${tag}`}>
               <span className="bg-ascending rounded-full py-1 px-4 text-white">
                 {tag}
               </span>
-            </Link>
+            </AniLink>
           ))}
         </p>
         <img
@@ -92,7 +93,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
 }
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     markdownRemark(
       fields: { slug: { eq: $slug } }
       frontmatter: { draft: { ne: true } }

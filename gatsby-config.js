@@ -15,6 +15,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-webpack-bundle-analyser-v2',
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

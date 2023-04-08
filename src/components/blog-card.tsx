@@ -1,11 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import {
   GatsbyImage,
   getImage,
   IGatsbyImageData,
   ImageDataLike,
 } from 'gatsby-plugin-image'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 type BlogCardProp = {
   post: {
@@ -27,32 +27,39 @@ type BlogCardProp = {
 const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
   return (
     <article className="flex flex-col overflow-hidden rounded-lg border border-faded transition duration-500 ease-in-out transform hover:-translate-y-2 shadow-lg hover:shadow-xl">
-      <Link to={post.fields.slug}>
+      <AniLink paintDrip hex="#38b2ac" to={post.fields.slug}>
         <GatsbyImage
           className="mb-0"
           image={getImage(post.frontmatter.coverImage)!}
         />
-      </Link>
+      </AniLink>
       <div className="flex flex-grow flex-col m-6">
         <span className="space-x-2 mb-3">
           {post.frontmatter.tags.map((tag) => (
-            <Link
+            <AniLink
               key={tag}
+              paintDrip
+              hex="#38b2ac"
               to={`/tags/${tag}`}
               className="border border-ascending rounded-full py-1 px-4"
             >
               <span className="text-ascending text-sm">{tag}</span>
-            </Link>
+            </AniLink>
           ))}
         </span>
-        <Link to={post.fields.slug}>
+        <AniLink paintDrip hex="#38b2ac" to={post.fields.slug}>
           <p className="mb-4 text-lg font-bold text-primary">
             {post.frontmatter.title}
           </p>
-        </Link>
-        <Link to={post.fields.slug} className="flex-grow">
+        </AniLink>
+        <AniLink
+          paintDrip
+          hex="#38b2ac"
+          to={post.fields.slug}
+          className="flex-grow"
+        >
           <p className="mb-4 text-sm">{post.excerpt}</p>
-        </Link>
+        </AniLink>
         <p className="text-xs space-x-2">
           <span>{post.frontmatter.date}</span>
           <span>•</span>
