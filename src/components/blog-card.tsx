@@ -26,7 +26,7 @@ type BlogCardProp = {
 
 const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
   return (
-    <article className="flex flex-col overflow-hidden rounded border border-faded transition duration-500 ease-in-out transform hover:-translate-y-2 shadow-md hover:shadow-xl">
+    <article className="flex flex-col overflow-hidden rounded-lg border border-faded transition duration-500 ease-in-out transform hover:-translate-y-2 shadow-lg hover:shadow-xl">
       <Link to={post.fields.slug}>
         <GatsbyImage
           className="mb-0"

@@ -26,8 +26,8 @@ const AboutPage: React.FC = () => {
           👋 Hi there, I'm <span className="text-ascending">Aof</span>.
         </h1>
         <p>
-          I'm a software engineer from Bangkok, Thailand, and previously worked
-          at THiNKNET. I write code on{' '}
+          I'm a software engineer from Bangkok, Thailand, currently worked at
+          THiNKNET. I write code on{' '}
           <a href={github} target="_blank" rel="noopener noreferrer">
             GitHub
           </a>{' '}
@@ -46,8 +46,8 @@ const AboutPage: React.FC = () => {
           >
             GitHub
           </a>{' '}
-          mostly in JavaScript and TypeScript. My previous work is about
-          building websites and mobile applications using React and React-Native
+          mostly in JavaScript and TypeScript. My work is about building
+          websites and mobile applications using Flutter, React and React-Native
           and also backend with ExpressJS.
         </p>
         <p>
