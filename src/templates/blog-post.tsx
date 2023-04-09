@@ -15,6 +15,12 @@ type BlogPostProps = {
         coverImage: {
           name: string
           publicURL: string
+          childImageSharp: {
+            original: {
+              width: number
+              height: number
+            }
+          }
         }
         date: string
       }
@@ -45,6 +51,10 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
         keywords={post.frontmatter.tags}
         image={
           post.frontmatter.coverImage && post.frontmatter.coverImage.publicURL
+        }
+        imageWidth={post.frontmatter.coverImage.childImageSharp.original.width}
+        imageHeight={
+          post.frontmatter.coverImage.childImageSharp.original.height
         }
         slug={post.fields.slug}
         article
@@ -106,6 +116,12 @@ export const query = graphql`
         coverImage {
           name
           publicURL
+          childImageSharp {
+            original {
+              width
+              height
+            }
+          }
         }
         date(fromNow: true)
       }

@@ -8,6 +8,8 @@ type SEOProps = {
   author?: string
   keywords?: string[]
   image?: string
+  imageWidth?: number
+  imageHeight?: number
   article?: boolean
   slug?: string
 }
@@ -46,6 +48,15 @@ const SEO: React.FC<SEOProps> = (props) => {
               <meta
                 property="og:image:secure_url"
                 content={`${data.site.siteMetadata.siteUrl}${props.image}`}
+              />
+            )}
+            {props.imageWidth && (
+              <meta property="og:image:width" content={`${props.imageWidth}`} />
+            )}
+            {props.imageHeight && (
+              <meta
+                property="og:image:height"
+                content={`${props.imageHeight}`}
               />
             )}
             <meta property="og:locale" content="th_TH" />
