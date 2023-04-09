@@ -12,11 +12,11 @@ type SEOProps = {
   slug?: string
 }
 
-const SEO: React.FC<SEOProps> = props => {
+const SEO: React.FC<SEOProps> = (props) => {
   return (
     <StaticQuery
       query={query}
-      render={data => {
+      render={(data) => {
         const title = props.title || data.site.siteMetadata.title
         const description = props.description || data.site.siteMetadata.title
         const author = props.author || data.site.siteMetadata.author
@@ -38,7 +38,7 @@ const SEO: React.FC<SEOProps> = props => {
             {props.article && <meta property="og:type" content="article" />}
             {props.image && (
               <meta
-                property="og:image"
+                property="og:image:secure_url"
                 content={`${data.site.siteMetadata.siteUrl}${props.image}`}
               />
             )}
