@@ -38,6 +38,12 @@ const SEO: React.FC<SEOProps> = (props) => {
             {props.article && <meta property="og:type" content="article" />}
             {props.image && (
               <meta
+                property="og:image"
+                content={`${data.site.siteMetadata.siteUrl}${props.image}`}
+              />
+            )}
+            {props.image && (
+              <meta
                 property="og:image:secure_url"
                 content={`${data.site.siteMetadata.siteUrl}${props.image}`}
               />
