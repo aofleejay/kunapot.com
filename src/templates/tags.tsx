@@ -28,10 +28,9 @@ interface TagsPageProps {
   }
 }
 
-const TagsPage: React.FC<TagsPageProps> = (props) => {
+const TagsPage = (props: TagsPageProps) => {
   return (
     <Layout>
-      <SEO />
       <Grid>
         {props.data.allMarkdownRemark.edges.map(({ node }) => (
           <BlogCard key={node.id} post={node} />
@@ -40,6 +39,8 @@ const TagsPage: React.FC<TagsPageProps> = (props) => {
     </Layout>
   )
 }
+
+export const Head = () => <SEO />
 
 export const query = graphql`
   query ($tag: String!) {

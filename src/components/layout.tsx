@@ -1,16 +1,15 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import { FaSun, FaMoon } from 'react-icons/fa'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader'
 deckDeckGoHighlightElement()
 
-type LayoutProps = {
+interface LayoutProps {
   children: React.ReactNode
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout = ({ children }: LayoutProps) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -34,18 +33,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <ThemeToggler>
       {({ theme, toggleTheme }) => {
         return (
-          <>
-            <header className="shadow border-b border-faded">
+          <div className="min-h-screen">
+            <header>
               <nav className="flex items-center p-4 sm:p-8 text-sm sm:text-base">
                 <div className="flex-grow space-x-4 sm:space-x-8">
-                  <AniLink
-                    paintDrip
-                    hex="#38b2ac"
-                    to={'/'}
-                    className="hover:text-ascending duration-500"
-                  >
+                  <Link to={'/'} className="hover:text-ascending duration-500">
                     Home
-                  </AniLink>
+                  </Link>
                   <a
                     href={medium}
                     target="_blank"
@@ -62,14 +56,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   >
                     GitHub
                   </a>
-                  <AniLink
-                    paintDrip
-                    hex="#38b2ac"
+                  <Link
                     to={'/about'}
                     className="hover:text-ascending duration-500"
                   >
                     About
-                  </AniLink>
+                  </Link>
                 </div>
                 <span
                   className="cursor-pointer hover:text-ascending duration-500"
@@ -81,9 +73,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </span>
               </nav>
             </header>
-            <main className="container mx-auto">{children}</main>
-            <footer className="p-8">
-              Made by{' '}
+            <main className="container mx-auto pb-8 sm:pb-16">{children}</main>
+            <footer className="w-full fixed bottom-0 px-8 py-4 sm:py-8 bg-faded">
+              Made with 💖 by{' '}
               <a
                 href={github}
                 target="_blank"
@@ -103,7 +95,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </a>
               .
             </footer>
-          </>
+          </div>
         )
       }}
     </ThemeToggler>

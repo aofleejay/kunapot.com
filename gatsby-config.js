@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `aofleejay.com`,
@@ -15,15 +19,13 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-webpack-bundle-analyser-v2',
-    `gatsby-plugin-transition-link`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'UA-75313761-4',
+        trackingIds: [process.env.GA4_TAG_ID],
       },
     },
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

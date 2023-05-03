@@ -28,10 +28,9 @@ interface IndexPageProps {
   }
 }
 
-const IndexPage: React.FC<IndexPageProps> = (props) => {
+const IndexPage = (props: IndexPageProps) => {
   return (
     <Layout>
-      <SEO />
       <section className="mx-8 my-16 text-center">
         <h1 className="text-2xl font-bold mb-2">
           <span className="text-primary mr-1">AOFLEEJAY</span>
@@ -47,6 +46,8 @@ const IndexPage: React.FC<IndexPageProps> = (props) => {
     </Layout>
   )
 }
+
+export const Head = () => <SEO />
 
 export const query = graphql`
   query {

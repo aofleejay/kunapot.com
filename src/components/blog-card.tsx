@@ -1,13 +1,8 @@
 import React from 'react'
-import {
-  GatsbyImage,
-  getImage,
-  IGatsbyImageData,
-  ImageDataLike,
-} from 'gatsby-plugin-image'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
+import { Link } from 'gatsby'
 
-type BlogCardProp = {
+interface BlogCardProp {
   post: {
     id: string
     fields: {
@@ -24,42 +19,36 @@ type BlogCardProp = {
   }
 }
 
-const BlogCard: React.FC<BlogCardProp> = ({ post }) => {
+const BlogCard = ({ post }: BlogCardProp) => {
   return (
     <article className="flex flex-col overflow-hidden rounded-lg border border-faded transition duration-500 ease-in-out transform hover:-translate-y-2 shadow-lg hover:shadow-xl">
-      <AniLink paintDrip hex="#38b2ac" to={post.fields.slug}>
+      <Link to={post.fields.slug}>
         <GatsbyImage
           className="mb-0"
           image={getImage(post.frontmatter.coverImage)!}
+          alt=""
         />
-      </AniLink>
+      </Link>
       <div className="flex flex-grow flex-col m-6">
         <span className="space-x-2 mb-3">
           {post.frontmatter.tags.map((tag) => (
-            <AniLink
+            <Link
               key={tag}
-              paintDrip
-              hex="#38b2ac"
               to={`/tags/${tag}`}
               className="border border-ascending rounded-full py-1 px-4"
             >
               <span className="text-ascending text-sm">{tag}</span>
-            </AniLink>
+            </Link>
           ))}
         </span>
-        <AniLink paintDrip hex="#38b2ac" to={post.fields.slug}>
+        <Link to={post.fields.slug}>
           <p className="mb-4 text-lg font-bold text-primary">
             {post.frontmatter.title}
           </p>
-        </AniLink>
-        <AniLink
-          paintDrip
-          hex="#38b2ac"
-          to={post.fields.slug}
-          className="flex-grow"
-        >
+        </Link>
+        <Link to={post.fields.slug} className="flex-grow">
           <p className="mb-4 text-sm">{post.excerpt}</p>
-        </AniLink>
+        </Link>
         <p className="text-xs space-x-2">
           <span>{post.frontmatter.date}</span>
           <span>•</span>

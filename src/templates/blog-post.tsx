@@ -1,10 +1,9 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import { DiscussionEmbed } from 'disqus-react'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import { Layout, SEO } from '../components'
 
-type BlogPostProps = {
+interface BlogPostProps {
   data: {
     markdownRemark: {
       html: string
@@ -40,25 +39,11 @@ type BlogPostProps = {
   }
 }
 
-const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
+const BlogPost = ({ data }: BlogPostProps) => {
   const post = data.markdownRemark
 
   return (
     <Layout>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description}
-        keywords={post.frontmatter.tags}
-        image={
-          post.frontmatter.coverImage && post.frontmatter.coverImage.publicURL
-        }
-        imageWidth={post.frontmatter.coverImage.childImageSharp.original.width}
-        imageHeight={
-          post.frontmatter.coverImage.childImageSharp.original.height
-        }
-        slug={post.fields.slug}
-        article
-      />
       <div className="max-w-screen-md mx-auto p-4 my-8">
         <h1 className="text-2xl font-bold text-primary mb-4">
           {post.frontmatter.title}
@@ -70,11 +55,11 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
         </p>
         <p className="mb-8 space-x-4">
           {post.frontmatter.tags.map((tag) => (
-            <AniLink key={tag} paintDrip hex="#38b2ac" to={`/tags/${tag}`}>
+            <Link key={tag} to={`/tags/${tag}`}>
               <span className="bg-ascending rounded-full py-1 px-4 text-white">
                 {tag}
               </span>
-            </AniLink>
+            </Link>
           ))}
         </p>
         <img
@@ -99,6 +84,25 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
         />
       </div>
     </Layout>
+  )
+}
+
+export const Head = ({ data }: BlogPostProps) => {
+  const post = data.markdownRemark
+
+  return (
+    <SEO
+      title={post.frontmatter.title}
+      description={post.frontmatter.description}
+      keywords={post.frontmatter.tags}
+      image={
+        post.frontmatter.coverImage && post.frontmatter.coverImage.publicURL
+      }
+      imageWidth={post.frontmatter.coverImage.childImageSharp.original.width}
+      imageHeight={post.frontmatter.coverImage.childImageSharp.original.height}
+      slug={post.fields.slug}
+      article
+    />
   )
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import { Layout, SEO } from '../components'
 
-const AboutPage: React.FC = () => {
+const AboutPage = () => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -20,7 +20,6 @@ const AboutPage: React.FC = () => {
 
   return (
     <Layout>
-      <SEO />
       <div className="prose max-w-screen-md mx-auto p-4 my-8">
         <h1 className="text-2xl font-bold mb-8">
           👋 Hi there, I'm <span className="text-ascending">Aof</span>.
@@ -68,5 +67,7 @@ const AboutPage: React.FC = () => {
     </Layout>
   )
 }
+
+export const Head = () => <SEO />
 
 export default AboutPage

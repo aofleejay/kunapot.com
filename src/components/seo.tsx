@@ -1,8 +1,7 @@
 import React from 'react'
-import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-type SEOProps = {
+interface SEOProps {
   title?: string
   description?: string
   author?: string
@@ -14,7 +13,7 @@ type SEOProps = {
   slug?: string
 }
 
-const SEO: React.FC<SEOProps> = (props) => {
+const SEO = (props: SEOProps) => {
   return (
     <StaticQuery
       query={query}
@@ -26,7 +25,7 @@ const SEO: React.FC<SEOProps> = (props) => {
         const slug = props.slug || '/'
 
         return (
-          <Helmet title={title}>
+          <>
             <meta name="description" content={description} />
             <meta name="author" content={author} />
             <meta name="keywords" content={keywords.join()} />
@@ -64,7 +63,7 @@ const SEO: React.FC<SEOProps> = (props) => {
               property="fb:app_id"
               content={data.site.siteMetadata.facebookAppID}
             />
-          </Helmet>
+          </>
         )
       }}
     />

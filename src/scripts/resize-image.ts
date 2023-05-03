@@ -16,10 +16,11 @@ const resize = ({ imageType, inputFile, outputFolder }: Input) => {
   const size = imageSize.find((size) => size.name === imageType)
 
   if (size) {
+    const fileName = `${outputFolder.split('/').pop()}-cover-image.webp`
     sharp(inputFile)
       .resize(size.width, size.height)
       .webp()
-      .toFile(`${outputFolder}/foo-cover-image.webp`)
+      .toFile(`${outputFolder}/${fileName}`)
   }
 }
 
