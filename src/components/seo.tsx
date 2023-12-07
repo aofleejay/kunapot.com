@@ -50,7 +50,7 @@ const SEO = (props: SEOProps) => {
               />
             )}
             {props.image && (
-              <meta property="og:image:type" content={`image/jpeg}`} />
+              <meta property="og:image:type" content="image/jpeg" />
             )}
             {props.imageWidth && (
               <meta property="og:image:width" content={`${props.imageWidth}`} />
