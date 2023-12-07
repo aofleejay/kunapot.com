@@ -1,12 +1,12 @@
 require('dotenv').config({
-  path: `.env`,
+  path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
   siteMetadata: {
-    title: `aofleejay.com`,
+    title: `kunapot.com`,
     author: `aofleejay`,
-    siteUrl: 'https://aofleejay.com',
+    siteUrl: 'https://kunapot.com',
     keywords: ['เล่าหนังสือ', 'เล่าเกม'],
     social: {
       medium: 'https://medium.com/@aofleejay/latest',
