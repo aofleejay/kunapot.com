@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkkunapot_com=self.webpackChunkkunapot_com||[]).push([[975],{2178:function(e,t,n){n.r(t),n.d(t,{Head:function(){return r}});var a=n(7294),l=n(9127);const r=()=>a.createElement(l.HJ,null);t.default=e=>a.createElement(l.Ar,null,a.createElement(l.rj,null,e.data.allMarkdownRemark.edges.map((e=>{let{node:t}=e;return a.createElement(l.$h,{key:t.id,post:t})}))))}}]);
+//# sourceMappingURL=component---src-templates-tags-tsx-dddab8cdbecf1cb786ad.js.map
