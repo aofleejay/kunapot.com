@@ -21,13 +21,8 @@
   yarn serve
   ```
 
-- **Deployment**
-  ```
-  yarn deploy
-  ```
-
 ## ➕ Create blog
 
 ```
-yarn create:blog
+yarn blog:create
 ```
