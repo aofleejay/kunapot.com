@@ -49,9 +49,9 @@ const SEO = (props: SEOProps) => {
                 content={`${data.site.siteMetadata.siteUrl}${props.image}`}
               />
             )} */}
-            {/* {props.image && (
+            {props.image && (
               <meta property="og:image:type" content="image/jpeg" />
-            )} */}
+            )}
             {props.imageWidth && (
               <meta property="og:image:width" content={`${props.imageWidth}`} />
             )}
