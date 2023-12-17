@@ -16,6 +16,7 @@ interface BlogPostProps {
           publicURL: string
           childImageSharp: {
             original: {
+              src: string
               width: number
               height: number
             }
@@ -95,9 +96,7 @@ export const Head = ({ data }: BlogPostProps) => {
       title={post.frontmatter.title}
       description={post.frontmatter.description}
       keywords={post.frontmatter.tags}
-      image={
-        post.frontmatter.coverImage && post.frontmatter.coverImage.publicURL
-      }
+      image={post.frontmatter.coverImage.childImageSharp.original.src}
       imageWidth={post.frontmatter.coverImage.childImageSharp.original.width}
       imageHeight={post.frontmatter.coverImage.childImageSharp.original.height}
       slug={post.fields.slug}
@@ -122,6 +121,7 @@ export const query = graphql`
           publicURL
           childImageSharp {
             original {
+              src
               width
               height
             }
