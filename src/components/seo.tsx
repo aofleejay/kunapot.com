@@ -61,7 +61,7 @@ const SEO = (props: SEOProps) => {
                 content={`${props.imageHeight}`}
               />
             )}
-            <meta property="og:locale" content="th_TH" />
+            {/* <meta property="og:locale" content="th_TH" /> */}
             <meta
               property="fb:app_id"
               content={data.site.siteMetadata.facebookAppID}
