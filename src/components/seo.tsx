@@ -40,7 +40,7 @@ const SEO = (props: SEOProps) => {
             {props.image && (
               <meta
                 property="og:image"
-                content={`${data.site.siteMetadata.siteUrl}${props.image}`}
+                content={encodeURI(`${data.site.siteMetadata.siteUrl}${props.image}`)}
               />
             )}
             {/* {props.image && (
