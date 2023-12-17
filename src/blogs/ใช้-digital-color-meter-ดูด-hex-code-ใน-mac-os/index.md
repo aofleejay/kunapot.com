@@ -2,7 +2,7 @@
 title: 'ใช้ Digital Color Meter ดูด Hex Code ใน MacOS'
 description: 'Digital Color Meter เป็นแอพติดเครื่องของ MacOS ที่ใช้ดูดสีจากส่วนต่างๆ ของหน้าจอเรา แต่สารภาพว่าผมมองข้ามเครื่องมือตัวนี้มาตลอด เพราะมันดูดสีมาเป็น RGB แต่ที่ผมอยากได้ส่วนใหญ่ผมมักจะเป็น Hexadecimal มากกว่าน่ะ'
 date: '2020-09-10T13:46:36.579Z'
-coverImage: 'ใช้-digital-color-meter-ดูด-hex-code-ใน-mac-os-cover-image.jpg'
+coverImage: 'ใช้-digital-color-meter-ดูด-hex-code-ใน-mac-os-cover-image.jpeg'
 tags: ['เล่าโค้ด']
 draft: false
 ---
