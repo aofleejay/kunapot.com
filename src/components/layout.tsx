@@ -78,7 +78,7 @@ const Layout = ({ children }: LayoutProps) => {
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-ascending"
+                className="text-ascending underline underline-offset-2"
               >
                 {author}
               </a>
@@ -87,7 +87,7 @@ const Layout = ({ children }: LayoutProps) => {
                 href="https://www.gatsbyjs.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-ascending"
+                className="text-ascending underline underline-offset-2"
               >
                 Gatsby
               </a>
