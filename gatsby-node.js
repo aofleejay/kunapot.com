@@ -10,6 +10,14 @@ const path = require(`path`)
 const _ = require('lodash')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
+  const config = getConfig()
+  config.plugins = config.plugins.filter(
+    (plugin) => plugin.constructor.name !== 'ESLintWebpackPlugin',
+  )
+  actions.replaceWebpackConfig(config)
+}
+
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {

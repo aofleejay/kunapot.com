@@ -40,7 +40,17 @@ const TagsPage = (props: TagsPageProps) => {
   )
 }
 
-export const Head = () => <SEO />
+interface TagsHeadProps {
+  pageContext: { tag: string }
+}
+
+export const Head = ({ pageContext }: TagsHeadProps) => (
+  <SEO
+    title={`${pageContext.tag}`}
+    description={`บทความทั้งหมดในหมวด ${pageContext.tag}`}
+    slug={`/tags/${pageContext.tag}/`}
+  />
+)
 
 export const query = graphql`
   query ($tag: String!) {

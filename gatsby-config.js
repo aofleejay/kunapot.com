@@ -5,9 +5,10 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `kunapot.com`,
+    description: `บล็อกส่วนตัวของ aofleejay รวมบทความเกี่ยวกับ software development, สรุปหนังสือ, และเกม`,
     author: `aofleejay`,
     siteUrl: 'https://kunapot.com',
-    keywords: ['เล่าหนังสือ', 'เล่าเกม'],
+    keywords: ['เล่าหนังสือ', 'เล่าเกม', 'เล่าโค้ด', 'เล่าเบียร์'],
     social: {
       medium: 'https://medium.com/@aofleejay/latest',
       github: 'https://github.com/aofleejay',
@@ -18,7 +19,9 @@ module.exports = {
     },
   },
   plugins: [
-    'gatsby-plugin-webpack-bundle-analyser-v2',
+    ...(process.env.ANALYZE === 'true'
+      ? ['gatsby-plugin-webpack-bundle-analyser-v2']
+      : []),
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
@@ -76,8 +79,6 @@ module.exports = {
     'gatsby-plugin-dark-mode',
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-postcss`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+    'gatsby-plugin-offline',
   ],
 }

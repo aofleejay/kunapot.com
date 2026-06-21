@@ -26,7 +26,7 @@ const BlogCard = ({ post }: BlogCardProp) => {
         <GatsbyImage
           className="mb-0"
           image={getImage(post.frontmatter.coverImage)!}
-          alt=""
+          alt={post.frontmatter.title}
         />
       </Link>
       <div className="flex flex-grow flex-col m-6">
@@ -42,9 +42,9 @@ const BlogCard = ({ post }: BlogCardProp) => {
           ))}
         </span>
         <Link to={post.fields.slug}>
-          <p className="mb-4 text-lg font-bold text-primary">
+          <h2 className="mb-4 text-lg font-bold text-primary">
             {post.frontmatter.title}
-          </p>
+          </h2>
         </Link>
         <Link to={post.fields.slug} className="flex-grow">
           <p className="mb-4 text-sm">{post.excerpt}</p>

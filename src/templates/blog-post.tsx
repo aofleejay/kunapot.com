@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link, graphql } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { DiscussionEmbed } from 'disqus-react'
 import { Layout, SEO } from '../components'
 
@@ -15,6 +16,7 @@ interface BlogPostProps {
           name: string
           publicURL: string
           childImageSharp: {
+            gatsbyImageData: object
             original: {
               src: string
               width: number
@@ -23,6 +25,7 @@ interface BlogPostProps {
           }
         }
         date: string
+        dateISO: string
       }
       fields: {
         slug: string
@@ -42,6 +45,33 @@ interface BlogPostProps {
 
 const BlogPost = ({ data }: BlogPostProps) => {
   const post = data.markdownRemark
+  const coverImage = post.frontmatter.coverImage
+  const image = coverImage
+    ? getImage(coverImage.childImageSharp.gatsbyImageData as never)
+    : null
+
+  const commentRef = useRef<HTMLDivElement>(null)
+  const [showComments, setShowComments] = useState(false)
+
+  useEffect(() => {
+    // Load deckDeckGo highlight code only on post pages
+    import('@deckdeckgo/highlight-code/dist/loader').then(
+      ({ defineCustomElements }) => defineCustomElements(),
+    )
+
+    // Lazy-load Disqus when comment section scrolls into view
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShowComments(true)
+          observer.disconnect()
+        }
+      },
+      { rootMargin: '200px' },
+    )
+    if (commentRef.current) observer.observe(commentRef.current)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <Layout>
@@ -52,7 +82,9 @@ const BlogPost = ({ data }: BlogPostProps) => {
         <p className="mb-4 space-x-4 text-gray-500">
           <span>{post.timeToRead} min read</span>
           <span>•</span>
-          <span>{post.frontmatter.date}</span>
+          <time dateTime={post.frontmatter.dateISO}>
+            {post.frontmatter.date}
+          </time>
         </p>
         <p className="mb-8 space-x-4">
           {post.frontmatter.tags.map((tag) => (
@@ -63,44 +95,80 @@ const BlogPost = ({ data }: BlogPostProps) => {
             </Link>
           ))}
         </p>
-        <img
-          className="rounded"
-          src={
-            post.frontmatter.coverImage && post.frontmatter.coverImage.publicURL
-          }
-          alt={post.frontmatter.coverImage && post.frontmatter.coverImage.name}
-        />
+        {image ? (
+          <GatsbyImage
+            className="rounded"
+            image={image}
+            alt={post.frontmatter.title}
+          />
+        ) : (
+          coverImage?.publicURL && (
+            <img
+              className="rounded"
+              src={coverImage.publicURL}
+              alt={post.frontmatter.title}
+              loading="lazy"
+              decoding="async"
+            />
+          )
+        )}
         <div
           dangerouslySetInnerHTML={{ __html: post.html }}
           className="prose mx-auto my-8"
         />
         <p className="text-center mb-8">. . .</p>
-        <DiscussionEmbed
-          shortname={data.site.siteMetadata.disqus.shortName}
-          config={{
-            url: `${data.site.siteMetadata.siteUrl}${post.fields.slug}`,
-            identifier: post.fields.slug,
-            title: post.frontmatter.title,
-          }}
-        />
+        <div ref={commentRef}>
+          {showComments && (
+            <DisqusEmbed
+              shortName={data.site.siteMetadata.disqus.shortName}
+              siteUrl={data.site.siteMetadata.siteUrl}
+              slug={post.fields.slug}
+              title={post.frontmatter.title}
+            />
+          )}
+        </div>
       </div>
     </Layout>
   )
 }
 
+const DisqusEmbed = ({
+  shortName,
+  siteUrl,
+  slug,
+  title,
+}: {
+  shortName: string
+  siteUrl: string
+  slug: string
+  title: string
+}) => (
+  <DiscussionEmbed
+    shortname={shortName}
+    config={{
+      url: `${siteUrl}${slug}`,
+      identifier: slug,
+      title,
+    }}
+  />
+)
+
 export const Head = ({ data }: BlogPostProps) => {
   const post = data.markdownRemark
+  const cover = post.frontmatter.coverImage
 
   return (
     <SEO
       title={post.frontmatter.title}
       description={post.frontmatter.description}
       keywords={post.frontmatter.tags}
-      image={post.frontmatter.coverImage.childImageSharp.original.src}
-      imageWidth={post.frontmatter.coverImage.childImageSharp.original.width}
-      imageHeight={post.frontmatter.coverImage.childImageSharp.original.height}
+      image={cover?.childImageSharp?.original?.src}
+      imageWidth={cover?.childImageSharp?.original?.width}
+      imageHeight={cover?.childImageSharp?.original?.height}
       slug={post.fields.slug}
       article
+      articleDate={post.frontmatter.dateISO}
+      articleTags={post.frontmatter.tags}
     />
   )
 }
@@ -120,6 +188,11 @@ export const query = graphql`
           name
           publicURL
           childImageSharp {
+            gatsbyImageData(
+              width: 768
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+            )
             original {
               src
               width
@@ -127,7 +200,8 @@ export const query = graphql`
             }
           }
         }
-        date(fromNow: true)
+        date(formatString: "D MMMM YYYY")
+        dateISO: date
       }
       fields {
         slug

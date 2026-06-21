@@ -68,6 +68,12 @@ const AboutPage = () => {
   )
 }
 
-export const Head = () => <SEO />
+export const Head = () => (
+  <SEO
+    title="About"
+    description="aofleejay — software engineer จากกรุงเทพฯ เขียนบล็อกเกี่ยวกับ software development, สรุปหนังสือ และเกม"
+    slug="/about/"
+  />
+)
 
 export default AboutPage

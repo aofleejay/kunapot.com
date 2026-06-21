@@ -10,7 +10,10 @@ interface SEOProps {
   imageWidth?: number
   imageHeight?: number
   article?: boolean
+  articleDate?: string
+  articleTags?: string[]
   slug?: string
+  noindex?: boolean
 }
 
 const SEO = (props: SEOProps) => {
@@ -18,39 +21,89 @@ const SEO = (props: SEOProps) => {
     <StaticQuery
       query={query}
       render={(data) => {
-        const title = props.title || data.site.siteMetadata.title
-        const description = props.description || data.site.siteMetadata.title
+        const siteTitle = data.site.siteMetadata.title
+        const siteDescription = data.site.siteMetadata.description
+        const siteUrl = data.site.siteMetadata.siteUrl
         const author = props.author || data.site.siteMetadata.author
         const keywords = props.keywords || data.site.siteMetadata.keywords
         const slug = props.slug || '/'
 
+        const title = props.title ? `${props.title} | ${siteTitle}` : siteTitle
+        const description = props.description || siteDescription
+        const canonical = `${siteUrl}${slug}`
+        const ogImage = props.image ? `${siteUrl}${props.image}` : null
+
+        const jsonLd = props.article
+          ? {
+              '@context': 'https://schema.org',
+              '@type': 'BlogPosting',
+              headline: props.title,
+              description: description,
+              image: ogImage,
+              datePublished: props.articleDate,
+              author: {
+                '@type': 'Person',
+                name: author,
+                url: `${siteUrl}/about`,
+              },
+              publisher: {
+                '@type': 'Person',
+                name: author,
+                url: siteUrl,
+              },
+              mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+            }
+          : {
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: siteTitle,
+              url: siteUrl,
+              description: siteDescription,
+            }
+
         return (
           <>
+            <title>{title}</title>
             <meta name="description" content={description} />
             <meta name="author" content={author} />
             <meta name="keywords" content={keywords.join()} />
+            {props.noindex && (
+              <meta name="robots" content="noindex, nofollow" />
+            )}
 
-            <meta
-              property="og:url"
-              content={`${data.site.siteMetadata.siteUrl}${slug}`}
+            <link rel="canonical" href={canonical} />
+
+            {/* Fonts — non-blocking */}
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link
+              rel="preconnect"
+              href="https://fonts.gstatic.com"
+              crossOrigin=""
             />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=IBM+Plex+Sans+Thai:wght@400;700&display=swap"
+              rel="stylesheet"
+            />
+
+            {/* Open Graph */}
+            <meta property="og:site_name" content={siteTitle} />
+            <meta property="og:url" content={canonical} />
             <meta property="og:title" content={title} />
             <meta property="og:description" content={description} />
-            {props.article && <meta property="og:type" content="article" />}
-            {props.image && (
-              <meta
-                property="og:image"
-                content={encodeURI(`${data.site.siteMetadata.siteUrl}${props.image}`)}
-              />
+            <meta property="og:locale" content="th_TH" />
+            {props.article ? (
+              <meta property="og:type" content="article" />
+            ) : (
+              <meta property="og:type" content="website" />
             )}
-            {/* {props.image && (
+            {ogImage && <meta property="og:image" content={ogImage} />}
+            {ogImage && (
               <meta
-                property="og:image:secure_url"
-                content={`${data.site.siteMetadata.siteUrl}${props.image}`}
+                property="og:image:type"
+                content={
+                  ogImage.endsWith('.webp') ? 'image/webp' : 'image/jpeg'
+                }
               />
-            )} */}
-            {props.image && (
-              <meta property="og:image:type" content="image/jpeg" />
             )}
             {props.imageWidth && (
               <meta property="og:image:width" content={`${props.imageWidth}`} />
@@ -61,11 +114,37 @@ const SEO = (props: SEOProps) => {
                 content={`${props.imageHeight}`}
               />
             )}
-            {/* <meta property="og:locale" content="th_TH" /> */}
             <meta
               property="fb:app_id"
               content={data.site.siteMetadata.facebookAppID}
             />
+
+            {/* Article tags */}
+            {props.article && props.articleDate && (
+              <meta
+                property="article:published_time"
+                content={props.articleDate}
+              />
+            )}
+            {props.article && (
+              <meta property="article:author" content={author} />
+            )}
+            {props.articleTags?.map((tag) => (
+              <meta key={tag} property="article:tag" content={tag} />
+            ))}
+
+            {/* Twitter Card */}
+            <meta
+              name="twitter:card"
+              content={ogImage ? 'summary_large_image' : 'summary'}
+            />
+            <meta name="twitter:title" content={title} />
+            <meta name="twitter:description" content={description} />
+            {ogImage && <meta name="twitter:image" content={ogImage} />}
+            <meta name="twitter:creator" content={`@${author}`} />
+
+            {/* JSON-LD */}
+            <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
           </>
         )
       }}
@@ -80,7 +159,10 @@ SEO.defaultProps = {
   keywords: null,
   image: null,
   article: false,
+  articleDate: null,
+  articleTags: null,
   slug: null,
+  noindex: false,
 }
 
 export const query = graphql`
@@ -88,6 +170,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        description
         author
         keywords
         siteUrl
