@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkkunapot_com=self.webpackChunkkunapot_com||[]).push([[443],{6171:function(e,t,a){a.r(t),a.d(t,{Head:function(){return r}});var n=a(6540),l=a(2256);const r=e=>{let t=e.pageContext;return n.createElement(l.kW,{title:""+t.tag,description:"บทความทั้งหมดในหมวด "+t.tag,slug:"/tags/"+t.tag+"/"})};t.default=e=>n.createElement(l.PE,null,n.createElement(l.xA,null,e.data.allMarkdownRemark.edges.map(e=>{let t=e.node;return n.createElement(l.Zj,{key:t.id,post:t})})))}}]);
+//# sourceMappingURL=component---src-templates-tags-tsx-c2ae6e6a6bca1de4e333.js.map
