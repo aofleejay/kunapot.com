@@ -1,1 +1,5 @@
 import './src/styles/global.css'
+import '@fontsource/quicksand/400.css'
+import '@fontsource/quicksand/700.css'
+import '@fontsource/ibm-plex-sans-thai/400.css'
+import '@fontsource/ibm-plex-sans-thai/700.css'

@@ -6,6 +6,8 @@
       "name": "kunapot.com",
       "dependencies": {
         "@deckdeckgo/highlight-code": "^4.4.0",
+        "@fontsource/ibm-plex-sans-thai": "^5.2.8",
+        "@fontsource/quicksand": "^5.2.10",
         "disqus-react": "^1.1.7",
         "gatsby": "^5.16.1",
         "gatsby-plugin-dark-mode": "^1.1.2",
@@ -381,6 +383,10 @@
     "@expo/devcert": ["@expo/devcert@1.2.1", "", { "dependencies": { "@expo/sudo-prompt": "^9.3.1", "debug": "^3.1.0" } }, "sha512-qC4eaxmKMTmJC2ahwyui6ud8f3W60Ss7pMkpBq40Hu3zyiAaugPXnZ24145U7K36qO9UHdZUVxsCvIpz2RYYCA=="],
 
     "@expo/sudo-prompt": ["@expo/sudo-prompt@9.3.2", "", {}, "sha512-HHQigo3rQWKMDzYDLkubN5WQOYXJJE2eNqIQC2axC2iO3mHdwnIR7FgZVvHWtBwAdzBgAP0ECp8KqS8TiMKvgw=="],
+
+    "@fontsource/ibm-plex-sans-thai": ["@fontsource/ibm-plex-sans-thai@5.2.8", "", {}, "sha512-pddJU1HCjtqbXRcyCnbEJ8UV8pQQuUo23Hxjvdwr0DBibtUra66MVsFMDP/Et/Su5P2VeQAgalACZOCEkWaReA=="],
+
+    "@fontsource/quicksand": ["@fontsource/quicksand@5.2.10", "", {}, "sha512-rck0ccT6vJF9RnbSW2ON1grq5qFZvjVOGvYIUixATXF8mNh4KglD+8Sn8QpRgKQBSBJF5yOR3SBYBWPg/Y8YbQ=="],
 
     "@gatsbyjs/parcel-namer-relative-to-cwd": ["@gatsbyjs/parcel-namer-relative-to-cwd@2.16.0", "", { "dependencies": { "@babel/runtime": "^7.20.13", "@parcel/namer-default": "2.8.3", "@parcel/plugin": "2.8.3", "gatsby-core-utils": "^4.16.0" } }, "sha512-E05myRVDUgUXS41wWxBOc0wPub1WAty3M6bO2vGctToXO11Lw9tci9banlSQojBB12ExsmRqNW90FxtVNTbfQA=="],
 

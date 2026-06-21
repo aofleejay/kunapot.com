@@ -27,6 +27,7 @@ const BlogCard = ({ post }: BlogCardProp) => {
           className="mb-0"
           image={getImage(post.frontmatter.coverImage)!}
           alt={post.frontmatter.title}
+          sizes="(min-width: 1024px) calc((100vw - 6rem) / 3), 100vw"
         />
       </Link>
       <div className="flex flex-grow flex-col m-6">

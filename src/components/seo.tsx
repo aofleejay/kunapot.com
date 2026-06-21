@@ -73,18 +73,6 @@ const SEO = (props: SEOProps) => {
 
             <link rel="canonical" href={canonical} />
 
-            {/* Fonts — non-blocking */}
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link
-              rel="preconnect"
-              href="https://fonts.gstatic.com"
-              crossOrigin=""
-            />
-            <link
-              href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=IBM+Plex+Sans+Thai:wght@400;700&display=swap"
-              rel="stylesheet"
-            />
-
             {/* Open Graph */}
             <meta property="og:site_name" content={siteTitle} />
             <meta property="og:url" content={canonical} />

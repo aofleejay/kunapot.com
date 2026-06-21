@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@deckdeckgo/highlight-code": "^4.4.0",
+    "@fontsource/ibm-plex-sans-thai": "^5.2.8",
+    "@fontsource/quicksand": "^5.2.10",
     "disqus-react": "^1.1.7",
     "gatsby": "^5.16.1",
     "gatsby-plugin-dark-mode": "^1.1.2",

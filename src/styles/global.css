@@ -1,6 +1,13 @@
 @import 'tailwindcss';
 @config '../../tailwind.config.js';
 
+/* Ensure inline links in text blocks are distinguishable beyond color (a11y) */
+p a,
+li a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 body {
   --bg: #fff;
   --primary: #1a202c;

@@ -26,6 +26,11 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         trackingIds: [process.env.GA4_TAG_ID],
+        pluginConfig: {
+          // Load GA script at end of body so it doesn't block initial render
+          head: false,
+          respectDNT: true,
+        },
       },
     },
     `gatsby-plugin-typescript`,
