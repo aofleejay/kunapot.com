@@ -159,28 +159,29 @@ Manual fallback: `bun deploy`
 
 ## Content ownership
 
-**Blog post body text is written exclusively by the human owner (aofleejay).** AI agents must never generate, rewrite, paraphrase, or fill in blog post content in `src/blogs/*/index.md`.
+**All written content on this blog is authored exclusively by the human owner (aofleejay).** AI agents must never generate, rewrite, paraphrase, or fill in any text that will appear to readers.
 
 ### What AI can freely change
 
 - All code: components, templates, pages, scripts, config files
-- Frontmatter fields other than the body (e.g. fixing `description`, `tags`, `draft`, `coverImage` path) — but only when explicitly asked
+- Frontmatter fields that are purely technical: `draft`, `tags`, `coverImage` path, `date`
 - `AGENTS.md`, `README.md`, documentation
 - Dependencies, CI config, tooling
 
-### What requires a human
+### What requires a human — never touch these
 
-| File / area                                                           | Rule                                                                          |
-| --------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| Body text inside `src/blogs/*/index.md` (below the frontmatter `---`) | **Human only.** Do not write, edit, translate, summarise, or paraphrase.      |
-| `description` frontmatter on a new post                               | Human writes it; AI may not invent a description for content it has not read. |
-| `src/pages/about.tsx` body copy                                       | Human only — personal bio.                                                    |
+| Area                                                              | Rule                                                                                                               |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Body text inside `src/blogs/*/index.md` (below the closing `---`) | **Human only.** Do not write, edit, translate, or summarise.                                                       |
+| `description` in any blog post frontmatter                        | **Human only.** This is written in the author's voice. If empty or missing, leave it that way — do not invent one. |
+| `title` in blog post frontmatter                                  | **Human only.**                                                                                                    |
+| `src/pages/about.tsx` body copy                                   | **Human only** — personal bio.                                                                                     |
 
 ### When to warn
 
-If a task requires editing blog post body text (e.g. "fix this paragraph", "translate the post", "add a section about X"), **stop and tell the user** that post content must be written by a human. Do not attempt the edit. Example response:
+If asked to write, fill in, or edit any of the above (e.g. "write a description", "fill missing descriptions", "edit this paragraph", "translate the post"), **stop immediately** and tell the user. Example:
 
-> "บทความนี้ต้องเขียนโดย aofleejay เอง — ฉันแก้ไขเนื้อหา body ของ blog post ไม่ได้ บอกฉันได้ถ้าอยากให้ช่วยด้านเทคนิคอื่นๆ แทน"
+> "ส่วนนี้ต้องเขียนโดย aofleejay เอง — ฉันเขียนหรือแก้ไขเนื้อหาของ blog post รวมถึง description ไม่ได้ บอกฉันได้ถ้าอยากให้ช่วยด้านเทคนิคอื่นๆ แทน"
 
 ## Agent guidelines
 
