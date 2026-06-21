@@ -1,6 +1,11 @@
 module.exports = {
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        diagnostics: false,
+      },
+    ],
     '^.+\\.jsx?$': '<rootDir>/jest-preprocess.js',
   },
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.([tj]sx?)$',
@@ -12,12 +17,6 @@ module.exports = {
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   testPathIgnorePatterns: ['node_modules', '.cache'],
   transformIgnorePatterns: ['node_modules/(?!(gatsby)/)'],
-  globals: {
-    __PATH_PREFIX__: '',
-    'ts-jest': {
-      diagnostics: false,
-    },
-  },
-  testURL: 'http://localhost',
+  testEnvironment: 'jsdom',
   setupFiles: ['<rootDir>/loadershim.js'],
 }

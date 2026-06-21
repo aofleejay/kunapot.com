@@ -11,18 +11,18 @@
 - **View your site locally**
 
   ```
-  yarn dev
+  bun dev
   ```
 
 - **View the production site locally**
 
   ```
-  yarn build
-  yarn serve
+  bun build
+  bun serve
   ```
 
 ## ➕ Create blog
 
 ```
-yarn blog:create
+bun blog:create
 ```
