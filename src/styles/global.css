@@ -43,3 +43,39 @@ body.dark {
 ::selection {
   background-color: color-mix(in srgb, var(--ascending) 22%, transparent);
 }
+
+/* Code blocks (deckDeckGo <deckgo-highlight-code>) — outer vars override the
+   component's built-in carbon theme, so blocks follow light/dark mode */
+deckgo-highlight-code {
+  --deckgo-highlight-code-carbon-background: var(--faded);
+  --deckgo-highlight-code-carbon-color: var(--primary);
+  --deckgo-highlight-code-carbon-border: 1px solid var(--line);
+  --deckgo-highlight-code-carbon-border-radius: 1rem;
+  --deckgo-highlight-code-carbon-box-shadow: none;
+  --deckgo-highlight-code-carbon-margin: 1.75em 0;
+  --deckgo-highlight-code-carbon-toolbar-display: none;
+  --deckgo-highlight-code-margin: 0;
+  --deckgo-highlight-code-padding: 1.25em 1.5em;
+  --deckgo-highlight-code-font-size: 0.875rem;
+  --deckgo-highlight-code-line-height: 1.7;
+  --deckgo-highlight-code-font-family:
+    ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --deckgo-highlight-code-token-comment: var(--muted);
+  --deckgo-highlight-code-token-comment-rgb: 110, 110, 115;
+  --deckgo-highlight-code-token-punctuation: var(--muted);
+  --deckgo-highlight-code-token-operator: var(--secondary);
+  --deckgo-highlight-code-token-function: var(--ascending);
+  --deckgo-highlight-code-token-atrule: #ad3da4;
+  --deckgo-highlight-code-token-selector: #c41a16;
+  --deckgo-highlight-code-token-property: #1c00cf;
+  --deckgo-highlight-code-token-regex: #b35900;
+}
+
+body.dark deckgo-highlight-code {
+  --deckgo-highlight-code-token-comment-rgb: 152, 152, 157;
+  --deckgo-highlight-code-token-atrule: #ff7ab2;
+  --deckgo-highlight-code-token-selector: #ff8170;
+  --deckgo-highlight-code-token-property: #d9c97c;
+  --deckgo-highlight-code-token-regex: #fd8f3f;
+}
