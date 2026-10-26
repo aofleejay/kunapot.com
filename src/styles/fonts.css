@@ -1,0 +1,67 @@
+/* Self-hosted fonts (Fontsource files), Latin from Google Sans, Thai from IBM Plex
+   Sans Thai Looped. font-display: optional avoids the late swap that shifts
+   layout and pushes back LCP; once cached, the web fonts always render. */
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 400;
+  src: url('~@fontsource/google-sans/files/google-sans-latin-400-normal.woff2')
+    format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 500;
+  src: url('~@fontsource/google-sans/files/google-sans-latin-500-normal.woff2')
+    format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 600;
+  src: url('~@fontsource/google-sans/files/google-sans-latin-600-normal.woff2')
+    format('woff2');
+}
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 700;
+  src: url('~@fontsource/google-sans/files/google-sans-latin-700-normal.woff2')
+    format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans Thai Looped';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 400;
+  src: url('~@fontsource/ibm-plex-sans-thai-looped/files/ibm-plex-sans-thai-looped-thai-400-normal.woff2')
+    format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans Thai Looped';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 500;
+  src: url('~@fontsource/ibm-plex-sans-thai-looped/files/ibm-plex-sans-thai-looped-thai-500-normal.woff2')
+    format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans Thai Looped';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 600;
+  src: url('~@fontsource/ibm-plex-sans-thai-looped/files/ibm-plex-sans-thai-looped-thai-600-normal.woff2')
+    format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Sans Thai Looped';
+  font-style: normal;
+  font-display: optional;
+  font-weight: 700;
+  src: url('~@fontsource/ibm-plex-sans-thai-looped/files/ibm-plex-sans-thai-looped-thai-700-normal.woff2')
+    format('woff2');
+}
