@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link, graphql } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { DiscussionEmbed } from 'disqus-react'
-import { Layout, SEO } from '../components'
+import { BackToTop, Layout, SEO } from '../components'
 
 interface BlogPostProps {
   data: {
@@ -138,6 +138,7 @@ const BlogPost = ({ data }: BlogPostProps) => {
           )}
         </div>
       </article>
+      <BackToTop />
     </Layout>
   )
 }
