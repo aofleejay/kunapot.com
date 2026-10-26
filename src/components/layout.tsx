@@ -7,6 +7,11 @@ interface LayoutProps {
   children: React.ReactNode
 }
 
+interface ThemeTogglerProps {
+  theme: string | null
+  toggleTheme: (theme: string) => void
+}
+
 const navLink = 'text-muted hover:text-primary transition-colors duration-300'
 
 const Layout = ({ children }: LayoutProps) => {
@@ -31,7 +36,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <ThemeToggler>
-      {({ theme, toggleTheme }) => {
+      {({ theme, toggleTheme }: ThemeTogglerProps) => {
         return (
           <div className="flex min-h-screen flex-col">
             <header className="sticky top-0 z-50 border-b border-line bg-nav backdrop-blur-xl backdrop-saturate-150">
