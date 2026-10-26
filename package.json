@@ -16,6 +16,7 @@
     "deploy": "gatsby build && gh-pages -d public",
     "blog:create": "bun src/scripts/create-blog.ts",
     "image:resize": "bun src/scripts/resize-image.ts",
+    "cover:create": "bun src/scripts/create-cover.ts",
     "prepare": "husky"
   },
   "dependencies": {

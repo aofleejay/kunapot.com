@@ -38,6 +38,7 @@ bun build        # production build → public/
 bun serve        # serve built site
 bun blog:create  # scaffold new post (interactive)
 bun image:resize # resize cover to 1600×900 webp
+bun cover:create # render cover text (default: post title) onto a 1600×900 cover (needs Chrome)
 bun lint         # ESLint on src/
 bun format       # Prettier
 bun deploy       # manual: build + push public/ to gh-pages
@@ -82,6 +83,7 @@ draft: false # true = excluded from build
 - `coverImage` is required for og:image and the hero on the post page.
 - Inline images: place in the post folder, reference with relative paths in markdown.
 - `bun blog:create` comments out `coverImage` by default and sets `draft: true` by default.
+- No cover idea? `bun cover:create` (or `bun cover:create <slug> "<cover text>"`) renders text on a minimal card with soft glows coloured by the first tag, saves `<slug>-cover-image.webp`, and uncomments `coverImage`. Cover text is typed by the author; empty = the post `title`. Agents must not write or translate cover text. Uses headless Chrome; set `CHROME_PATH` if it isn't at the default macOS path.
 - Draft posts are filtered everywhere via `filter: { frontmatter: { draft: { ne: true } } }` in `gatsby-node.js`.
 
 ### Markdown features
