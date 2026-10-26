@@ -41,8 +41,8 @@ const IndexPage = (props: IndexPageProps) => {
         </p>
       </section>
       <Grid>
-        {props.data.allMarkdownRemark.edges.map(({ node }) => (
-          <BlogCard key={node.id} post={node} />
+        {props.data.allMarkdownRemark.edges.map(({ node }, index) => (
+          <BlogCard key={node.id} post={node} eager={index === 0} />
         ))}
       </Grid>
     </Layout>

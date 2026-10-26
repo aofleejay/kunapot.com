@@ -105,6 +105,8 @@ const BlogPost = ({ data }: BlogPostProps) => {
               className="isolate overflow-hidden rounded-2xl sm:rounded-3xl"
               image={image}
               alt={post.frontmatter.title}
+              loading="eager"
+              fetchPriority="high"
             />
           ) : (
             coverImage?.publicURL && (

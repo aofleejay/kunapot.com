@@ -43,8 +43,8 @@ const TagsPage = (props: TagsPageProps) => {
         </p>
       </header>
       <Grid>
-        {posts.map(({ node }) => (
-          <BlogCard key={node.id} post={node} />
+        {posts.map(({ node }, index) => (
+          <BlogCard key={node.id} post={node} eager={index === 0} />
         ))}
       </Grid>
     </Layout>

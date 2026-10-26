@@ -17,9 +17,11 @@ interface BlogCardProp {
     excerpt: string
     timeToRead: number
   }
+  // Above-the-fold cards: skip lazy loading so the LCP image starts early
+  eager?: boolean
 }
 
-const BlogCard = ({ post }: BlogCardProp) => {
+const BlogCard = ({ post, eager = false }: BlogCardProp) => {
   return (
     <article className="group isolate flex flex-col overflow-hidden rounded-3xl border border-line bg-faded transition duration-500 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10">
       <Link to={post.fields.slug} className="block overflow-hidden">
@@ -27,6 +29,8 @@ const BlogCard = ({ post }: BlogCardProp) => {
           className="transition-transform duration-700 ease-out group-hover:scale-[1.03]"
           image={getImage(post.frontmatter.coverImage)!}
           alt={post.frontmatter.title}
+          loading={eager ? 'eager' : 'lazy'}
+          fetchPriority={eager ? 'high' : undefined}
           sizes="(min-width: 1152px) 346px, (min-width: 1024px) calc((100vw - 112px) / 3), (min-width: 640px) calc((100vw - 80px) / 2), calc(100vw - 32px)"
         />
       </Link>
