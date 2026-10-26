@@ -10,6 +10,9 @@ const path = require(`path`)
 const _ = require('lodash')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+// 3 rows of the desktop grid
+const POSTS_PER_PAGE = 9
+
 exports.onCreateWebpackConfig = ({ actions, getConfig }) => {
   const config = getConfig()
   config.plugins = config.plugins.filter(
@@ -34,6 +37,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve('./src/templates/blog-post.tsx')
   const tagTemplate = path.resolve('./src/templates/tags.tsx')
+  const blogListTemplate = path.resolve('./src/templates/blog-list.tsx')
 
   return graphql(`
     {
@@ -62,6 +66,21 @@ exports.createPages = ({ graphql, actions }) => {
           // Data passed to context is available
           // in page queries as GraphQL variables.
           slug: node.fields.slug,
+        },
+      })
+    })
+
+    // Paginated home page: `/`, `/page/2/`, ...
+    const numPages = Math.ceil(posts.length / POSTS_PER_PAGE)
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? '/' : `/page/${i + 1}/`,
+        component: blogListTemplate,
+        context: {
+          limit: POSTS_PER_PAGE,
+          skip: i * POSTS_PER_PAGE,
+          currentPage: i + 1,
+          numPages,
         },
       })
     })
