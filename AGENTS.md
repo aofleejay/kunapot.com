@@ -11,7 +11,7 @@ Personal blog at [https://kunapot.com](https://kunapot.com) by **aofleejay**.
 | Framework       | Gatsby 5 + React 18 + TypeScript (strict)                  |
 | Styling         | Tailwind CSS 4 + `@tailwindcss/typography` + CSS variables |
 | Hosting         | GitHub Pages (custom domain via `static/CNAME`)            |
-| Package manager | Bun 1.3.14                                                 |
+| Package manager | Bun 1.4.4                                                  |
 
 - **Content language:** predominantly Thai (blog body); site chrome (nav, footer) is English.
 - **Common tags:** `เล่าเกม`, `เล่าหนังสือ`, `เล่าโค้ด`, `เล่าเบียร์`

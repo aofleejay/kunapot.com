@@ -94,7 +94,7 @@
   "bugs": {
     "url": "https://github.com/aofleejay/kunapot.com/issues"
   },
-  "packageManager": "bun@1.3.14",
+  "packageManager": "bun@1.4.4",
   "trustedDependencies": [
     "sharp",
     "gatsby",
