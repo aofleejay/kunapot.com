@@ -10,6 +10,7 @@
     "serve": "gatsby serve",
     "format": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\" --write",
     "lint": "eslint src gatsby-*.js",
+    "typecheck": "tsc --noEmit",
     "test": "jest --passWithNoTests --forceExit",
     "test:watch": "jest --watch --passWithNoTests",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",

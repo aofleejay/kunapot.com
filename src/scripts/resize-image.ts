@@ -25,7 +25,7 @@ const resize = ({ imageType, inputFile, outputFolder }: Input) => {
 }
 
 inquirer
-  .prompt([
+  .prompt<Input>([
     {
       type: 'list',
       name: 'imageType',
