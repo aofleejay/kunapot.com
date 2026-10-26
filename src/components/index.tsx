@@ -1,3 +1,4 @@
+export { default as BackToTop } from './back-to-top'
 export { default as BlogCard } from './blog-card'
 export { default as Grid } from './grid'
 export { default as Layout } from './layout'
