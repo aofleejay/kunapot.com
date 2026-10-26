@@ -35,7 +35,7 @@ const BlogCard = ({ post, eager = false }: BlogCardProp) => {
         />
       </Link>
       <div className="flex flex-grow flex-col p-6">
-        <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs font-medium">
+        <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs font-semibold">
           {post.frontmatter.tags.map((tag) => (
             <Link
               key={tag}

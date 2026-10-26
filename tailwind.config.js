@@ -46,7 +46,7 @@ module.exports = {
             },
             a: {
               color: 'var(--ascending)',
-              fontWeight: '500',
+              fontWeight: '400',
             },
             hr: {
               borderColor: 'var(--line)',
@@ -95,7 +95,7 @@ module.exports = {
               border: '1px solid var(--line)',
               borderRadius: '0.375rem',
               padding: '0.15em 0.4em',
-              fontWeight: '500',
+              fontWeight: '400',
             },
             'code::before': {
               content: 'none',

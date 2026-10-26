@@ -77,7 +77,7 @@ const BlogPost = ({ data }: BlogPostProps) => {
     <Layout>
       <article className="px-4 pt-12 sm:px-6 sm:pt-20">
         <header className="mx-auto max-w-[680px]">
-          <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium">
+          <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-semibold">
             {post.frontmatter.tags.map((tag) => (
               <Link
                 key={tag}

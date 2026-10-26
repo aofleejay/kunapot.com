@@ -34,7 +34,7 @@ const TagsPage = (props: TagsPageProps) => {
   return (
     <Layout>
       <header className="mx-auto max-w-6xl px-4 pt-16 pb-12 sm:px-6 sm:pt-24 sm:pb-16">
-        <p className="text-sm font-medium text-ascending">Tag</p>
+        <p className="text-sm font-semibold text-ascending">Tag</p>
         <h1 className="mt-2 text-4xl font-semibold leading-snug text-primary sm:text-5xl">
           {props.pageContext.tag}
         </h1>
