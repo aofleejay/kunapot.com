@@ -18,17 +18,17 @@ Personal blog at [https://kunapot.com](https://kunapot.com) by **aofleejay**.
 
 ## Repository map
 
-| Path                         | Role                                          |
-| ---------------------------- | --------------------------------------------- |
-| `src/blogs/`                 | All markdown posts (one folder per post)      |
-| `src/templates/`             | `blog-post.tsx`, `tags.tsx`                   |
-| `src/components/`            | Layout, BlogCard, Grid, SEO                   |
-| `src/pages/`                 | Static pages: home, about, 404                |
-| `src/scripts/`               | `create-blog.ts`, `resize-image.ts`           |
-| `src/styles/global.css`      | Tailwind imports + theme CSS variables        |
-| `gatsby-node.js`             | Slug generation, page creation (posts + tags) |
-| `gatsby-config.js`           | Plugins, site metadata, env loading           |
-| `.github/workflows/main.yml` | CI build + deploy to `gh-pages`               |
+| Path                         | Role                                                          |
+| ---------------------------- | ------------------------------------------------------------- |
+| `src/blogs/`                 | All markdown posts (one folder per post)                      |
+| `src/templates/`             | `blog-list.tsx` (paginated home), `blog-post.tsx`, `tags.tsx` |
+| `src/components/`            | Layout, BlogCard, Grid, SEO                                   |
+| `src/pages/`                 | Static pages: about, 404                                      |
+| `src/scripts/`               | `create-blog.ts`, `resize-image.ts`                           |
+| `src/styles/global.css`      | Tailwind imports + theme CSS variables                        |
+| `gatsby-node.js`             | Slug generation, page creation (posts + tags)                 |
+| `gatsby-config.js`           | Plugins, site metadata, env loading                           |
+| `.github/workflows/main.yml` | CI build + deploy to `gh-pages`                               |
 
 ## Local development
 
