@@ -75,49 +75,57 @@ const BlogPost = ({ data }: BlogPostProps) => {
 
   return (
     <Layout>
-      <div className="max-w-screen-md mx-auto p-4 my-8">
-        <h1 className="text-2xl font-bold text-primary mb-4">
-          {post.frontmatter.title}
-        </h1>
-        <p className="mb-4 space-x-4 text-gray-500">
-          <span>{post.timeToRead} min read</span>
-          <span>•</span>
-          <time dateTime={post.frontmatter.dateISO}>
-            {post.frontmatter.date}
-          </time>
-        </p>
-        <p className="mb-8 space-x-4">
-          {post.frontmatter.tags.map((tag) => (
-            <Link key={tag} to={`/tags/${tag}`}>
-              <span className="bg-ascending rounded-full py-1 px-4 text-white">
+      <article className="px-4 pt-12 sm:px-6 sm:pt-20">
+        <header className="mx-auto max-w-[680px]">
+          <p className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-medium">
+            {post.frontmatter.tags.map((tag) => (
+              <Link
+                key={tag}
+                to={`/tags/${tag}`}
+                className="text-ascending hover:underline underline-offset-2"
+              >
                 {tag}
-              </span>
-            </Link>
-          ))}
-        </p>
-        {image ? (
-          <GatsbyImage
-            className="rounded"
-            image={image}
-            alt={post.frontmatter.title}
-          />
-        ) : (
-          coverImage?.publicURL && (
-            <img
-              className="rounded"
-              src={coverImage.publicURL}
+              </Link>
+            ))}
+          </p>
+          <h1 className="mt-3 text-3xl font-semibold leading-snug text-primary sm:text-[2.75rem] sm:leading-[1.3]">
+            {post.frontmatter.title}
+          </h1>
+          <p className="mt-5 space-x-2 text-sm text-muted">
+            <time dateTime={post.frontmatter.dateISO}>
+              {post.frontmatter.date}
+            </time>
+            <span aria-hidden="true">·</span>
+            <span>{post.timeToRead} min read</span>
+          </p>
+        </header>
+        <div className="mx-auto mt-10 max-w-3xl sm:mt-14">
+          {image ? (
+            <GatsbyImage
+              className="isolate overflow-hidden rounded-2xl sm:rounded-3xl"
+              image={image}
               alt={post.frontmatter.title}
-              loading="lazy"
-              decoding="async"
             />
-          )
-        )}
+          ) : (
+            coverImage?.publicURL && (
+              <img
+                className="w-full rounded-2xl sm:rounded-3xl"
+                src={coverImage.publicURL}
+                alt={post.frontmatter.title}
+                loading="lazy"
+                decoding="async"
+              />
+            )
+          )}
+        </div>
         <div
           dangerouslySetInnerHTML={{ __html: post.html }}
-          className="prose mx-auto my-8"
+          className="prose mx-auto mt-10 max-w-[680px] sm:mt-14"
         />
-        <p className="text-center mb-8">. . .</p>
-        <div ref={commentRef}>
+        <p className="mx-auto my-16 max-w-[680px] text-center tracking-[0.5em] text-muted">
+          . . .
+        </p>
+        <div ref={commentRef} className="mx-auto max-w-[680px]">
           {showComments && (
             <DisqusEmbed
               shortName={data.site.siteMetadata.disqus.shortName}
@@ -127,7 +135,7 @@ const BlogPost = ({ data }: BlogPostProps) => {
             />
           )}
         </div>
-      </div>
+      </article>
     </Layout>
   )
 }

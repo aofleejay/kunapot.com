@@ -8,22 +8,38 @@ li a {
   text-underline-offset: 3px;
 }
 
+html {
+  scroll-padding-top: 4.5rem;
+}
+
 body {
-  --bg: #fff;
-  --primary: #1a202c;
-  --secondary: #4a5568;
-  --faded: #f7fafc;
-  --ascending: #38b2ac;
+  --bg: #ffffff;
+  --nav: rgba(255, 255, 255, 0.72);
+  --primary: #1d1d1f;
+  --secondary: #333336;
+  --muted: #6e6e73;
+  --faded: #f5f5f7;
+  --line: #e5e5ea;
+  --ascending: #0066cc;
 
   background-color: var(--bg);
   color: var(--secondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body.dark {
-  -webkit-font-smoothing: antialiased;
+  --bg: #000000;
+  --nav: rgba(22, 22, 23, 0.72);
+  --primary: #f5f5f7;
+  --secondary: #d2d2d7;
+  --muted: #98989d;
+  --faded: #1c1c1e;
+  --line: #2c2c2e;
+  --ascending: #2997ff;
+}
 
-  --bg: #1a202c;
-  --primary: #ffffff;
-  --secondary: #bcc3ce;
-  --faded: #2d3748;
+::selection {
+  background-color: color-mix(in srgb, var(--ascending) 22%, transparent);
 }

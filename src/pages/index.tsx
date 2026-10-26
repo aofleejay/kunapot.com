@@ -31,12 +31,14 @@ interface IndexPageProps {
 const IndexPage = (props: IndexPageProps) => {
   return (
     <Layout>
-      <section className="mx-8 my-16 text-center">
-        <h1 className="text-2xl font-bold mb-2">
-          <span className="text-primary mr-1">Kunapot</span>
+      <section className="mx-auto max-w-6xl px-4 pt-16 pb-12 text-center sm:px-6 sm:pt-24 sm:pb-16">
+        <h1 className="text-5xl font-semibold tracking-tight sm:text-7xl">
+          <span className="text-primary mr-3">Kunapot</span>
           <span className="text-ascending">BLOG</span>
         </h1>
-        <p>Software development, Book summary, Games.</p>
+        <p className="mt-4 text-lg text-muted sm:text-xl">
+          Software development, Book summary, Games.
+        </p>
       </section>
       <Grid>
         {props.data.allMarkdownRemark.edges.map(({ node }) => (

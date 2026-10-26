@@ -26,13 +26,24 @@ interface TagsPageProps {
       ]
     }
   }
+  pageContext: { tag: string }
 }
 
 const TagsPage = (props: TagsPageProps) => {
+  const posts = props.data.allMarkdownRemark.edges
   return (
     <Layout>
+      <header className="mx-auto max-w-6xl px-4 pt-16 pb-12 sm:px-6 sm:pt-24 sm:pb-16">
+        <p className="text-sm font-medium text-ascending">Tag</p>
+        <h1 className="mt-2 text-4xl font-semibold leading-snug text-primary sm:text-5xl">
+          {props.pageContext.tag}
+        </h1>
+        <p className="mt-3 text-muted">
+          {posts.length} {posts.length === 1 ? 'post' : 'posts'}
+        </p>
+      </header>
       <Grid>
-        {props.data.allMarkdownRemark.edges.map(({ node }) => (
+        {posts.map(({ node }) => (
           <BlogCard key={node.id} post={node} />
         ))}
       </Grid>

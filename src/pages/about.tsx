@@ -20,8 +20,8 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <div className="prose max-w-screen-md mx-auto p-4 my-8">
-        <h1 className="text-2xl font-bold mb-8">
+      <div className="prose mx-auto max-w-[680px] px-4 pt-16 sm:px-6 sm:pt-24">
+        <h1 className="mb-10 text-4xl font-semibold leading-snug sm:text-5xl">
           👋 Hi there, I'm <span className="text-ascending">Aof</span>.
         </h1>
         <p>
