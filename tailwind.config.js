@@ -88,6 +88,21 @@ module.exports = {
             img: {
               borderRadius: '1rem',
             },
+            // Inline code: theme-aware pill instead of the plugin's fixed dark text + backticks
+            code: {
+              color: 'var(--primary)',
+              backgroundColor: 'var(--faded)',
+              border: '1px solid var(--line)',
+              borderRadius: '0.375rem',
+              padding: '0.15em 0.4em',
+              fontWeight: '500',
+            },
+            'code::before': {
+              content: 'none',
+            },
+            'code::after': {
+              content: 'none',
+            },
           },
         },
       },
